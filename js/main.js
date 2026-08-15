@@ -391,7 +391,7 @@
       a.setAttribute('data-reveal', '');
       a.setAttribute('data-delay', String((i % 4) + 1));
       a.innerHTML =
-        '<span class="opp__cover"><img src="assets/img/oportunidades/' + o.img +
+        '<span class="opp__cover"><img src="assets/img/oportunidades/' + esc(o.img) +
           '" alt="" loading="lazy" width="640" height="360"></span>' +
         '<span class="opp__k">' + esc(o.k) + '</span>' +
         '<h3>' + esc(o.t) + '</h3>' +
@@ -431,7 +431,7 @@
       var a = el('a', 'cap');
       a.href = c.u; a.target = '_blank'; a.rel = 'noopener noreferrer';
       a.innerHTML =
-        '<span class="cap__logo"><img src="assets/img/capitulos/' + c.img +
+        '<span class="cap__logo"><img src="assets/img/capitulos/' + esc(c.img) +
           '" alt="Logotipo de ' + esc(c.t) + '" loading="lazy"></span>' +
         '<span class="cap__k">' + esc(c.k) + '</span>' +
         '<span class="cap__t">' + esc(c.t) + '</span>' +
@@ -516,7 +516,7 @@
       f.setAttribute('data-reveal', '');
       f.setAttribute('data-delay', String((i % 3) + 1));
       f.innerHTML =
-        '<img src="assets/img/herbieee/' + m.f + '" alt="' + esc(m.c || '') +
+        '<img src="assets/img/herbieee/' + esc(m.f) + '" alt="' + esc(m.c || '') +
             '" loading="lazy">' +
         (m.c ? '<figcaption>' + esc(m.c) + '</figcaption>' : '');
       wrap.appendChild(f);

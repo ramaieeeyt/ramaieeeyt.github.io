@@ -276,6 +276,35 @@ La **marginalia izquierda** se oculta en escritorio — el lomo ocupa ese margen
 
 ---
 
+## 7a · Seguridad
+
+La superficie de ataque de este sitio es diminuta y conviene entender por qué,
+para no gastar esfuerzo donde no hace falta: **no hay servidor propio, ni base
+de datos, ni formularios, ni sesiones, ni cookies, ni contenido de terceros**.
+Es HTML, CSS y JS estáticos servidos por GitHub Pages sobre HTTPS. No hay
+inyección SQL porque no hay SQL, ni fuga de datos porque no se recoge ninguno.
+
+**Lo que sí hay que cuidar, por orden de importancia real:**
+
+1. **La cuenta de GitHub.** Es el único camino para cambiar el sitio. Con 2FA
+   activo en todos los propietarios de la organización, el riesgo cae a casi
+   cero. Sin 2FA, todo lo demás sobra.
+2. **El token de Instagram**, cuando se active. Va como *secret* del
+   repositorio, nunca en el código, y es de solo lectura.
+3. **El escape del HTML.** Todo lo que se inserta con `innerHTML` pasa por
+   `esc()`, incluidas las rutas de imagen. Importa porque el Archivo se
+   alimenta de una fuente externa: si mañana un pie de Instagram trae `<script>`,
+   `esc()` es lo único que lo detiene. **Si añades un `innerHTML`, escapa.**
+
+**Puesto el 15-08-2026:** una `Content-Security-Policy` como `<meta>` —GitHub
+Pages no deja poner cabeceras— que restringe todo a origen propio, y
+`referrer: strict-origin-when-cross-origin`. Verificado que no rompe nada:
+fuentes cargadas, cero violaciones, las dos páginas enteras.
+
+**Lo que no se puede tener aquí:** `frame-ancestors` (solo funciona como
+cabecera), así que no hay protección contra *clickjacking*. Para un sitio
+informativo sin acciones que ejecutar, el impacto es nulo.
+
 ## 7b · Posicionamiento en Google
 
 Al buscar «IEEE Yachay» aparecía primero `edu.ieee.org/ec-ytu`, la página vieja

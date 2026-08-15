@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Política de seguridad de contenido. GitHub Pages no deja poner cabeceras,
+     así que va como <meta>, que cubre todo salvo `frame-ancestors`.
+     Todo el sitio se sirve de su propio origen; `data:` hace falta para las
+     fuentes incrustadas en el CSS, y `'unsafe-inline'` en estilos porque hay
+     atributos `style` y el JS ajusta propiedades a mano. Los scripts NO
+     llevan `unsafe-inline`: los tres son archivos propios. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>IEEE Yachay Tech · Rama Estudiantil — Urcuquí, Ecuador</title>
 <meta name="description" content="Sitio oficial de la Rama Estudiantil IEEE de la Universidad Yachay Tech (Urcuquí, Imbabura, Ecuador). Directiva 2026, ocho capítulos técnicos y dos grupos de afinidad, becas y oportunidades IEEE, y cómo hacerse miembro.">
 <meta name="google-site-verification" content="Z5_LZP4WgQZVqh4_TVViv-Z1zzw27bXw1oujBzgdHto">
@@ -57,7 +65,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="css/style.css?v=74">
+<link rel="stylesheet" href="css/style.css?v=75">
 </head>
 
 <body>
@@ -479,7 +487,7 @@
   <p class="lightbox__cap" id="lightbox-cap"></p>
 </div>
 
-<script src="js/ascii.js?v=74"></script>
-<script src="js/main.js?v=74"></script>
+<script src="js/ascii.js?v=75"></script>
+<script src="js/main.js?v=75"></script>
 </body>
 </html>
