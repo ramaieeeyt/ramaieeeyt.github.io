@@ -46,12 +46,16 @@ medieval sea exactamente la misma forma que la cometa de IEEE.
 
 ```
 IEEE YT webpage/
-├── index.html              ← la página
+├── index.html              ← la portada
+├── capitulos.html          ← los diez capítulos y grupos de afinidad
+├── robots.txt              ← para los buscadores
+├── sitemap.xml             ← ídem; se envía desde Google Search Console
 ├── css/
-│   ├── style.css           ← todo el diseño (tokens IEEE arriba del archivo)
+│   ├── style.css           ← todo el diseño (tokens IEEE y escala de espacio
+│   │                         arriba del archivo)
 │   └── fonts.css           ← @font-face (generado, ver nota de tipografía)
 ├── js/
-│   ├── ascii.js            ← el motor ASCII medieval + ornamentos
+│   ├── ascii.js            ← el motor ASCII medieval + el icono de Yachay
 │   └── main.js             ← CONTENIDO EDITABLE + interacciones
 └── assets/
     ├── logo/               ← lockup oficial de la Rama (ieee-yt-*.png) +
@@ -60,6 +64,9 @@ IEEE YT webpage/
     └── img/
         ├── directiva/      ← retratos recortados de la Directiva 2026
         ├── archivo/        ← las piezas de Instagram completas
+        ├── capitulos/      ← los diez logotipos, del manual de marca
+        ├── oportunidades/  ← portadas de las ocho tarjetas
+        ├── herbieee/       ← los memes (la sección está oculta)
         ├── rama-general-2026.jpg
         └── call-for-volunteers.jpg   ← fondo de «Únete a la Rama»
 
@@ -76,6 +83,36 @@ horizontal de la barra superior (cometa + filete + descriptor) a escala de
 titular, para que ambos digan lo mismo. Se arma solo al cargar — la cometa entra,
 el filete se dibuja hacia abajo y el descriptor sale de detrás; nada de eso
 ocurre si el sistema pide *reduce motion*.
+
+### El orden de la portada
+
+hero · Qué es la Rama · IEEE en el mundo *(franja)* · **Directiva 2026** ·
+Oportunidades (+ el precio y la puerta a capítulos) · **Recursos** · Archivo ·
+Trayectoria · HERBIEEE *(oculta)* · Únete · pie.
+
+Directiva va **antes** que Oportunidades a propósito: primero quiénes son,
+luego qué se gana entrando. Si mueves una sección, muévela también en el menú
+de **las dos** páginas — el lomo lateral se rehace solo, porque se construye
+leyendo la barra.
+
+**Oportunidades y Recursos no son lo mismo.** En Oportunidades va aquello a lo
+que se *postula* —becas, concursos, ayudas de viaje—; en Recursos, lo que ya se
+*usa* siendo miembro —Xplore, Spectrum, Collabratec, normas, Access,
+congresos—. Mezclarlos vacía las dos.
+
+### El espacio: escala Fibonacci
+
+Los huecos de la página no se eligen a ojo. Hay siete peldaños en `style.css`,
+cada uno ~1,618 veces el anterior:
+
+```
+--e1  8px   --e2  13px   --e3  21px   --e4  34px
+--e5  55px  --e6  89px   --e7  144px
+```
+
+**Usa un token en vez de escribir un `clamp` nuevo.** Un aviso: el `gap:1px` de
+Oportunidades y Recursos **no es espaciado**, es el filete que se ve entre
+tarjetas porque el fondo de la rejilla es el color de la regla.
 
 ---
 
@@ -161,9 +198,16 @@ memes: [
 ],
 ```
 
-Cualquier proporción sirve: la rejilla es de mampostería. **Mientras el array
-esté vacío la sección solo muestra su portada y la palabra «Próximamente»** — no
-se rompe ni se ve a medio hacer. Hay un `LEEME.txt` con lo mismo dentro de la
+Cualquier proporción sirve: la rejilla es de mampostería a dos columnas.
+
+**La sección está oculta ahora mismo** (`hidden` en el `<section id="herbieee">`
+de `index.html`) porque con dos piezas se leía a medio hacer. Dentro están las
+dos portadas del *Error 404 · Seriedad Not Found*. Para devolverla: quita
+`hidden` y repón el enlace `<a href="#herbieee">HERBIEEE</a>` en el menú de
+**las dos** páginas.
+
+Si el array se queda vacío, la sección se colapsa sola y muestra
+«Próximamente» — no se rompe. Hay un `LEEME.txt` con lo mismo dentro de la
 carpeta.
 
 ### Capítulos y grupos de afinidad
@@ -242,6 +286,31 @@ rotarlo, deformarlo o meterlo en una caja. El lockup del nav (cometa + filete +
 siguiendo el bloque oficial de la rama.
 
 ---
+
+## Buscadores y seguridad
+
+**Buscadores.** El sitio lleva `robots.txt`, `sitemap.xml`, `<link rel=canonical>`
+en las dos páginas y una ficha `schema.org` de tipo `Organization` con los alias
+por los que la gente busca. La propiedad está verificada en Google Search
+Console con la etiqueta `google-site-verification` del `<head>` — **no la
+borres**: si desaparece, Google retira la verificación.
+
+Nada de eso decide el orden en Google. Lo que lo decide son los enlaces
+entrantes y que la página vieja de `edu.ieee.org/ec-ytu` deje de competir.
+
+**Seguridad.** No hay servidor propio, ni base de datos, ni formularios, ni
+cookies, ni contenido de terceros: la superficie de ataque es diminuta. Lo que
+sí hay que cuidar:
+
+1. **2FA en las cuentas de la organización de GitHub.** Es el único camino real
+   para cambiar el sitio.
+2. El token de Instagram, cuando se active: va como *secret*, nunca en el código.
+3. **Todo lo que se inserte con `innerHTML` pasa por `esc()`.** Importa porque
+   el Archivo se alimenta de una fuente externa.
+
+Hay una `Content-Security-Policy` como `<meta>` —GitHub Pages no deja poner
+cabeceras— que restringe todo al propio origen. Si añades un script o una
+imagen de fuera, tendrás que abrirle sitio ahí o no cargará.
 
 ## Detalles técnicos
 

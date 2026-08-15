@@ -221,9 +221,14 @@ puede mostrar) **y fotos propias de la rama**. Nada más.
 
 ## 7 · Estado actual
 
-**Secciones (index.html):** hero · Qué es la Rama · IEEE en el mundo ·
-Oportunidades (+ puerta a capítulos) · **Recursos** · Directiva 2026 ·
-Archivo · Trayectoria · HERBIEEE *(oculta)* · Únete · pie.
+**Secciones (index.html), en orden:** hero · Qué es la Rama · IEEE en el mundo
+*(franja)* · **Directiva 2026** · Oportunidades (+ el precio y la puerta a
+capítulos) · **Recursos** · Archivo · Trayectoria · HERBIEEE *(oculta)* ·
+Únete · pie.
+
+Directiva va **antes** que Oportunidades: primero quiénes son, luego qué se
+gana entrando. Si cambias el orden, cámbialo también en el menú de **las dos**
+páginas — el lomo se rehace solo porque lee la barra.
 
 **Directiva va antes que Oportunidades** (lo pidió Andrés el 15-08-2026):
 primero quiénes son, luego qué se gana entrando.

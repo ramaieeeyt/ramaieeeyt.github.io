@@ -181,7 +181,7 @@ away from what looked expensive towards what was.
 
 ```
 The site is public at https://ramaieeeyt.github.io. A single scrolling page
-carries eight sections — branch identity, IEEE at global scale, the 2026 Board,
+carries nine sections — branch identity, IEEE at global scale, the 2026 Board,
 Opportunities, Resources, a visual Archive, a sourced Timeline, Join the Branch
 and Contact — and a dedicated page presents the branch's chapters and affinity
 groups.
@@ -243,7 +243,8 @@ The page spacing follows a Fibonacci scale — 8, 13, 21, 34, 55, 89, 144 px, ea
 step about 1.618 times the last — so that the distances between blocks hold a
 constant relation instead of being chosen one by one.
 
-A first visit transfers 497 kB, from a single origin. The site sets
+The initial load transfers about 350 kB from a single origin; the photographs
+below the fold are fetched only as the reader reaches them. The site sets
 no cookies, uses no local storage, and makes no request to any third party — no
 analytics, no CDN, no embedded widgets — which was verified in production. It is
 responsive from 320 px to desktop with no horizontal overflow at any width, and
