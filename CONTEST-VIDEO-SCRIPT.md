@@ -41,17 +41,23 @@ https://ramaieeeyt.github.io/?demo
 
 Se desplaza a ritmo constante, con las mismas paradas y los mismos tiempos que
 este guion, y enseña arriba a la derecha un **cronómetro** que se pone rojo al
-pasar de 3:00. No toques el trackpad mientras grabas: cualquier scroll tuyo se
-pelea con el recorrido.
+pasar de 3:00.
 
-**Cubre solo la portada** — 2:25, de la apertura al pie. La página de capítulos
-es otra URL, así que va en una **segunda toma** de unos 20 s que se monta entre
-Recursos y Trayectoria. En total, ~2:46.
+**Hace el recorrido entero, capítulos incluidos.** Tras Recursos salta solo a
+`capitulos.html`, se queda ahí veinte segundos —lo justo para que entre el
+titular y aparezcan las diez tarjetas— y vuelve a la portada, a Trayectoria.
+El cronómetro no se reinicia al cambiar de página: el tiempo viaja en la URL.
+Así que **es una sola toma de principio a fin, sin nada que montar después**.
 
-El cronómetro sale en el vídeo si grabas la ventana entera. Dos salidas:
-encuadra la captura dejándolo fuera, o córtalo luego en el montaje. También
-puedes hacer una pasada con `?demo` para ensayar los tiempos y grabar la buena
-sin él.
+Duración medida: **2:44**, con dieciséis segundos de margen sobre el tope.
+
+No toques el trackpad mientras grabas: cualquier scroll tuyo se pelea con el
+recorrido.
+
+El cronómetro sale en el vídeo si grabas la ventana entera. Tres salidas:
+encuadra la captura dejándolo fuera, córtalo en el montaje, o —lo que yo
+haría— haz una pasada con `?demo` para ensayar los tiempos y grabar la buena
+sin él, guiándote tú. Así te sirve de metrónomo sin acabar en el vídeo.
 
 **Para volver al sitio normal**, quita el `?demo` de la URL.
 
@@ -122,9 +128,10 @@ don't."**
 
 ### 2:00 — 2:20 · Capítulos y grupos de afinidad
 
-> *[Haz clic en la puerta de entrada al final de Oportunidades, o en
-> «Capítulos» del menú. Deja que entre la animación del titular y que aparezcan
-> las tarjetas desde el centro hacia afuera. Luego vuelve.]*
+> *[Con `?demo` esto pasa solo: la página salta aquí después de Recursos y
+> vuelve a los veinte segundos. Si vas a mano, haz clic en la puerta de entrada
+> del final de Oportunidades. Deja que entre la animación del titular y que
+> aparezcan las tarjetas desde el centro hacia afuera.]*
 
 **"Ten units work inside the branch: eight technical chapters and two affinity
 groups, each with the official lockup from our own brand manual. This page

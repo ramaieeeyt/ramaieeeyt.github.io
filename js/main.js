@@ -927,18 +927,43 @@
      de pantalla salga estable y repetible. Invisible para un visitante
      normal: sin el parámetro no ocurre nada.                              */
   function initDemo() {
-    if (!/[?&]demo\b/.test(location.search)) return;
+    var q = location.search;
+    if (!/[?&]demo\b/.test(q)) return;
 
+    /* El recorrido cruza las dos páginas. Como cambiar de página recarga todo,
+       el punto por el que va y el tiempo acumulado viajan en la propia URL:
+       `?demo=<paso>&t=<segundos>`. Así el cronómetro no se reinicia y la toma
+       sale de una sola pasada, sin costuras que montar después. */
+    var paso = +( /[?&]demo=(\d+)/.exec(q) || [] )[1] || 0;
+    var yaVan = +( /[?&]t=(\d+)/.exec(q) || [] )[1] || 0;
+
+    /* el cronómetro, igual en las dos páginas */
+    var hud = el('div', 'demo-hud');
+    document.body.appendChild(hud);
+    var t0 = Date.now() - yaVan * 1000;
+    function transcurrido() { return (Date.now() - t0) / 1000; }
+    setInterval(function () {
+      var t = transcurrido();
+      hud.textContent = 'DEMO · ' + Math.floor(t / 60) + ':' +
+        String(Math.floor(t % 60)).padStart(2, '0');
+      hud.classList.toggle('is-over', t > 180);   /* pasado el límite de 3 min */
+    }, 250);
+
+    /* --- la subpágina: se deja ver y vuelve sola ------------------------- */
+    if (!$('#top')) {
+      setTimeout(function () {
+        location.href = 'index.html?demo=5&t=' + Math.round(transcurrido());
+      }, 20000);
+      return;
+    }
+
+    /* --- la portada ------------------------------------------------------ */
     /* [sección, segundos de pausa antes de seguir]
 
        Los tiempos son los de CONTEST-VIDEO-SCRIPT.md, para que la narración
-       encaje sin tener que cortar. Este recorrido cubre solo la PORTADA: la
-       página de capítulos es otra URL y se graba aparte, en una segunda toma
-       de unos 20 s que se monta entre Recursos y Trayectoria.
-
-       Suma: 136 s de pausas + 6 viajes de 1,6 s = ~2:26. Con la toma de
-       capítulos, ~2:46, por debajo del tope de 3:00. Si añades una parada,
-       quítale el tiempo a otra. */
+       encaje sin tener que cortar. Suma: 136 s de pausas + los viajes + los
+       20 s de capítulos ≈ 2:46, por debajo del tope de 3:00. Si añades una
+       parada, quítale el tiempo a otra. */
     var GUION = [
       ['top',           16],
       ['manifiesto',    18],
@@ -948,17 +973,8 @@
       ['trayectoria',   16],
       ['contacto',       8]
     ];
+    var TRAS_RECURSOS = 4;                  /* después de esta parada, capítulos */
     var VIAJE = 1600;                       /* duración de cada desplazamiento */
-
-    var hud = el('div', 'demo-hud', 'DEMO · 0:00');
-    document.body.appendChild(hud);
-    var t0 = Date.now();
-    setInterval(function () {
-      var t = (Date.now() - t0) / 1000;
-      hud.textContent = 'DEMO · ' + Math.floor(t / 60) + ':' +
-        String(Math.floor(t % 60)).padStart(2, '0');
-      hud.classList.toggle('is-over', t > 180);   /* pasado el límite de 3 min */
-    }, 250);
 
     function irA(y, ms, done) {
       var y0 = window.scrollY, dy = y - y0, t = null, listo = false;
@@ -967,28 +983,37 @@
          el recorrido se quedaría a medias. Este seguro lo desatasca. */
       setTimeout(fin, ms + 1200);
       if (ms <= 0) return fin();
-      (function paso(now) {
+      (function avance(now) {
         if (listo) return;
         if (t === null) t = now;
         var p = Math.min(1, (now - t) / ms);
         var e = p < 0.5 ? 4 * p * p * p                       /* easeInOutCubic */
                         : 1 - Math.pow(-2 * p + 2, 3) / 2;
         window.scrollTo(0, y0 + dy * e);
-        if (p < 1) requestAnimationFrame(paso); else fin();
+        if (p < 1) requestAnimationFrame(avance); else fin();
       })(performance.now());
     }
 
-    var i = 0;
+    var i = paso;
     (function siguiente() {
       if (i >= GUION.length) { hud.textContent = 'DEMO · fin'; return; }
       var sec = document.getElementById(GUION[i][0]);
       var espera = GUION[i][1] * 1000;
+      /* Al volver de capítulos se arranca en el paso 5, así que por el 4 no
+         se vuelve a pasar: no hace falta más guardia que esta. */
+      var tocaCapitulos = (i === TRAS_RECURSOS);
       i++;
       if (!sec) return siguiente();
       var y = sec.getBoundingClientRect().top + window.scrollY -
               (sec.id === 'top' ? 0 : 40);
-      irA(y, i === 1 ? 0 : VIAJE, function () {
-        setTimeout(siguiente, espera);
+      irA(y, (i - 1) === paso ? 0 : VIAJE, function () {
+        setTimeout(function () {
+          if (tocaCapitulos) {
+            location.href = 'capitulos.html?demo&t=' + Math.round(transcurrido());
+            return;
+          }
+          siguiente();
+        }, espera);
       });
     })();
   }
