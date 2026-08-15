@@ -379,8 +379,17 @@ Cinco figuras, elegidas para respaldar el criterio que más pesa en cada caso:
 - **Figura 4** — la página de capítulos y grupos.
   *Fig. 4. Chapters and affinity groups page, with the official lockup of each of the ten units.*
 - **Figura 5** — la misma página en móvil y tableta, una junto a otra.
-  *Fig. 5. The same content at 390 px and 768 px; the site is responsive from 375 px with no horizontal overflow.*
+  *Fig. 5. The same content at 412 px and 834 px; the site is responsive from 320 px with no horizontal overflow.*
 
 Si el espacio aprieta, la que primero sobra es la Figura 3: los cargos ya se
 nombran en el texto. Las Figuras 2 y 5 no deberían caer — respaldan los dos
 criterios de más peso.
+
+**Prueba de mantenimiento, sin coste.** *Website Management and Sustainability*
+vale 25 puntos del artículo y pide demostrar cómo se mantiene el sitio y cómo se
+traspasa. El repositorio es público y su historial **es** ese registro:
+`github.com/ramaieeeyt/ramaieeeyt.github.io`. Si sobra sitio, una captura del
+historial de commits sirve de figura; si no, basta con citarlo en el texto.
+
+**No cites métricas de visitas.** No hay analíticas instaladas y las bases piden
+veracidad.
