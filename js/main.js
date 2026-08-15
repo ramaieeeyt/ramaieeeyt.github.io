@@ -929,18 +929,26 @@
   function initDemo() {
     if (!/[?&]demo\b/.test(location.search)) return;
 
-    /* [sección, segundos de pausa antes de seguir] */
+    /* [sección, segundos de pausa antes de seguir]
+
+       Los tiempos son los de CONTEST-VIDEO-SCRIPT.md, para que la narración
+       encaje sin tener que cortar. Este recorrido cubre solo la PORTADA: la
+       página de capítulos es otra URL y se graba aparte, en una segunda toma
+       de unos 20 s que se monta entre Recursos y Trayectoria.
+
+       Suma: 136 s de pausas + 6 viajes de 1,6 s = ~2:26. Con la toma de
+       capítulos, ~2:46, por debajo del tope de 3:00. Si añades una parada,
+       quítale el tiempo a otra. */
     var GUION = [
-      ['top',           18],
-      ['manifiesto',    20],
-      ['oportunidades', 42],
-      ['directiva',     25],
-      ['archivo',       13],
-      ['trayectoria',   12],
-      ['unete',         20],
-      ['contacto',      10]
+      ['top',           16],
+      ['manifiesto',    18],
+      ['directiva',     16],
+      ['oportunidades', 44],   /* el precio y las ocho tarjetas */
+      ['recursos',      18],
+      ['trayectoria',   16],
+      ['contacto',       8]
     ];
-    var VIAJE = 2200;                       /* duración de cada desplazamiento */
+    var VIAJE = 1600;                       /* duración de cada desplazamiento */
 
     var hud = el('div', 'demo-hud', 'DEMO · 0:00');
     document.body.appendChild(hud);

@@ -31,9 +31,29 @@ animaciones.
 - Si prefieres no narrar: graba en silencio y usa los textos de abajo como
   **subtítulos**. Cumple igual y suele quedar más limpio.
 
-**Atajo para el recorrido:** abre `https://ramaieeeyt.github.io/?demo` y la
-página se desplaza sola, a ritmo constante, sin que toques el trackpad. Está
-hecho para esto. Si prefieres controlarlo tú, abre la URL normal.
+### El modo demo
+
+La página sabe recorrerse sola. Abre:
+
+```
+https://ramaieeeyt.github.io/?demo
+```
+
+Se desplaza a ritmo constante, con las mismas paradas y los mismos tiempos que
+este guion, y enseña arriba a la derecha un **cronómetro** que se pone rojo al
+pasar de 3:00. No toques el trackpad mientras grabas: cualquier scroll tuyo se
+pelea con el recorrido.
+
+**Cubre solo la portada** — 2:25, de la apertura al pie. La página de capítulos
+es otra URL, así que va en una **segunda toma** de unos 20 s que se monta entre
+Recursos y Trayectoria. En total, ~2:46.
+
+El cronómetro sale en el vídeo si grabas la ventana entera. Dos salidas:
+encuadra la captura dejándolo fuera, o córtalo luego en el montaje. También
+puedes hacer una pasada con `?demo` para ensayar los tiempos y grabar la buena
+sin él.
+
+**Para volver al sitio normal**, quita el `?demo` de la URL.
 
 ---
 
