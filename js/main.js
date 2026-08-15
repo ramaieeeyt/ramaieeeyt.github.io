@@ -776,42 +776,40 @@
     });
   }
 
-  /* -- Ornamento de los márgenes -------------------------------------------
-     Marginalia del códice: remates ASCII del mismo alfabeto que el enrejado
-     del fondo, en el canal que queda entre la columna de texto y el borde.
+  /* -- Ornamento -----------------------------------------------------------
+     Remates ASCII del mismo alfabeto que el enrejado del fondo, centrados al
+     final de cada sección: cierran el bloque y marcan dónde acaba uno y
+     empieza el siguiente.
 
-     Van DENTRO de cada sección, no fijos en la ventana. Fijos tendrían que
-     valer para el papel y para el campo oscuro con un solo color, y no hay
-     ninguno que se lea bien en los dos: dentro, cada sección les da el suyo.
+     Estaban en los márgenes y no se veían: el canal del gutter obliga a
+     cinco caracteres y a un tamaño pequeño, y ahí un remate no compite con
+     una página llena. En el cuerpo pueden ser grandes y anchos, que es lo
+     que hace que se lean como ornamento y no como suciedad.
 
-     Decoración: `aria-hidden`, sin eventos, por debajo del contenido, y el
-     CSS los apaga por debajo de 1100 px y con `prefers-reduced-motion`. */
+     Van dentro de `.shell` para heredar la anchura del texto y el color de
+     la sección: azul sobre papel, cian sobre campo oscuro. */
   var REMATES = [
-    /* Cinco caracteres como máximo: a 19 px de mono son ~57 px y el canal del
-       gutter mide 72. Con siete se metían en la columna de texto. */
-    '  ✦\n◇ ❖ ◇\n  ✦',
-    '\\ ✦ /\n◇ ❖ ◇\n/ ✦ \\',
-    '  ❖\n✧ ✦ ✧\n  ❖',
-    ' ✦\n◇ ❖\n ✦',
-    '  ✧\n◇ ❖ ◇\n  ✧'
+    '◇ ─── ✦ ─── ◇',
+    '✧  ◇ ─ ❖ ─ ◇  ✧',
+    '❖ ── ✦ ── ❖',
+    '◇ ✧ ─ ❖ ─ ✧ ◇',
+    '✦ ─── ❖ ─── ✦'
   ];
 
   function initOrnamento() {
-    var zonas = $$('.section, .hero');
-    if (!zonas.length) return;
+    /* en las secciones con cabecera propia; el hero y el pie tienen su
+       propio remate visual y no lo necesitan */
+    var zonas = $$('.section');
     zonas.forEach(function (sec, i) {
       if (sec.hasAttribute('hidden')) return;
-      /* dos por sección, una a cada lado, alternando la altura para que no
-         formen una fila */
-      [['izq', 18 + (i % 3) * 14], ['der', 58 + (i % 4) * 9]].forEach(function (par, k) {
-        var m = el('pre', 'ornamento__marca ornamento__marca--' + par[0]);
-        m.setAttribute('aria-hidden', 'true');
-        m.textContent = REMATES[(i * 2 + k) % REMATES.length];
-        m.style.top = par[1] + '%';
-        m.style.setProperty('--dur', (19 + ((i * 5 + k * 3) % 11)) + 's');
-        m.style.setProperty('--retardo', '-' + ((i * 4 + k * 7) % 17) + 's');
-        sec.appendChild(m);
-      });
+      var caja = $('.shell', sec);
+      if (!caja) return;
+      var r = el('div', 'remate');
+      r.setAttribute('aria-hidden', 'true');
+      r.innerHTML = '<pre>' + REMATES[i % REMATES.length] + '</pre>';
+      r.style.setProperty('--dur', (17 + (i % 9)) + 's');
+      r.style.setProperty('--retardo', '-' + ((i * 5) % 13) + 's');
+      caja.appendChild(r);
     });
   }
 

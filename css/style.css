@@ -190,47 +190,45 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 
 /* --------------------------------------------------- 4a. ORNAMENTO
-   Marginalia del códice: remates ASCII del mismo alfabeto que el enrejado del
-   fondo, en el canal que queda entre la columna de texto y el borde.
+   Remates ASCII centrados al final de cada sección. Cierran el bloque y
+   marcan dónde acaba uno y empieza el siguiente.
 
-   Los inyecta `initOrnamento()` DENTRO de cada sección, no fijos en la
-   ventana: fijos harían falta de un solo color que se leyera igual sobre el
-   papel y sobre el campo oscuro, y no existe. Dentro, cada sección les da el
-   suyo —azul sobre papel, cian sobre oscuro— y así se ven de verdad.
-
-   Sigue siendo decoración: sin eventos, por debajo del contenido, animada
-   solo con `transform`, y fuera por debajo de 1100 px y con movimiento
-   reducido. El canal mide unos 70 px a cada lado (medido a 1440: el texto va
-   de 136 a 1368), así que los remates se centran ahí y no lo invaden. */
-.ornamento__marca{
-  display:none;position:absolute;margin:0;z-index:0;pointer-events:none;
-  font-family:var(--font-mono);white-space:pre;
-  /* Más grandes de lo que parece razonable sobre el papel: a 12 px no se
-     veían. El canal del gutter mide 72 px, y con cinco caracteres a 19 px
-     de mono son unos 57 px, así que caben sin tocar la columna de texto. */
-  font-size:19px;line-height:1.15;letter-spacing:.02em;
-  color:var(--ieee-blue);opacity:.34;
+   Estuvieron en los márgenes y no se veían: el canal del gutter obliga a
+   cinco caracteres y a un cuerpo pequeño, y así un remate no compite con una
+   página llena. En el cuerpo pueden ser grandes, que es lo que hace que se
+   lean como ornamento. Los inyecta `initOrnamento()` dentro de `.shell`, para
+   que hereden la anchura del texto y el color de la sección. */
+.remate{
+  display:flex;justify-content:center;
+  margin-top:var(--e5);
+  pointer-events:none;
+}
+.remate pre{
+  margin:0;font-family:var(--font-mono);white-space:pre;
+  font-size:clamp(15px,1.5vw,21px);line-height:1;letter-spacing:.34em;
+  text-indent:.34em;
+  color:var(--ieee-blue);opacity:.38;
   will-change:transform;
-  animation:derivar var(--dur,23s) ease-in-out var(--retardo,0s) infinite alternate;
+  animation:respirar var(--dur,19s) ease-in-out var(--retardo,0s) infinite alternate;
 }
-/* `left`/`right` van contra la caja de la SECCIÓN, no de la ventana, y la
-   sección ya empieza pasado el lomo. El canal libre es el gutter: 72 px a
-   1440. Los remates se centran ahí, y por eso ninguno pasa de 8 caracteres —a
-   13 px de mono son unos 62 px— o se meterían en la columna de texto. */
-.ornamento__marca--izq{left:8px}
-.ornamento__marca--der{right:8px}
+/* sobre campo oscuro el azul se pierde: allí van en cian */
+.section--ink .remate pre{color:var(--ieee-cyan);opacity:.5}
 
-/* sobre campo oscuro el azul se pierde: allí van en cian, y algo más marcados */
-.section--ink .ornamento__marca,
-.hero .ornamento__marca,
-.foot .ornamento__marca{color:var(--ieee-cyan);opacity:.42}
+/* Late, no se desplaza: en medio de la columna un movimiento lateral se
+   notaría como un error de maquetación.
 
-@keyframes derivar{
-  from{transform:translate3d(0,0,0) rotate(0deg)}
-  to  {transform:translate3d(0,-20px,0) rotate(4deg)}
+   Ojo con la opacidad: si se anima, el fotograma manda sobre la `opacity`
+   declarada arriba. Por eso los valores del `keyframes` son los de verdad y
+   el `.38` de la regla solo vale mientras la animación no corre. */
+@keyframes respirar{
+  from{transform:scale(1);opacity:.34}
+  to  {transform:scale(1.04);opacity:.46}
 }
-
-@media (min-width:1100px){ .ornamento__marca{display:block} }
+.section--ink .remate pre{animation-name:respirar-claro}
+@keyframes respirar-claro{
+  from{transform:scale(1);opacity:.44}
+  to  {transform:scale(1.04);opacity:.58}
+}
 
 /* ------------------------------------------------------------- 4b. LOMO
    La navegación de secciones vive en un lomo a la izquierda —como el de un
@@ -608,10 +606,11 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 
 .section__head{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
-  /* `end` alineaba las dos columnas por abajo, así que el texto de al lado
-     arrancaba muy por encima del titular. Con `baseline` las dos primeras
-     líneas se apoyan en la misma raya y arrancan juntas. */
-  gap:var(--e5);align-items:baseline;
+  /* Centrado, no `end` ni `baseline`. Con `end` el texto de al lado arrancaba
+     muy por encima del titular; con `baseline` arrancaba muy por debajo. Al
+     centrar, el bloque de texto queda simétrico respecto al titular: sobra el
+     mismo aire arriba que abajo, sea cual sea el largo de cada uno. */
+  gap:var(--e5);align-items:center;
   padding-bottom:var(--e4);margin-bottom:var(--e4);
   border-bottom:1px solid var(--rule);
 }
@@ -1499,7 +1498,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .cap__d{max-height:none;opacity:1}
   .capstitle{transform:none;animation:none;opacity:1}
   .peek{display:none}
-  .ornamento__marca{display:none !important}
+  .remate pre{animation:none}
 }
 @media print{
   .nav,.ascii-field,.marquee,.peek,.lightbox,.hero__scroll{display:none !important}
