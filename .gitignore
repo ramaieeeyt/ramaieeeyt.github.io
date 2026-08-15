@@ -8,3 +8,5 @@ LOGOS IEEE YT/
 
 # Herramientas locales
 .claude/
+
+# la plantilla rellenada se regenera con scripts/rellenar-plantilla.py

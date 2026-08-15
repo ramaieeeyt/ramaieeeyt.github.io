@@ -23,11 +23,45 @@
 > Los tres archivos salen de este `.md` con `scripts/articulo-v2.py`. Si cambias
 > el texto, vuelve a lanzarlo y se regeneran el `.docx` y el `.txt`.
 
-**Cómo usar este archivo:** cada bloque en ``` corresponde a una sección de
-`IEEE Website Contest - Article - Template.docx`. Pega dentro del .docx
-**respetando sus estilos** (*Pegar → Conservar solo texto*, ⌘⇧V) y exporta a PDF.
-Para pegar sin pelearte con VS Code usa `CONTEST-ARTICLE-V2.docx` o
-`CONTEST-ARTICLE-V2.txt`, que salen de este mismo texto.
+**Cómo usar este archivo:** ya no hace falta pegar nada.
+`CONTEST-ARTICLE-V2-PLANTILLA.docx` **es la plantilla oficial con este texto
+dentro**, hecha con `scripts/rellenar-plantilla.py`. Ábrela, mete tus capturas y
+exporta a PDF. Los otros dos formatos (`.docx` suelto y `.txt`) siguen ahí por si
+prefieres pegar a mano.
+
+---
+
+## POR QUÉ SALÍAN 6 PÁGINAS
+
+Medido sobre la plantilla, no estimado:
+
+| | Lo que trae la plantilla |
+|---|---|
+| Página | **A4** (no Carta) |
+| Columnas | 2, de 3,42″ cada una |
+| Cuerpo de las secciones I–VI | **12 pt** |
+| Resumen y palabras clave | 10 pt |
+| Referencias | 9 pt |
+| Interlineado | sencillo |
+| Margen superior | 1,14″ |
+| Margen inferior del cuerpo | **3,00″** |
+
+Las bases **no fijan tamaño de letra ni interlineado**: la plantilla es la
+especificación, y su cuerpo viene a 12 pt. A 12 pt, 2.689 palabras son seis
+páginas. Los dos culpables son ese 12 pt y ese margen inferior de tres pulgadas,
+que se come un cuarto de cada página y que además **la plantilla se contradice a
+sí misma**: arriba deja 1,14″ y abajo 3,00″.
+
+`rellenar-plantilla.py` corrige las dos cosas:
+
+- **cuerpo a 10 pt**, que es el estándar de artículo IEEE y el que la propia
+  plantilla ya usa en su resumen. Los títulos se quedan en 12 pt negrita y las
+  referencias en 9 pt, como venían;
+- **margen inferior igualado al superior** (1,14″). Si prefieres no tocar nada de
+  la plantilla, pon `MARGEN_INFERIOR = None` en el script y vuelve a lanzarlo.
+
+Todo lo demás queda intacto: A4, las dos columnas, los estilos, la numeración de
+las secciones, el hueco de la Figura 1 y la Tabla 1.
 
 ---
 
@@ -387,10 +421,10 @@ Ponlas **a una columna**, no a doble ancho: a doble columna ocupan el triple.
 ## SI SE PASA DE 4 PÁGINAS
 
 **Cuenta las páginas del PDF montado. No te fíes de ninguna estimación, ni de la
-mía.** 2.689 palabras son unas 2,8 páginas de texto a dos columnas; con la
-cabecera, la Tabla 1 y cinco figuras la cuenta se va cerca de 4,3. Es decir: **es
-probable que tengas que recortar algo**, y conviene que lo elijas tú y no el
-azar.
+mía.** Con el cuerpo a 10 pt y el margen igualado, 2.689 palabras deberían caber
+en unas 3,4 páginas contando la cabecera, la Tabla 1 y el hueco de la Figura 1.
+Eso deja sitio para **tres o cuatro figuras**, no para cinco. Si vas a poner las
+cinco, cuenta con recortar.
 
 Recorta en este orden, comprobando el PDF después de cada paso:
 
