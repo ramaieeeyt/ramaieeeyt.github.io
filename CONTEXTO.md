@@ -176,6 +176,7 @@ puede mostrar) **y fotos propias de la rama**. Nada más.
 | «IEEE en el mundo» lleva **el mismo fondo que el hero** | El degradado radial idéntico y la misma retícula de 78 px, más su propio campo ASCII. Así la portada y la franja se leen como el mismo material y no como dos azules distintos. Si cambias el fondo del hero, **cambia también este** |
 | El precio de la membresía sale de **la guía de la Rama**, no de mi memoria | ~28 USD al año, ~14 si te inscribes a partir de marzo, y 1–13 por sociedad. Está en el Google Doc de membresía que mantiene la Rama, exportado y leído el 15-08-2026. `ieee.org` rechaza las peticiones automáticas, así que **no se puede verificar desde aquí**: por eso la ficha cita su fuente y enlaza a ieee.org para la tarifa vigente. Había además una promoción de ~7 USD que **vencía el 15-08-2026**; se dejó fuera a propósito |
 | El **ornamento de los márgenes** son remates ASCII, y viven **dentro de cada sección** | Los inyecta `initOrnamento()`, dos por sección, alternando lado y altura. Fijos en la ventana no servían: harían falta de un solo color que se leyera igual sobre el papel y sobre el campo oscuro, y no existe. Dentro, cada sección les da el suyo —azul al 26 % sobre papel, cian al 34 % sobre oscuro—. Van en el canal del gutter, que a 1440 mide 72 px: **ninguno puede pasar de 8 caracteres de ancho** o se mete en la columna de texto. Comprobado con `getBoundingClientRect` contra la caja real del texto: 0 invasiones |
+| El sitio lleva `robots.txt`, `sitemap.xml`, canónicas y ficha `schema.org` | Puestos el 15-08-2026 porque al buscar «IEEE Yachay» salía primero `edu.ieee.org/ec-ytu`, que está desactualizada. **Nada de esto basta por sí solo**: lo que de verdad mueve el orden son los enlaces entrantes y que la página vieja deje de competir. Ver la nota de posicionamiento más abajo |
 | Los remates van **centrados al final de cada sección**, no en los márgenes | En el canal del gutter no se veían: caben cinco caracteres a cuerpo pequeño y ahí un remate no compite con una página llena. En el cuerpo pueden ser anchos —de 225 a 304 px— y se leen como ornamento. Los inyecta `initOrnamento()` dentro de `.shell`, así heredan la anchura del texto y el color de la sección |
 | Si animas `opacity`, **el `keyframes` manda sobre la regla** | Los remates llevan `opacity:.38` y una animación que latía de 1 a .72: salían al doble de fuerte de lo previsto, porque durante la animación el fotograma gana. Los valores buenos son los del `keyframes` |
 | La cabecera de sección alinea por **`center`** | Probé `end` —el texto de al lado arrancaba muy por encima del titular— y `baseline` —arrancaba muy por debajo—. Centrado, el bloque de texto queda simétrico respecto al titular: medido, los dos centros caen en la misma línea |
@@ -274,6 +275,32 @@ La **marginalia izquierda** se oculta en escritorio — el lomo ocupa ese margen
   grabar**. Cierre era el 3 de agosto — confirmar si se envió.
 
 ---
+
+## 7b · Posicionamiento en Google
+
+Al buscar «IEEE Yachay» aparecía primero `edu.ieee.org/ec-ytu`, la página vieja
+de la rama en el portal de IEEE, con información de hace varias directivas.
+Compite con ventaja porque vive en el dominio `ieee.org`, que Google considera
+mucho más fiable que un `github.io`.
+
+**Hecho en el sitio** (15-08-2026): `robots.txt`, `sitemap.xml`, `<link rel=canonical>`
+en las dos páginas, `og:url`, y una ficha `schema.org` de tipo `Organization`
+con los alias por los que la gente busca —«IEEE Yachay Tech», «Rama IEEE Yachay
+Tech», «IEEE YT»— y los perfiles sociales en `sameAs`.
+
+**Lo que falta, y es lo que de verdad decide:**
+
+1. **Dar de alta el sitio en Google Search Console** y enviar el sitemap. Sin
+   esto Google tarda semanas en enterarse; con esto, días.
+2. **Actualizar o vaciar `edu.ieee.org/ec-ytu`** dejando un enlace bien visible
+   a `ramaieeeyt.github.io`. Es la palanca más fuerte de todas: quita de en
+   medio al competidor y le pasa autoridad al sitio nuevo. La rama debería
+   poder editar esa página.
+3. **Enlaces entrantes**: la biografía de Instagram, la de Facebook, la sección
+   de Ecuador en `r9.ieee.org`, la web de la universidad. Los enlaces son lo que
+   más mueve el orden, más que cualquier etiqueta.
+
+**No** hace falta comprar dominio para esto. Ayudaría a la marca, no al orden.
 
 ## 8 · Cómo trabajar aquí
 

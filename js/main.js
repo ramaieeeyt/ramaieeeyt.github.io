@@ -802,6 +802,10 @@
     var zonas = $$('.section');
     zonas.forEach(function (sec, i) {
       if (sec.hasAttribute('hidden')) return;
+      /* la franja del mundo no: es una banda baja de cuatro cifras y un remate
+         debajo la convierte en una sección con cierre, que es justo lo que no
+         queríamos que fuera */
+      if (sec.id === 'mundo') return;
       var caja = $('.shell', sec);
       if (!caja) return;
       var r = el('div', 'remate');

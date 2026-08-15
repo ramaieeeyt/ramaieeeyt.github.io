@@ -1,0 +1,6 @@
+# Rama Estudiantil IEEE — Universidad Yachay Tech
+# Todo el sitio es público: no hay nada que esconder a los buscadores.
+User-agent: *
+Allow: /
+
+Sitemap: https://ramaieeeyt.github.io/sitemap.xml
