@@ -171,6 +171,7 @@ puede mostrar) **y fotos propias de la rama**. Nada más.
 
 | Decisión | Por qué |
 |---|---|
+| `fonts.css` tiene **solo las cuatro caras que se usan** | Comprobado con `document.fonts.check()` en las dos páginas: Open Sans normal e itálica, Libre Caslon **Display** 400 y Libre Caslon **Text itálica** 400. Libre Caslon Text normal y 700 estaban incrustadas y **no las pedía nadie**: fuera, con sus cuatro `.woff2`. De 212 a 168 KB (123,6 comprimido). **No borres los `.woff2` de `latin`**: no los descarga el navegador, pero son el original desde el que se genera el base64 |
 | Fuentes `latin` **incrustadas en base64** en `css/fonts.css` | Chrome se niega a cargar *archivos* de fuente por `file://`. Sin esto, abrir `index.html` con doble clic pierde toda la tipografía. Verificado: fallaba antes, funciona ahora |
 | El ASCII se escribe como **una cadena por fotograma** en un `<pre>` | Barato. ~11 fps, se detiene fuera de pantalla y con `prefers-reduced-motion` |
 | La máscara del ASCII va en el **contenedor**, no en el `<pre>` | Si va en el elemento cuyo texto cambia, se re-rasteriza cada repintado |

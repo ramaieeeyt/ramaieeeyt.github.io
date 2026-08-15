@@ -19,7 +19,6 @@
   var NODE    = '◇';             // where the diagonals cross
   var MOTIF_A = '✦';             // the motif inside each lozenge —
   var MOTIF_B = '❖';             // alternating, as in a real diaper
-  var CREN    = '█░';       // crenellation teeth
   var ICON    = '·:+*◇✦❖/\\';  // the icon shimmers through these
 
   /* The Yachay Tech icon, sampled square from the official mark: 1 is the
@@ -105,7 +104,6 @@
     this.density = opt.density != null ? opt.density : 0.5;  // 0..1
     this.pitch   = opt.pitch   != null ? opt.pitch   : 16;   // lattice spacing
     this.icon    = !!opt.icon;
-    this.crenel  = !!opt.crenel;
     this.cols = 0; this.rows = 0; this.t = 0;
     this.visible = true; this.raf = null; this.last = 0;
 
@@ -191,15 +189,6 @@
     for (var y = 0; y < rows; y++) {
       var line = new Array(cols);
 
-      /* crenellated border — the top of a castle wall */
-      if (this.crenel && (y === 0 || y === rows - 1)) {
-        for (var cxi = 0; cxi < cols; cxi++) {
-          line[cxi] = CREN[(cxi >> 1) % 2];
-        }
-        out[y] = line.join('');
-        continue;
-      }
-
       for (var x = 0; x < cols; x++) {
         /* slow interference field — decides where the ornament is "lit" */
         var v =
@@ -274,28 +263,8 @@
   };
 
   /* ----------------------------------------------------- static ornaments */
-  var Art = {
-    /* escutcheon — kept for the Capítulos y grupos section, still to be built
-       with the official chapter logos. Ascii.art.shield('◆') → a shield. */
-    shield: function (glyph) {
-      return [
-        '╔═════════╗',
-        '║ ╲     ╱ ║',
-        '║   ╲ ╱   ║',
-        '║    ' + glyph + '    ║',
-        '║   ╱ ╲   ║',
-        '╚╗ ╱   ╲ ╔╝',
-        ' ╚╗     ╔╝ ',
-        '  ╚╗   ╔╝  ',
-        '   ╚╗ ╔╝   ',
-        '    ╚═╝    '
-      ].join('\n');
-    }
-  };
-
   global.Ascii = {
     mount: function (el, opt) { return new Field(el, opt); },
-    art: Art,
     reduced: reduced
   };
 })(window);

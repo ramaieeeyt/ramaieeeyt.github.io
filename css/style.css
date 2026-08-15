@@ -11,7 +11,7 @@
                 → Libre Caslon substitutes when Adobe Caslon Pro isn't installed.
    ========================================================================== */
 
-@import url("fonts.css?v=2");
+@import url("fonts.css?v=3");
 
 /* ---------------------------------------------------------------- 1. TOKENS */
 :root{
@@ -112,12 +112,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   color:var(--ink-60);font-feature-settings:"tnum";
 }
 .label--light{color:rgba(255,255,255,.5)}
-.label--blue{color:var(--ieee-blue)}
 
-.display{
-  font-weight:800;line-height:.84;letter-spacing:-.035em;text-transform:uppercase;
-  margin:0;text-wrap:balance;
-}
 .caslon{font-family:var(--font-caslon);font-weight:400;font-style:italic;
   text-transform:none;letter-spacing:-.01em}
 
@@ -160,20 +155,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   will-change:contents;
 }
 /* the paler field used on light sections */
-.ascii-field--light > pre{color:rgba(0,98,155,.10)}
 
-/* ASCII rule / fleuron used between sections */
-.fleuron{
-  display:flex;align-items:center;gap:1.1rem;
-  color:var(--ink-40);font-family:var(--font-mono);font-size:.78rem;
-  letter-spacing:.08em;
-}
-.fleuron::before,.fleuron::after{
-  content:"";flex:1;height:1px;background:var(--rule);
-}
-/* ornamento, no texto: no le aplica el mínimo de contraste */
-.fleuron--light{color:rgba(255,255,255,.4)}
-.fleuron--light::before,.fleuron--light::after{background:rgba(255,255,255,.16)}
 
 
 /* illuminated drop cap */
@@ -1439,7 +1421,6 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
     mask-image:radial-gradient(135% 62% at 50% 26%,#000 34%,transparent 82%);
     -webkit-mask-image:radial-gradient(135% 62% at 50% 26%,#000 34%,transparent 82%);
   }
-  .ascii-field--light > pre{color:rgba(0,98,155,.16)}
   .foot .ascii-field > pre{color:rgba(0,181,226,.12)}
 }
 @media (max-width:600px){
