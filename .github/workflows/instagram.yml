@@ -1,0 +1,82 @@
+name: Sincronizar Instagram
+
+# Trae las publicaciones nuevas de @ramaieeeyt al archivo del sitio, una vez al
+# día. Las imágenes se descargan y recortan en el runner, así que el repositorio
+# se queda con copias propias: si mañana Meta cambia la API o se cae, el sitio
+# sigue en pie y solo deja de traer novedades.
+#
+# ANTES DE QUE ESTO FUNCIONE hacen falta dos secrets en
+# Settings → Secrets and variables → Actions:
+#
+#   IG_TOKEN   El token de larga duración de Instagram (dura 60 días).
+#   GH_PAT     Opcional. Un fine-grained PAT con permiso "Secrets: write" sobre
+#              este repo. Si está, el workflow renueva IG_TOKEN solo y nadie
+#              tiene que acordarse. Si no está, avisa en el log cuando queden
+#              pocos días y hay que renovarlo a mano.
+
+on:
+  schedule:
+    - cron: "17 9 * * *"      # 09:17 UTC = 04:17 en Ecuador, sin tráfico
+  workflow_dispatch:           # y a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Pillow
+        run: pip install --quiet Pillow
+
+      - name: Traer publicaciones
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python3 scripts/sync_instagram.py --limit 24
+
+      - name: Publicar los cambios
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Sin novedades en Instagram."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/img/instagram
+          git commit -m "Archivo: publicaciones nuevas de Instagram"
+          git push
+
+      # El token de larga duración caduca a los 60 días. Esto lo estira otros 60
+      # en cada ejecución, que es lo que permite que el sistema no se muera solo.
+      - name: Renovar el token
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          RES=$(curl -sS "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${IG_TOKEN}")
+          NEW=$(echo "$RES" | python3 -c "import sys,json;print(json.load(sys.stdin).get('access_token',''))")
+          DAYS=$(echo "$RES" | python3 -c "import sys,json;print(int(json.load(sys.stdin).get('expires_in',0))//86400)")
+
+          if [ -z "$NEW" ]; then
+            echo "::warning::No se pudo renovar el token. Respuesta: $RES"
+            exit 0
+          fi
+          echo "El token queda válido $DAYS días más."
+
+          if [ -z "$GH_PAT" ]; then
+            echo "::warning::No hay GH_PAT, así que IG_TOKEN no se guarda renovado."
+            echo "::warning::Hay que actualizarlo a mano antes de que caduque."
+            exit 0
+          fi
+          echo "$NEW" | GH_TOKEN="$GH_PAT" gh secret set IG_TOKEN --repo "$GITHUB_REPOSITORY"
+          echo "IG_TOKEN actualizado."

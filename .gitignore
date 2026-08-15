@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Fuentes de trabajo: los originales a 5000 px pesan 5 MB y el sitio no los usa
+# (usa los recortes ya exportados en assets/logo/). Quita esta línea si prefieres
+# versionarlos también.
+LOGOS IEEE YT/
+
+# Herramientas locales
+.claude/

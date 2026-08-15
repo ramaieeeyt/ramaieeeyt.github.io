@@ -1,0 +1,15 @@
+HARBIEEE — archivo de memes de la rama
+======================================
+
+1. Deja aquí los archivos (jpg / png / gif / webp — da igual la proporción,
+   la rejilla es de mampostería).
+
+2. Añádelos al array `memes` en js/main.js:
+
+       memes: [
+         { f:'lo-que-sea.jpg', c:'pie opcional' },
+         { f:'otro.png' }
+       ],
+
+Mientras el array esté vacío la sección solo muestra su portada y la palabra
+«Próximamente» — no se rompe.
