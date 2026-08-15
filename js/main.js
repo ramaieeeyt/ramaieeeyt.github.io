@@ -854,6 +854,11 @@
     var caps = $('#ascii-caps');
     if (caps) window.Ascii.mount(caps, { speed: 1, density: .55, pitch: 24, icon: true });
 
+    /* la franja de «IEEE en el mundo»: más suelto y sin icono, que ahí es
+       ornamento de fondo y no hay altura para dibujar nada */
+    var mundo = $('#ascii-mundo');
+    if (mundo) window.Ascii.mount(mundo, { speed: .5, density: .34, pitch: 18 });
+
     var foot = $('#ascii-foot');
     if (foot) window.Ascii.mount(foot, { speed: .6, density: .4, pitch: 20 });
   }

@@ -181,6 +181,45 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   font-style:normal;
 }
 
+/* --------------------------------------------------- 4a. ORNAMENTO
+   Las formas orgánicas de las tarjetas de la directiva, llevadas al margen
+   de la página para que el papel no quede tan liso.
+
+   Reglas que se cumplen sin excepción, porque es decoración:
+   · `pointer-events:none` — no debe robar un solo clic;
+   · `z-index:0` y el contenido por encima — nunca tapa nada;
+   · `position:fixed` y `transform` — se anima en el compositor, sin
+     recalcular maquetación en cada fotograma;
+   · fuera por debajo de 1100 px, donde no sobra margen, y fuera con
+     `prefers-reduced-motion`. */
+.ornamento{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  overflow:hidden;display:none;
+}
+.ornamento__pieza{
+  position:absolute;width:var(--tam);height:var(--tam);
+  opacity:.055;filter:blur(.4px);
+  will-change:transform;
+  animation:flotar var(--dur) ease-in-out var(--retardo) infinite alternate;
+}
+.ornamento__pieza--a{--tam:clamp(180px,17vw,300px);--dur:19s;--retardo:0s;
+  top:14vh;left:-5vw}
+.ornamento__pieza--b{--tam:clamp(150px,14vw,250px);--dur:24s;--retardo:-6s;
+  top:58vh;left:-3vw}
+.ornamento__pieza--c{--tam:clamp(200px,19vw,340px);--dur:21s;--retardo:-11s;
+  top:26vh;right:-6vw}
+.ornamento__pieza--d{--tam:clamp(140px,13vw,230px);--dur:27s;--retardo:-3s;
+  top:72vh;right:-2vw}
+
+/* Poco movimiento, como pidió Andrés: unos pocos píxeles y un grado de giro.
+   Lo justo para que el margen no esté muerto. */
+@keyframes flotar{
+  from{transform:translate3d(0,0,0) rotate(0deg) scale(1)}
+  to  {transform:translate3d(0,-26px,0) rotate(7deg) scale(1.04)}
+}
+
+@media (min-width:1100px){ .ornamento{display:block} }
+
 /* ------------------------------------------------------------- 4b. LOMO
    La navegación de secciones vive en un lomo a la izquierda —como el de un
    códice— y la barra de arriba queda solo para lo que lleva a otra página.
@@ -531,9 +570,21 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 @keyframes slide{to{transform:translateX(-50%)}}
 
 /* ----------------------------------------------------------- 8. SECTION */
-.section{position:relative;padding-block:var(--section-y)}
+.section{position:relative;z-index:1;padding-block:var(--section-y)}
 .section--tint{background:var(--paper-2)}
 .section--ink{background:var(--ieee-dark-blue);color:#fff}
+/* La franja del mundo se aligera: en vez del azul macizo, un degradado que
+   deja respirar el papel por los lados, y el campo ASCII por detrás. */
+.section--franja.section--ink{
+  background:linear-gradient(180deg,rgba(0,40,85,.94) 0%,rgba(0,40,85,.88) 100%);
+  isolation:isolate;overflow:hidden;
+}
+.ascii-field--franja{
+  mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 78%,transparent 100%);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 78%,transparent 100%);
+}
+.ascii-field--franja > pre{color:rgba(0,181,226,.22)}
+.section--franja .shell{position:relative;z-index:1}
 .section--ink .label{color:rgba(255,255,255,.5)}
 .section--ink .lede{color:rgba(255,255,255,.72)}
 
@@ -649,6 +700,30 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 .opp__go i{font-style:normal;font-family:var(--font-mono);
   transition:transform .45s var(--ease-out)}
 .opp:hover .opp__go i{transform:translate(3px,-3px)}
+
+/* ---------------------------------------------------------- 11b1. PRECIO
+   La cifra manda: quien llega a Oportunidades quiere saber cuánto cuesta
+   entrar, y enterarse al final es peor que enterarse al principio. */
+.precio{
+  display:grid;grid-template-columns:auto minmax(0,1fr);
+  gap:clamp(1.2rem,3vw,2.6rem);align-items:center;
+  border:1px solid var(--rule);background:var(--paper);
+  padding:clamp(1.3rem,2.4vw,2rem);margin-bottom:clamp(1.6rem,3vw,2.4rem);
+}
+.precio__cifra{
+  display:flex;align-items:baseline;gap:.35rem;color:var(--ieee-blue);
+  border-right:1px solid var(--rule);padding-right:clamp(1.2rem,3vw,2.6rem);
+}
+.precio__cifra b{
+  font-size:clamp(2.6rem,5.4vw,4.2rem);font-weight:800;line-height:.9;
+  letter-spacing:-.05em;font-variant-numeric:tabular-nums;
+}
+.precio__moneda{font-size:.72rem;font-weight:700;letter-spacing:.16em}
+.precio__periodo{font-size:.72rem;font-weight:600;letter-spacing:.1em;white-space:nowrap}
+.precio__txt p{margin:0;font-size:.92rem;line-height:1.55;color:var(--ink-60)}
+.precio__txt b{color:var(--ink);font-weight:700}
+.precio__pie{margin-top:.6rem !important;font-size:.76rem !important;color:var(--ink-40) !important}
+.precio__pie a{color:var(--ieee-blue);border-bottom:1px solid currentColor}
 
 /* -------------------------------------------------------- 11b2. RECURSOS
    Fichas de texto, sin imagen: son herramientas, no programas con marca
@@ -1344,6 +1419,8 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .board{grid-template-columns:1fr 1fr;gap:.9rem}
   .opps{grid-template-columns:1fr}
   .recursos{grid-template-columns:1fr}
+  .precio{grid-template-columns:1fr;gap:1rem}
+  .precio__cifra{border-right:0;border-bottom:1px solid var(--rule);padding-right:0;padding-bottom:.9rem}
   .mosaic{columns:1}
   .memes{columns:1}
   .foot__top{grid-template-columns:1fr}
@@ -1399,6 +1476,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .cap__d{max-height:none;opacity:1}
   .capstitle{transform:none;animation:none;opacity:1}
   .peek{display:none}
+  .ornamento{display:none !important}
 }
 @media print{
   .nav,.ascii-field,.marquee,.peek,.lightbox,.hero__scroll{display:none !important}

@@ -15,11 +15,32 @@
 <meta property="og:image" content="assets/img/rama-general-2026.jpg">
 <meta property="og:locale" content="es_EC">
 
-<link rel="stylesheet" href="css/style.css?v=56">
+<link rel="stylesheet" href="css/style.css?v=58">
 </head>
 
 <body>
 <a class="sr-only" href="#manifiesto">Saltar al contenido</a>
+
+<!-- ====================================================== ORNAMENTO
+     Las formas de las tarjetas de la directiva, traídas al margen de la
+     página. Mismos colores muestreados de esas piezas: cian #00A8D8,
+     azul #006090 y el verde agua #90D8D8 de la esquina inferior.
+     Decoración pura: `aria-hidden`, sin eventos, y se apaga sola con
+     `prefers-reduced-motion` y por debajo de 1100 px. -->
+<div class="ornamento" aria-hidden="true">
+  <svg class="ornamento__pieza ornamento__pieza--a" viewBox="0 0 200 200" fill="none">
+    <path d="M104 6c34-11 74 8 86 40s-6 68-28 92-52 44-82 38S28 140 22 108 8 46 34 28 70 17 104 6Z" fill="#00A8D8"/>
+  </svg>
+  <svg class="ornamento__pieza ornamento__pieza--b" viewBox="0 0 200 200" fill="none">
+    <path d="M62 14c40-14 92 6 110 44s2 86-26 112-74 32-104 10S6 116 14 80 22 28 62 14Z" fill="#006090"/>
+  </svg>
+  <svg class="ornamento__pieza ornamento__pieza--c" viewBox="0 0 200 200" fill="none">
+    <path d="M96 10c46 0 88 38 92 82s-30 92-76 100-92-26-102-70S50 10 96 10Z" fill="#90D8D8"/>
+  </svg>
+  <svg class="ornamento__pieza ornamento__pieza--d" viewBox="0 0 200 200" fill="none">
+    <path d="M112 8c40 6 76 44 78 86s-26 84-66 96-84-14-98-54S24 46 60 24 72 2 112 8Z" fill="#00629B"/>
+  </svg>
+</div>
 
 <!-- ============================================================ NAV -->
 <header class="nav" id="nav">
@@ -163,6 +184,8 @@
 
 <!-- ============================================ IEEE EN EL MUNDO -->
 <section class="section section--ink section--franja" id="mundo">
+  <div class="ascii-field ascii-field--franja" aria-hidden="true"><pre class="ascii" id="ascii-mundo"></pre></div>
+
   <div class="shell mundo__in">
     <header class="mundo__texto">
       <h2 class="h2 h2--corto" data-reveal>IEEE en el <span class="caslon">mundo</span></h2>
@@ -219,6 +242,27 @@
         parece y en <a href="#unete">Únete</a> está el cómo.
       </p>
     </header>
+
+    <div class="precio" data-reveal>
+      <div class="precio__cifra">
+        <span class="precio__moneda">USD</span>
+        <b>28</b>
+        <span class="precio__periodo">al año</span>
+      </div>
+      <div class="precio__txt">
+        <p>
+          Eso cuesta la membresía estudiantil de IEEE. Si te inscribes a partir
+          de marzo pagas la mitad —unos <b>14 USD</b>— porque el año ya va
+          empezado, y cada sociedad técnica que añadas suma entre <b>1 y 13 USD</b>
+          al año.
+        </p>
+        <p class="precio__pie">
+          Cifras de la <a href="https://docs.google.com/document/d/11SpIny1EWqJk5BxlPbUR99-k-lCSkMk9ZlkAAMRoVnU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">guía de membresía de la Rama</a>;
+          varían un poco según la región. La tarifa vigente, en
+          <a href="https://www.ieee.org/membership/join/index.html" target="_blank" rel="noopener noreferrer">ieee.org</a>.
+        </p>
+      </div>
+    </div>
 
     <div class="opps" id="opps"></div>
 
@@ -413,7 +457,7 @@
   <p class="lightbox__cap" id="lightbox-cap"></p>
 </div>
 
-<script src="js/ascii.js?v=56"></script>
-<script src="js/main.js?v=56"></script>
+<script src="js/ascii.js?v=58"></script>
+<script src="js/main.js?v=58"></script>
 </body>
 </html>
