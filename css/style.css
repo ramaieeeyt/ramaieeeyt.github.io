@@ -544,8 +544,13 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 }
 @keyframes bar-in{ from{transform:scaleY(0)} to{transform:scaleY(1)} }
 @keyframes slide-out{
-  from{opacity:0;transform:translateX(-.5em);clip-path:inset(0 100% 0 0)}
-  to  {opacity:1;transform:none;clip-path:inset(0 -.15em 0 0)}
+  /* El recorte final tiene que sobrar por arriba y por abajo. Con `inset(0 …)`
+     cortaba justo en la caja de línea, y la caja de línea es más baja que las
+     letras: a 73 px con `line-height:1.1` el renglón mide 81 px y la tipografía
+     necesita 100. Resultado: las colas de las «y» de «Yachay» y «University»
+     salían cortadas en plano. Los valores negativos ensanchan el recorte. */
+  from{opacity:0;transform:translateX(-.5em);clip-path:inset(-.35em 100% -.35em 0)}
+  to  {opacity:1;transform:none;clip-path:inset(-.35em -.15em -.35em 0)}
 }
 
 .hero__meta{
