@@ -61,6 +61,62 @@ sin él, guiándote tú. Así te sirve de metrónomo sin acabar en el vídeo.
 
 **Para volver al sitio normal**, quita el `?demo` de la URL.
 
+### El modo de rodaje: `?demo=cine`
+
+```
+https://ramaieeeyt.github.io/?demo=cine
+```
+
+Hace lo mismo que `?demo` y además **mueve un puntero dibujado**. Se posa en lo
+que el guion está nombrando —la ficha de datos, dos retratos de la directiva, el
+bloque del precio, la tarjeta de IEEEXtreme, la puerta a capítulos, dos fichas de
+Recursos, el primer hito, el correo— y **dispara el estado de hover de verdad**:
+la tarjeta cambia de fondo, el filete de color se dibuja, la imagen se acerca,
+la flecha se mueve. En IEEEXtreme hace además un **clic visible**, un anillo que
+se abre.
+
+Si el elemento está fuera de la franja central, la página lo acerca primero. En
+vídeo se lee como una panorámica.
+
+Ese puntero es un dibujo, no tu ratón: no tiembla, no se adelanta y no se sale.
+**Aparta el ratón real fuera del encuadre** antes de empezar.
+
+### La hoja de marcas para los zooms
+
+Los zooms **no se hacen en el navegador**, y es a propósito: escalar la página
+descoloca los elementos fijos —la barra y el lomo dejarían de estarlo— y el
+texto se recompone, que en vídeo se nota como un salto. Se hacen en el montaje,
+sobre una captura a doble resolución, y quedan más nítidos.
+
+Para que no sea a ojo, `?demo=cine` **imprime en la consola del navegador**
+(⌥⌘I → Console) una hoja con el segundo exacto, el punto de pantalla y el tamaño
+de cada parada:
+
+```
+0:34.2  centro 290,450  caja 300×372  · IEEEXtreme
+```
+
+Con eso, en DaVinci pones un fotograma clave de escala 1,35× centrado en ese
+punto, entrando 0,6 s antes y saliendo 1,2 s después. Sale mecánico.
+
+### Para que el zoom no pixele
+
+Graba a **2880 × 1800** y exporta a 1080p. Así un zoom de 1,35× sigue teniendo
+más píxeles de los que necesita el vídeo final. En el Mac: ventana a 1440 × 900
+en una pantalla Retina, y ⌘⇧5 captura al doble automáticamente.
+
+### Voz y efectos
+
+Con el material así ya se monta cómodo:
+
+- **Voz en off** aparte, sobre el vídeo mudo. Los tiempos del guion están
+  pensados para leerse sin correr.
+- **Efectos**: un *whoosh* corto en cada desplazamiento entre secciones —los
+  tienes marcados en la hoja—, un clic seco en el anillo de IEEEXtreme, y un
+  fondo musical instrumental muy bajo (−22 dB) que no pelee con la voz.
+- Cuidado con la música con derechos: YouTube la detecta. Usa la biblioteca de
+  audio de YouTube o Pixabay, que son libres.
+
 ---
 
 ## Guion
