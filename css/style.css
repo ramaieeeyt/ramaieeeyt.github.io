@@ -182,8 +182,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 
 /* --------------------------------------------------- 4a. ORNAMENTO
-   Las formas orgánicas de las tarjetas de la directiva, llevadas al margen
-   de la página para que el papel no quede tan liso.
+   Marginalia del códice: cuatro remates ASCII sueltos en los márgenes, del
+   mismo alfabeto que el enrejado del fondo. Antes aquí había manchas de color
+   copiadas de las tarjetas de la directiva; se cambiaron por esto, que es del
+   mismo idioma que el resto de la página.
 
    Reglas que se cumplen sin excepción, porque es decoración:
    · `pointer-events:none` — no debe robar un solo clic;
@@ -196,26 +198,28 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   position:fixed;inset:0;z-index:0;pointer-events:none;
   overflow:hidden;display:none;
 }
-.ornamento__pieza{
-  position:absolute;width:var(--tam);height:var(--tam);
-  opacity:.055;filter:blur(.4px);
+.ornamento__marca{
+  position:absolute;margin:0;
+  font-family:var(--font-mono);white-space:pre;
+  font-size:var(--tam);line-height:1.15;
+  color:var(--ieee-blue);opacity:.13;
   will-change:transform;
-  animation:flotar var(--dur) ease-in-out var(--retardo) infinite alternate;
+  animation:derivar var(--dur) ease-in-out var(--retardo) infinite alternate;
 }
-.ornamento__pieza--a{--tam:clamp(180px,17vw,300px);--dur:19s;--retardo:0s;
-  top:14vh;left:-5vw}
-.ornamento__pieza--b{--tam:clamp(150px,14vw,250px);--dur:24s;--retardo:-6s;
-  top:58vh;left:-3vw}
-.ornamento__pieza--c{--tam:clamp(200px,19vw,340px);--dur:21s;--retardo:-11s;
-  top:26vh;right:-6vw}
-.ornamento__pieza--d{--tam:clamp(140px,13vw,230px);--dur:27s;--retardo:-3s;
-  top:72vh;right:-2vw}
+/* Van en el canal que queda entre el lomo (o el borde) y la columna de texto,
+   que es el margen del gutter. Medido a 1440: el texto empieza en 136 y acaba
+   en 1368, así que hay unos 70 px libres a cada lado. Los dos anchos —el de
+   dos líneas— se centran en ese canal; los estrechos, pegados al borde. */
+.ornamento__marca--a{--tam:15px;--dur:21s;--retardo:0s;   top:16vh;left:calc(var(--lomo) + .5vw)}
+.ornamento__marca--b{--tam:11px;--dur:26s;--retardo:-7s;  top:62vh;left:calc(var(--lomo) + .3vw)}
+.ornamento__marca--c{--tam:13px;--dur:23s;--retardo:-13s; top:30vh;right:.5vw}
+.ornamento__marca--d{--tam:14px;--dur:29s;--retardo:-4s;  top:76vh;right:2.4vw}
 
-/* Poco movimiento, como pidió Andrés: unos pocos píxeles y un grado de giro.
-   Lo justo para que el margen no esté muerto. */
-@keyframes flotar{
-  from{transform:translate3d(0,0,0) rotate(0deg) scale(1)}
-  to  {transform:translate3d(0,-26px,0) rotate(7deg) scale(1.04)}
+/* Poco movimiento: unos píxeles arriba y un grado de giro. Lo justo para que
+   el margen no esté muerto. */
+@keyframes derivar{
+  from{transform:translate3d(0,0,0) rotate(0deg)}
+  to  {transform:translate3d(0,-22px,0) rotate(4deg)}
 }
 
 @media (min-width:1100px){ .ornamento{display:block} }
@@ -573,17 +577,25 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 .section{position:relative;z-index:1;padding-block:var(--section-y)}
 .section--tint{background:var(--paper-2)}
 .section--ink{background:var(--ieee-dark-blue);color:#fff}
-/* La franja del mundo se aligera: en vez del azul macizo, un degradado que
-   deja respirar el papel por los lados, y el campo ASCII por detrás. */
+/* La franja del mundo lleva el mismo campo que el hero: el degradado radial
+   idéntico y la misma retícula de 78 px. Así la portada y esta franja se leen
+   como el mismo material, no como dos azules distintos. */
 .section--franja.section--ink{
-  background:linear-gradient(180deg,rgba(0,40,85,.94) 0%,rgba(0,40,85,.88) 100%);
+  background:radial-gradient(120% 100% at 50% 0%,#013A6B 0%,#002855 42%,#001528 100%);
   isolation:isolate;overflow:hidden;
+}
+.section--franja.section--ink::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:78px 78px;
 }
 .ascii-field--franja{
   mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 78%,transparent 100%);
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 78%,transparent 100%);
 }
-.ascii-field--franja > pre{color:rgba(0,181,226,.22)}
+.ascii-field--franja > pre{color:rgba(0,181,226,.28)}
 .section--franja .shell{position:relative;z-index:1}
 .section--ink .label{color:rgba(255,255,255,.5)}
 .section--ink .lede{color:rgba(255,255,255,.72)}
