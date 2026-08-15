@@ -1,5 +1,17 @@
 # IEEE R9 Student Website Contest 2026 — Article
 
+**Tres formatos del mismo texto** — usa el que mejor te pegue:
+
+| Archivo | Para qué |
+|---|---|
+| `CONTEST-ARTICLE.docx` | **el más cómodo.** Ábrelo en Word, copia de ahí y pega en la plantilla con *Pegar → Conservar solo texto*. Ya viene con los títulos en negrita y el cuerpo justificado |
+| `CONTEST-ARTICLE.txt` | **el más seguro.** Texto pelado. Ábrelo con TextEdit (no con VS Code) y pega donde quieras: no arrastra ni fuente ni fondo |
+| `CONTEST-ARTICLE.md` | este archivo, con las notas y las instrucciones |
+
+**Por qué el .md pegaba mal:** VS Code copia con su coloreado de sintaxis
+incrustado, así que Word recibe la letra y el fondo oscuro del editor. No es
+culpa de Word. Con el .docx o el .txt no pasa.
+
 **Cómo usar este archivo:** cada bloque de abajo corresponde a una sección de
 `IEEE Website Contest - Article - Template.docx`. Pega el texto dentro del
 .docx **respetando sus estilos** (no pegues con formato: usa *Pegar sin
