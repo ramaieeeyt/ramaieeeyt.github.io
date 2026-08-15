@@ -55,7 +55,22 @@
   /* metrics */
   --gutter:clamp(20px,5vw,88px);
   --maxw:1560px;
-  --section-y:clamp(88px,13vh,180px);
+  /* ESCALA DE ESPACIO — Fibonacci: 8·13·21·34·55·89·144.
+     Cada peldaño es ~1,618 veces el anterior, la proporción áurea, y así los
+     huecos de la página guardan la misma relación entre sí en vez de ser
+     números sueltos. Los `clamp` conservan esa razón también en pantallas
+     pequeñas; solo el último peldaño se comprime algo más, porque 144 px de
+     aire arriba y abajo en un teléfono es media pantalla perdida.
+     Úsalos en vez de inventar un `clamp` nuevo. */
+  --e1:clamp(6px,.55vw,8px);
+  --e2:clamp(10px,.9vw,13px);
+  --e3:clamp(16px,1.5vw,21px);
+  --e4:clamp(26px,2.4vw,34px);
+  --e5:clamp(42px,3.8vw,55px);
+  --e6:clamp(68px,6.2vw,89px);
+  --e7:clamp(88px,10vw,144px);
+
+  --section-y:var(--e7);
   --ease:cubic-bezier(.22,.61,.36,1);
   --ease-out:cubic-bezier(.16,1,.3,1);
   --nav-h:74px;
@@ -182,47 +197,44 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 
 /* --------------------------------------------------- 4a. ORNAMENTO
-   Marginalia del códice: cuatro remates ASCII sueltos en los márgenes, del
-   mismo alfabeto que el enrejado del fondo. Antes aquí había manchas de color
-   copiadas de las tarjetas de la directiva; se cambiaron por esto, que es del
-   mismo idioma que el resto de la página.
+   Marginalia del códice: remates ASCII del mismo alfabeto que el enrejado del
+   fondo, en el canal que queda entre la columna de texto y el borde.
 
-   Reglas que se cumplen sin excepción, porque es decoración:
-   · `pointer-events:none` — no debe robar un solo clic;
-   · `z-index:0` y el contenido por encima — nunca tapa nada;
-   · `position:fixed` y `transform` — se anima en el compositor, sin
-     recalcular maquetación en cada fotograma;
-   · fuera por debajo de 1100 px, donde no sobra margen, y fuera con
-     `prefers-reduced-motion`. */
-.ornamento{
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  overflow:hidden;display:none;
-}
+   Los inyecta `initOrnamento()` DENTRO de cada sección, no fijos en la
+   ventana: fijos harían falta de un solo color que se leyera igual sobre el
+   papel y sobre el campo oscuro, y no existe. Dentro, cada sección les da el
+   suyo —azul sobre papel, cian sobre oscuro— y así se ven de verdad.
+
+   Sigue siendo decoración: sin eventos, por debajo del contenido, animada
+   solo con `transform`, y fuera por debajo de 1100 px y con movimiento
+   reducido. El canal mide unos 70 px a cada lado (medido a 1440: el texto va
+   de 136 a 1368), así que los remates se centran ahí y no lo invaden. */
 .ornamento__marca{
-  position:absolute;margin:0;
+  display:none;position:absolute;margin:0;z-index:0;pointer-events:none;
   font-family:var(--font-mono);white-space:pre;
-  font-size:var(--tam);line-height:1.15;
-  color:var(--ieee-blue);opacity:.13;
+  font-size:12px;line-height:1.2;letter-spacing:.02em;
+  color:var(--ieee-blue);opacity:.26;
   will-change:transform;
-  animation:derivar var(--dur) ease-in-out var(--retardo) infinite alternate;
+  animation:derivar var(--dur,23s) ease-in-out var(--retardo,0s) infinite alternate;
 }
-/* Van en el canal que queda entre el lomo (o el borde) y la columna de texto,
-   que es el margen del gutter. Medido a 1440: el texto empieza en 136 y acaba
-   en 1368, así que hay unos 70 px libres a cada lado. Los dos anchos —el de
-   dos líneas— se centran en ese canal; los estrechos, pegados al borde. */
-.ornamento__marca--a{--tam:15px;--dur:21s;--retardo:0s;   top:16vh;left:calc(var(--lomo) + .5vw)}
-.ornamento__marca--b{--tam:11px;--dur:26s;--retardo:-7s;  top:62vh;left:calc(var(--lomo) + .3vw)}
-.ornamento__marca--c{--tam:13px;--dur:23s;--retardo:-13s; top:30vh;right:.5vw}
-.ornamento__marca--d{--tam:14px;--dur:29s;--retardo:-4s;  top:76vh;right:2.4vw}
+/* `left`/`right` van contra la caja de la SECCIÓN, no de la ventana, y la
+   sección ya empieza pasado el lomo. El canal libre es el gutter: 72 px a
+   1440. Los remates se centran ahí, y por eso ninguno pasa de 8 caracteres —a
+   13 px de mono son unos 62 px— o se meterían en la columna de texto. */
+.ornamento__marca--izq{left:8px}
+.ornamento__marca--der{right:8px}
 
-/* Poco movimiento: unos píxeles arriba y un grado de giro. Lo justo para que
-   el margen no esté muerto. */
+/* sobre campo oscuro el azul se pierde: allí van en cian, y algo más marcados */
+.section--ink .ornamento__marca,
+.hero .ornamento__marca,
+.foot .ornamento__marca{color:var(--ieee-cyan);opacity:.34}
+
 @keyframes derivar{
   from{transform:translate3d(0,0,0) rotate(0deg)}
-  to  {transform:translate3d(0,-22px,0) rotate(4deg)}
+  to  {transform:translate3d(0,-20px,0) rotate(4deg)}
 }
 
-@media (min-width:1100px){ .ornamento{display:block} }
+@media (min-width:1100px){ .ornamento__marca{display:block} }
 
 /* ------------------------------------------------------------- 4b. LOMO
    La navegación de secciones vive en un lomo a la izquierda —como el de un
@@ -602,8 +614,8 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 
 .section__head{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
-  gap:clamp(1.6rem,4vw,4rem);align-items:end;
-  padding-bottom:clamp(2.4rem,5vw,4rem);margin-bottom:clamp(2.4rem,5vw,4rem);
+  gap:var(--e5);align-items:end;
+  padding-bottom:var(--e5);margin-bottom:var(--e5);
   border-bottom:1px solid var(--rule);
 }
 .section--ink .section__head{border-bottom-color:rgba(255,255,255,.16)}
@@ -669,6 +681,9 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   /* 8 tarjetas: 4, 2 o 1 columnas — los tres divisores exactos de 8, así la
      última fila nunca queda coja. auto-fill dejaba un hueco a 3 columnas. */
   display:grid;grid-template-columns:repeat(4,1fr);
+  /* el hueco de 1 px NO es espaciado: es el filete que se ve entre tarjetas,
+     porque el fondo de la rejilla es el color de la regla. No lo pases a la
+     escala de espacio. */
   gap:1px;background:var(--rule);border:1px solid var(--rule);
 }
 .opp{
@@ -720,7 +735,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   display:grid;grid-template-columns:auto minmax(0,1fr);
   gap:clamp(1.2rem,3vw,2.6rem);align-items:center;
   border:1px solid var(--rule);background:var(--paper);
-  padding:clamp(1.3rem,2.4vw,2rem);margin-bottom:clamp(1.6rem,3vw,2.4rem);
+  padding:var(--e4);margin-bottom:var(--e4);
 }
 .precio__cifra{
   display:flex;align-items:baseline;gap:.35rem;color:var(--ieee-blue);
@@ -744,7 +759,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 .recursos{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   gap:1px;background:var(--rule);border:1px solid var(--rule);
-  margin-top:clamp(2rem,4vw,3.2rem);
+  margin-top:var(--e4);
 }
 .recurso{
   display:flex;flex-direction:column;gap:.5rem;
@@ -769,7 +784,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   transition:transform .45s var(--ease-out)}
 .recurso:hover .recurso__go i{transform:translate(3px,-3px)}
 .recursos__nota{
-  margin:clamp(1.4rem,2.6vw,2rem) 0 0;font-size:.86rem;line-height:1.6;
+  margin:var(--e4) 0 0;font-size:.86rem;line-height:1.6;
   color:var(--ink-60);max-width:70ch;
 }
 .recursos__nota a{color:var(--ieee-blue);border-bottom:1px solid currentColor}
@@ -1138,7 +1153,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 /* Dos columnas, no tres: con pocas piezas la tercera se quedaba vacía y el
    bloque salía descentrado. Con más memes sigue equilibrando igual, y a
    este ancho cada pieza se ve de verdad en vez de en miniatura. */
-.memes{columns:2;column-gap:clamp(.8rem,1.6vw,1.4rem);margin-top:clamp(2rem,4vw,3.4rem);
+.memes{columns:2;column-gap:var(--e3);margin-top:var(--e4);
   max-width:900px}
 .meme{
   break-inside:avoid;margin:0 0 clamp(.8rem,1.6vw,1.4rem);
@@ -1488,7 +1503,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .cap__d{max-height:none;opacity:1}
   .capstitle{transform:none;animation:none;opacity:1}
   .peek{display:none}
-  .ornamento{display:none !important}
+  .ornamento__marca{display:none !important}
 }
 @media print{
   .nav,.ascii-field,.marquee,.peek,.lightbox,.hero__scroll{display:none !important}

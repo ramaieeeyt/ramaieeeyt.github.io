@@ -15,33 +15,16 @@
 <meta property="og:image" content="assets/img/rama-general-2026.jpg">
 <meta property="og:locale" content="es_EC">
 
-<link rel="stylesheet" href="css/style.css?v=62">
+<link rel="stylesheet" href="css/style.css?v=68">
 </head>
 
 <body>
 <a class="sr-only" href="#manifiesto">Saltar al contenido</a>
 
-<!-- ====================================================== ORNAMENTO
-     Marginalia del códice: cuatro remates ASCII sueltos en los márgenes, del
-     mismo alfabeto que el enrejado del fondo (◇ ❖ ✦ y las diagonales).
-     Decoración pura: `aria-hidden`, sin eventos, por debajo del contenido, y
-     se apaga sola con `prefers-reduced-motion` y por debajo de 1100 px. -->
-<div class="ornamento" aria-hidden="true">
-  <pre class="ornamento__marca ornamento__marca--a">   ✦
- ◇ ❖ ◇
-   ✦</pre>
-  <pre class="ornamento__marca ornamento__marca--b">  \  ✦  /
- ◇ ─ ❖ ─ ◇
-  /  ✦  \</pre>
-  <pre class="ornamento__marca ornamento__marca--c">  ❖
-✧ ✦ ✧
-  ❖
-✧ ✦ ✧
-  ❖</pre>
-  <pre class="ornamento__marca ornamento__marca--d"> ✦
-◇ ❖
- ✦</pre>
-</div>
+<!-- El ornamento de los márgenes lo inyecta initOrnamento() dentro de cada
+     sección, para que herede su color: azul sobre papel, cian sobre campo
+     oscuro. Fijo en la ventana no podía, porque un solo color no se lee
+     sobre los dos fondos. -->
 
 <!-- ============================================================ NAV -->
 <header class="nav" id="nav">
@@ -458,7 +441,7 @@
   <p class="lightbox__cap" id="lightbox-cap"></p>
 </div>
 
-<script src="js/ascii.js?v=62"></script>
-<script src="js/main.js?v=62"></script>
+<script src="js/ascii.js?v=68"></script>
+<script src="js/main.js?v=68"></script>
 </body>
 </html>
