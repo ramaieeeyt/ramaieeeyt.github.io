@@ -565,7 +565,25 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   letter-spacing:.16em;text-transform:uppercase}
 .factlist span{text-align:right;font-weight:600}
 
-/* ------------------------------------------------------------ 10. STATS */
+/* ------------------------------------------------------------ 10. STATS
+   «IEEE en el mundo» son cuatro cifras y dos frases: no necesita una sección
+   entera con su cabecera arriba y su ornamento abajo. Va como franja, con el
+   texto a la izquierda y las cifras a la derecha, y se queda en poco más de la
+   mitad del alto que ocupaba. */
+.section--franja{padding-block:clamp(2.6rem,6vh,4.4rem)}
+.mundo__in{
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2fr);
+  gap:clamp(1.6rem,4vw,4rem);align-items:center;
+}
+.mundo__texto{display:flex;flex-direction:column;gap:.7rem}
+.h2--corto{font-size:clamp(1.5rem,2.6vw,2.2rem)}
+.lede--corto{font-size:clamp(.88rem,1vw,.98rem);line-height:1.55;max-width:34ch}
+.section--franja .stats{border-top:0}
+.section--franja .stat{padding-block:0}
+.section--franja .stat__n{font-size:clamp(1.9rem,3.6vw,3.1rem)}
+.section--franja .stat__l{margin-top:.5rem;font-size:.6rem;letter-spacing:.16em}
+
+/* ------------------------------------------------------------ 10b. STATS */
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
   border-top:1px solid rgba(255,255,255,.16)}
 .stat{padding:clamp(1.6rem,3vw,2.6rem) 0;border-right:1px solid rgba(255,255,255,.16);
@@ -668,6 +686,12 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   color:var(--ink-60);max-width:70ch;
 }
 .recursos__nota a{color:var(--ieee-blue);border-bottom:1px solid currentColor}
+.recursos__nota b{color:var(--ink);font-weight:700}
+/* el aviso de membresía, dentro del lede de Oportunidades */
+.lede b{color:var(--ink);font-weight:700}
+.lede a{color:var(--ieee-blue);border-bottom:1px solid currentColor}
+.section--ink .lede b,.subpage--dark .lede b{color:#fff}
+.section--ink .lede a,.subpage--dark .lede a{color:var(--ieee-cyan)}
 
 /* --------------------------------------------- 11c. CAPÍTULOS (subpágina)
    capitulos.html reutiliza esta hoja entera.
@@ -1294,6 +1318,8 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 @media (max-width:860px){
   :root{--nav-h:64px}
   .stats{grid-template-columns:1fr 1fr}
+  /* en el móvil la franja vuelve a apilarse: texto arriba, cifras debajo */
+  .mundo__in{grid-template-columns:1fr;gap:1.6rem}
   .stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.16)}
   .stat:nth-child(odd){border-right:1px solid rgba(255,255,255,.16);padding-right:1.4rem}
   .tl{grid-template-columns:88px 1fr;row-gap:.5rem}

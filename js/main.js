@@ -126,11 +126,17 @@
           'congreso, normas y libros. El sitio donde acaba publicada casi toda ' +
           'la ingeniería que se cita en una tesis.',
         u:'https://ieeexplore.ieee.org/' },
-      { k:'Formación',
-        t:'IEEE Learning Network',
-        d:'Cursos y programas de IEEE, con certificado. Desde fundamentos hasta ' +
-          'temas de especialidad, en formato corto y a tu ritmo.',
-        u:'https://iln.ieee.org/' },
+      /* Aquí estaba IEEE Learning Network, y lo quitamos: iln.ieee.org devuelve
+         200 pero su título es «Login». Es un muro de acceso, así que a quien
+         todavía no es miembro —que es medio público de esta sección— le parece
+         un enlace roto. Spectrum es público, se lee sin cuenta y es de lo que
+         más engancha a un estudiante. */
+      { k:'Lectura',
+        t:'IEEE Spectrum',
+        d:'La revista de IEEE, abierta y sin cuenta: qué se está construyendo ' +
+          'ahora mismo en robótica, energía, computación o telecomunicaciones, ' +
+          'contado por quien lo construye.',
+        u:'https://spectrum.ieee.org/' },
       { k:'Red profesional',
         t:'IEEE Collabratec',
         d:'La red donde los miembros se encuentran por tema: grupos de trabajo, ' +

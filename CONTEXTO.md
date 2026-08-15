@@ -214,6 +214,13 @@ puede mostrar) **y fotos propias de la rama**. Nada más.
 Oportunidades (+ puerta a capítulos) · **Recursos** · Directiva 2026 ·
 Archivo · Trayectoria · HERBIEEE *(oculta)* · Únete · pie.
 
+**Directiva va antes que Oportunidades** (lo pidió Andrés el 15-08-2026):
+primero quiénes son, luego qué se gana entrando.
+
+**«IEEE en el mundo» es una franja, no una sección entera** — cuatro cifras y
+dos frases no justificaban cabecera arriba y ornamento abajo. Pasó de ~560 px
+de alto a **250**.
+
 **Oportunidades y Recursos no son lo mismo**, y conviene no mezclarlos: en
 Oportunidades va aquello a lo que se **postula** —becas, concursos, ayudas de
 viaje—; en Recursos, lo que ya se **usa** —Xplore, ILN, Collabratec, normas,
