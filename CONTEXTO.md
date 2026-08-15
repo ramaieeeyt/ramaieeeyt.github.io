@@ -297,6 +297,78 @@ La **marginalia izquierda** se oculta en escritorio — el lomo ocupa ese margen
 
 ---
 
+## 7c · Interacción — para después del concurso
+
+Andrés preguntó (15-08-2026) si se podía meter un newsletter o algo con lo que
+el usuario interactúe. Sí, y las bases lo premian: §4.1 pide *«interactive
+features that engage members»* y *Member Engagement and Recruitment* son 15 de
+los 100 puntos del sitio. Hoy la sección Únete son tres botones que sacan de la
+página.
+
+**Newsletter: la peor opción de las que hay.** GitHub Pages no tiene backend,
+así que obliga a un servicio externo, y eso tumba de golpe las tres cosas que
+hoy son ciertas: cero peticiones a terceros, cero cookies y la CSP del `<head>`.
+Habría que corregir el artículo, que afirma lo contrario. Y sobre todo: un
+newsletter que nadie escribe es **contenido inactivo**, que descuenta hasta 5
+puntos y es exactamente la muerte contra la que se construyó este sitio. Solo si
+aparece alguien que se comprometa a mandarlo.
+
+**Lo que sí, sin tocar la arquitectura** (puro cliente, con datos que ya están
+en `DATA`): un selector «¿dónde encajo?» que cruce intereses con `caps`; una
+calculadora de membresía con los números que ya salen en Oportunidades; un
+filtro sobre `opps` y `recursos`; un formulario que componga un `mailto:`.
+
+### Próximos eventos desde vTools — lo mejor de la lista
+
+Tapa el único requisito de las bases que hoy falta (§3.1 pide *«information
+about upcoming events, activities, projects, or an event calendar whenever
+applicable»*) **y se alimenta solo**, que es la única forma de que no se pudra.
+
+Comprobado contra la API el 15-08-2026, no supuesto:
+
+| Dato | Valor |
+|---|---|
+| API | `https://events.vtools.ieee.org/RST/events/api/public/v8/events/list` |
+| Documentación | `events.vtools.ieee.org/api/doc/events` |
+| Autenticación | **ninguna**, es pública |
+| Formatos | `.json` (por defecto), `.ics`, `.rss`, `.xml`, `.csv`, `.html` |
+| **spoid de la Rama** | **`STB11735`** — sección `R90729`, región `R9` |
+| CORS | **no hay `Access-Control-Allow-Origin`** |
+
+Dos cosas que condicionan el diseño:
+
+1. **Sin CORS, el navegador no puede llamarla.** Tiene que ser una GitHub Action
+   que la consulte y **escriba el resultado en el repo**. Eso es bueno: el sitio
+   sigue sin hacer ni una petición fuera de su origen.
+2. **La API pública no deja filtrar por unidad organizativa.** Los parámetros
+   son `category_id`, `subcategory_id`, `span`, `sort`, `delta`, `limit`,
+   `page`, `id`, `published`, `reported`, `location_type`, `include`, `tags`,
+   `tags_connector` y `spoid` (este último solo dentro de un feed a medida). Un
+   feed por unidad hay que **pedirlo al staff de vTools**.
+
+   La salida sin pedir nada a nadie es **`tags`**: que la Rama etiquete sus
+   eventos al crearlos en vTools —`#ramaieeeyt`— y consultar
+
+   ```
+   .../events/list?tags=ramaieeeyt&span=now~&sort=start-time&limit=20
+   ```
+
+   `span=now~` devuelve solo lo que aún no ha pasado. Probado y funciona.
+
+**Comprueba siempre `primary-host.spoid === 'STB11735'`** antes de publicar cada
+evento: la etiqueta la puede poner cualquiera, el spoid no. Sin ese filtro,
+cualquiera podría meter contenido en la página de la Rama poniendo la etiqueta.
+
+**Si la lista sale vacía, no dibujes la sección.** Un calendario vacío es peor
+que ninguno: descuenta por «contenido inactivo».
+
+Dónde iría: una banda entre **Directiva 2026** y **Qué gana quien entra** —
+acabas de ver quién está, lo siguiente que quieres saber es qué viene. La otra
+opción defendible es justo encima de Trayectoria, y entonces se lee futuro →
+pasado. El lomo lateral se rehace solo, porque lee la barra.
+
+---
+
 ## 7a · Seguridad
 
 La superficie de ataque de este sitio es diminuta y conviene entender por qué,
