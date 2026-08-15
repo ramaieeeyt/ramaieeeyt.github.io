@@ -4,7 +4,7 @@
 
    Aesthetic  : cosmos.so (editorial whitespace, mosaic, restraint)
                 × ieee.org (institutional structure, IEEE Blue, Open Sans)
-                × medieval ASCII marginalia
+                × marginalia ASCII medieval
    Colour     : IEEE Brand Identity Guidelines, Q1 2025 — full palette below.
    Type       : Open Sans (IEEE preferred web font)
                 Adobe Caslon Pro (IEEE secondary typeface, headlines only)
@@ -70,7 +70,10 @@
   --e6:clamp(68px,6.2vw,89px);
   --e7:clamp(88px,10vw,144px);
 
-  --section-y:var(--e7);
+  /* El aire entre secciones baja un peldaño de la escala: con --e7 (144 px
+     arriba y abajo, 288 entre dos secciones) los titulares quedaban muy
+     hundidos y costaba ver dónde empezaba cada cosa. */
+  --section-y:var(--e6);
   --ease:cubic-bezier(.22,.61,.36,1);
   --ease-out:cubic-bezier(.16,1,.3,1);
   --nav-h:74px;
@@ -172,16 +175,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .fleuron--light{color:rgba(255,255,255,.4)}
 .fleuron--light::before,.fleuron--light::after{background:rgba(255,255,255,.16)}
 
-/* vertical marginalia in the page gutters */
-.marginalia{
-  position:absolute;top:0;bottom:0;
-  writing-mode:vertical-rl;
-  font-family:var(--font-mono);font-size:.6rem;letter-spacing:.42em;
-  text-transform:uppercase;color:var(--ink-40);opacity:.55;
-  pointer-events:none;user-select:none;
-}
-.marginalia--l{left:14px}
-.marginalia--r{right:14px;transform:rotate(180deg)}
 
 /* illuminated drop cap */
 .dropcap{
@@ -212,8 +205,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ornamento__marca{
   display:none;position:absolute;margin:0;z-index:0;pointer-events:none;
   font-family:var(--font-mono);white-space:pre;
-  font-size:12px;line-height:1.2;letter-spacing:.02em;
-  color:var(--ieee-blue);opacity:.26;
+  /* Más grandes de lo que parece razonable sobre el papel: a 12 px no se
+     veían. El canal del gutter mide 72 px, y con cinco caracteres a 19 px
+     de mono son unos 57 px, así que caben sin tocar la columna de texto. */
+  font-size:19px;line-height:1.15;letter-spacing:.02em;
+  color:var(--ieee-blue);opacity:.34;
   will-change:transform;
   animation:derivar var(--dur,23s) ease-in-out var(--retardo,0s) infinite alternate;
 }
@@ -227,7 +223,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* sobre campo oscuro el azul se pierde: allí van en cian, y algo más marcados */
 .section--ink .ornamento__marca,
 .hero .ornamento__marca,
-.foot .ornamento__marca{color:var(--ieee-cyan);opacity:.34}
+.foot .ornamento__marca{color:var(--ieee-cyan);opacity:.42}
 
 @keyframes derivar{
   from{transform:translate3d(0,0,0) rotate(0deg)}
@@ -393,8 +389,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
   /* en la barra superior solo queda lo que sale de esta página */
   body.has-lomo .nav__links a[href^="#"]{display:none}
-  /* la marginalia izquierda chocaría con el lomo */
-  body.has-lomo .marginalia--l{display:none}
 }
 
 /* --------------------------------------------------------------- 5. NAV */
@@ -614,8 +608,11 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 
 .section__head{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
-  gap:var(--e5);align-items:end;
-  padding-bottom:var(--e5);margin-bottom:var(--e5);
+  /* `end` alineaba las dos columnas por abajo, así que el texto de al lado
+     arrancaba muy por encima del titular. Con `baseline` las dos primeras
+     líneas se apoyan en la misma raya y arrancan juntas. */
+  gap:var(--e5);align-items:baseline;
+  padding-bottom:var(--e4);margin-bottom:var(--e4);
   border-bottom:1px solid var(--rule);
 }
 .section--ink .section__head{border-bottom-color:rgba(255,255,255,.16)}
@@ -1426,7 +1423,6 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .stat:nth-child(odd){border-right:1px solid rgba(255,255,255,.16);padding-right:1.4rem}
   .tl{grid-template-columns:88px 1fr;row-gap:.5rem}
   .tl p{grid-column:2}
-  .marginalia{display:none}
   /* Más grande y con más tinta, no más pequeño: en una pantalla de teléfono
      el trazo a 11 px y al 30 % se perdía del todo. A 13 px el dibujo se lee y
      además se generan menos caracteres por fotograma. */

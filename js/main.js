@@ -787,8 +787,10 @@
      Decoración: `aria-hidden`, sin eventos, por debajo del contenido, y el
      CSS los apaga por debajo de 1100 px y con `prefers-reduced-motion`. */
   var REMATES = [
-    '   ✦\n ◇ ❖ ◇\n   ✦',
-    ' \\ ✦ /\n◇ ❖ ◇\n / ✦ \\',
+    /* Cinco caracteres como máximo: a 19 px de mono son ~57 px y el canal del
+       gutter mide 72. Con siete se metían en la columna de texto. */
+    '  ✦\n◇ ❖ ◇\n  ✦',
+    '\\ ✦ /\n◇ ❖ ◇\n/ ✦ \\',
     '  ❖\n✧ ✦ ✧\n  ❖',
     ' ✦\n◇ ❖\n ✦',
     '  ✧\n◇ ❖ ◇\n  ✧'
