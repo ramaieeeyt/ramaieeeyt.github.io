@@ -181,10 +181,10 @@ away from what looked expensive towards what was.
 
 ```
 The site is public at https://ramaieeeyt.github.io. A single scrolling page
-carries nine sections — branch identity, IEEE at global scale, Opportunities,
-the 2026 Board, a visual Archive, a sourced Timeline, HERBIEEE (the branch's
-informal archive), Join the Branch, and Contact — and a dedicated page presents
-the branch's chapters and affinity groups.
+carries eight sections — branch identity, IEEE at global scale, the 2026 Board,
+Opportunities, Resources, a visual Archive, a sourced Timeline, Join the Branch
+and Contact — and a dedicated page presents the branch's chapters and affinity
+groups.
 
 Content. The Opportunities section presents eight concrete routes into IEEE for
 students: IEEEXtreme, IEEE Foundation scholarships, IEEE WIE travel grants,
@@ -195,7 +195,17 @@ IEEE page. Joining is reduced to three actions in one place: obtain an IEEE
 membership, read the branch's membership guide, or write to the branch. The
 Board section presents all six 2026 officers with role, photograph, personal
 statement and contact. The Timeline records ten milestones from 2019 to 2026,
-tagged as award, milestone or meeting. The Chapters page presents the branch's
+tagged as award, milestone or meeting.
+
+Opportunities and Resources answer two different questions, and the site keeps
+them apart. Opportunities is what a student applies to; Resources is what a
+member already uses — IEEE Xplore, IEEE Spectrum, Collabratec, IEEE Standards,
+IEEE Access and the conference calendar. Both say plainly that most of what they
+list requires IEEE membership, and Opportunities carries the price: roughly USD
+28 a year, about half that when enrolling after March, plus USD 1 to 13 for each
+technical society. A student deciding whether to join should not have to hunt
+for the cost, and the figures are attributed to the branch's own membership
+guide with a link to IEEE for the current rate. The Chapters page presents the branch's
 eight technical chapters — Computer Society, EMBS, Electronics Packaging,
 Circuits and Systems, Robotics and Automation, Geoscience and Remote Sensing,
 Computational Intelligence and the Nanotechnology Council — together with its
@@ -209,13 +219,34 @@ hover, keyboard focus or tap; links that lead elsewhere stay in the top bar. The
 spine also acts as a position indicator, marking the section currently in view.
 
 Verifiability. Ten of ten timeline entries are traceable to a named public
-source, recorded in the source code beside the data. All twenty-three outbound
-links were tested and resolve to their intended pages.
+source, recorded in the source code beside the data. All outbound links were
+tested and resolve to their intended pages. One resource was dropped during that
+check: the IEEE Learning Network answers HTTP 200, but the page it serves is a
+login wall, so to a visitor who is not yet a member it reads as a dead link. A
+status code is not a working link.
 
-Technical. A first visit transfers 497 kB, from a single origin. The site sets
+Technical. Weight and accessibility were measured, not assumed, and both
+produced corrections. The chapter marks were being served at 900 px for a 124 px
+slot, and the home page downloaded 1.8 MB of them for six 42 px stamps; rescaled
+to their real size they fell from 3.0 MB to 216 kB — a factor of 13.7 — with no
+visible difference when compared side by side at twice their display size. Two
+font preload tags were fetching 58 kB per visit that no @font-face ever used.
+Labels set at 42 % ink measured 2.76:1 against paper, below the 4.5:1 that WCAG
+AA asks of small text, and were raised to a measured 5.23:1. Officer statements
+lived only in a hover state and were therefore invisible on every phone; they
+now show by default where there is no pointer. Between 861 and 1099 px the
+layout offered neither the spine nor the hamburger menu, so eight links crowded
+the bar and spilled off the right edge — precisely where a tablet in landscape
+lands; the two thresholds now meet.
+
+The page spacing follows a Fibonacci scale — 8, 13, 21, 34, 55, 89, 144 px, each
+step about 1.618 times the last — so that the distances between blocks hold a
+constant relation instead of being chosen one by one.
+
+A first visit transfers 497 kB, from a single origin. The site sets
 no cookies, uses no local storage, and makes no request to any third party — no
 analytics, no CDN, no embedded widgets — which was verified in production. It is
-responsive from 375 px to desktop with no horizontal overflow at any width, and
+responsive from 320 px to desktop with no horizontal overflow at any width, and
 was checked at the common phone, tablet and desktop sizes. Accessibility
 measures include alternative text on images, ARIA attributes on the menu,
 lightbox and spine, full keyboard navigation, visible focus states, a minimum
@@ -231,9 +262,10 @@ pointer.
 | :--- | :--- |
 | What the Branch is | Identity, mission, key facts |
 | IEEE worldwide | Scale and credibility of IEEE |
-| **Opportunities** | Scholarships, grants, competitions, volunteering |
-| Chapters and affinity groups | The ten units students can join |
 | Board 2026 | Officers, roles and direct contact |
+| **Opportunities** | Scholarships, grants, competitions — and what membership costs |
+| **Resources** | IEEE tools a member can open today |
+| Chapters and affinity groups | The ten units students can join |
 | Archive | Recent published activity |
 | Timeline | Verified history, 2019–2026 |
 | Join the Branch | Membership guide and enrolment |
@@ -281,7 +313,8 @@ github.com/ramaieeeyt/ramaieeeyt.github.io.
 ```
 The objectives set out in Section I were met. The site presents the branch and
 its 2026 officers accurately; it makes eight concrete IEEE opportunities visible
-with direct links to official pages; it presents the branch's ten chapters and
+with direct links to official pages and states what membership costs; it lists
+six resources a member can use today; it presents the branch's ten chapters and
 affinity groups with their official lockups; it records ten verified milestones
 with traceable sources; and it is structured, owned and documented so that it
 can be maintained by people who did not build it.
@@ -293,13 +326,19 @@ branch website is, in practice, the public memory of the organizational unit,
 and treating it with the same evidentiary discipline expected of an IEEE
 publication seems to us the correct standard.
 
-The same discipline applied to the technical work. Every performance claim in
-Section III was measured before it was acted on, and the measurement redirected
-the effort away from what looked expensive and towards what actually was.
+The same discipline applied to the technical work. Every performance and
+accessibility claim was measured before it was acted on, and measurement
+repeatedly redirected the effort. The animated background looked like the
+expensive part and cost 1.3 ms a frame; the images nobody suspected cost 1.8 MB
+on the home page alone. A link that returned HTTP 200 turned out to be a login
+wall. A contrast that looked fine measured 2.76:1. In each case the number, not
+the impression, decided what to do.
 
-For future editions we intend to activate the Instagram synchronization, add an
-upcoming events calendar, and populate HERBIEEE, the branch's informal archive,
-which is built and waiting for material.
+For future editions we intend to activate the Instagram synchronization —
+written and tested, waiting only on an access token — add an upcoming events
+calendar, and restore HERBIEEE, the branch's informal archive, which is built
+and hidden until there is enough material to justify a section rather than a
+placeholder.
 ```
 
 ## REFERENCES
