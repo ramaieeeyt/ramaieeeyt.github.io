@@ -37,10 +37,13 @@
 
     /* --- Cifras de IEEE a nivel global ----------------------------------- */
     stats: [
-      { n:420000, suf:'+', label:'Miembros en el mundo' },
-      { n:160,    suf:'+', label:'Países' },
-      { n:38,     suf:'',  label:'Sociedades técnicas' },
-      { n:1,      suf:'',  label:'Rama en Urcuquí' }
+      /* Cifras de la guía de membresía de la Rama (rev. agosto 2026): 460.000+
+         miembros en 190+ países. Antes decía 420.000 y 160, que venían de una
+         nota más vieja. */
+      { n:460000, suf:'+', label:'Miembros en el mundo' },
+      { n:190,    suf:'+', label:'Países' },
+      { n:10,     suf:'',  label:'Capítulos y grupos aquí' },
+      { n:8,      suf:'',  label:'Años de membresía estudiantil' }
     ],
 
     /* --- Oportunidades ------------------------------------------------------
@@ -122,9 +125,9 @@
     recursos: [
       { k:'Biblioteca',
         t:'IEEE Xplore',
-        d:'La biblioteca digital de IEEE: artículos de revista, ponencias de ' +
-          'congreso, normas y libros. El sitio donde acaba publicada casi toda ' +
-          'la ingeniería que se cita en una tesis.',
+        d:'Más de siete millones de documentos: artículos de revista, ' +
+          'ponencias de congreso, normas y libros. El sitio donde acaba ' +
+          'publicada casi toda la ingeniería que se cita en una tesis.',
         u:'https://ieeexplore.ieee.org/' },
       /* Aquí estaba IEEE Learning Network, y lo quitamos: iln.ieee.org devuelve
          200 pero su título es «Login». Es un muro de acceso, así que a quien
@@ -154,51 +157,57 @@
         u:'https://ieeeaccess.ieee.org/' },
       { k:'Congresos',
         t:'Conferencias IEEE',
-        d:'El calendario mundial de congresos de IEEE, con sus convocatorias de ' +
-          'ponencias. Los miembros pagan menos inscripción.',
+        d:'El calendario mundial de congresos de IEEE, con sus convocatorias ' +
+          'de ponencias. Los miembros llegan a pagar hasta un 40 % menos de ' +
+          'inscripción.',
         u:'https://conferences.ieee.org/conferences_events/' }
     ],
 
     caps: [
       { img:'computer-society.png', k:'Capítulo técnico', t:'IEEE Computer Society',
-        d:'La sociedad más grande de IEEE. Computación, software, arquitectura de ' +
-          'sistemas e inteligencia artificial.',
+        d:
+          'Computación, software, inteligencia artificial, ciberseguridad y ' +
+          'arquitectura del computador.',
         u:'https://www.computer.org/' },
       { img:'embs.png', k:'Capítulo técnico', t:'IEEE EMBS',
-        d:'Engineering in Medicine and Biology Society. Ingeniería aplicada a la ' +
-          'salud: instrumentación biomédica y señales fisiológicas.',
+        d:
+          'Bioingeniería: dispositivos médicos, neurociencias y procesamiento ' +
+          'de señales fisiológicas.',
         u:'https://www.embs.org/' },
       { img:'eps.png', k:'Capítulo técnico', t:'IEEE Electronics Packaging Society',
-        d:'Empaquetado electrónico: cómo se integra, protege e interconecta el ' +
+        d:
+          'Microchips, ensamblaje, empaque y manufactura electrónica — el ' +
           'hardware que todo lo demás da por sentado.',
         u:'https://eps.ieee.org/' },
       { img:'cas.png', k:'Capítulo técnico', t:'IEEE Circuits and Systems Society',
-        d:'Circuitos y sistemas: del diseño analógico y digital al procesamiento ' +
-          'de señales y los sistemas embebidos.',
+        d:
+          'Diseño de circuitos, nanoelectrónica y teoría de redes.',
         u:'https://ieee-cas.org/' },
       { img:'ras.png', k:'Capítulo técnico', t:'IEEE Robotics and Automation Society',
-        d:'Robótica y automatización: percepción, control, manipulación y los ' +
-          'sistemas autónomos que salen de ahí.',
+        d:
+          'Robótica, automatización, manufactura avanzada y drones.',
         u:'https://www.ieee-ras.org/' },
       { img:'grss.png', k:'Capítulo técnico', t:'IEEE Geoscience and Remote Sensing',
-        d:'Teledetección y geociencia: observar el planeta desde satélites, ' +
-          'radares y sensores, y sacar información de ello.',
+        d:
+          'Teledetección, SIG, observación de la Tierra y sensores ' +
+          'satelitales.',
         u:'https://www.grss-ieee.org/' },
       { img:'cis.png', k:'Capítulo técnico', t:'IEEE Computational Intelligence Society',
-        d:'Redes neuronales, computación evolutiva y sistemas difusos — la ' +
-          'inteligencia computacional en su sentido más amplio.',
+        d:
+          'Redes neuronales, lógica difusa y algoritmos evolutivos.',
         u:'https://cis.ieee.org/' },
       { img:'nano.png', k:'Capítulo técnico', t:'IEEE Nanotechnology Council',
-        d:'Nanotecnología: materiales, dispositivos y sistemas en la escala donde ' +
-          'la física deja de comportarse como esperamos.',
+        d:
+          'Nanotecnología: nanomateriales, nanodispositivos y nanomedicina.',
         u:'https://ieeenano.org/' },
       { img:'wie.png', k:'Grupo de afinidad', t:'IEEE Women in Engineering',
-        d:'Creado en abril de 2022 para promover a mujeres ingenieras y ' +
-          'científicas, e inspirar a jóvenes a seguir una carrera STEM.',
+        d:
+          'Comunidad de mujeres en ingeniería: mentoría, divulgación y ' +
+          'diversidad. La membresía del grupo es gratuita.',
         u:'https://wie.ieee.org/' },
       { img:'sight.png', k:'Grupo de afinidad', t:'IEEE SIGHT',
-        d:'Special Interest Group on Humanitarian Technology. Ingeniería puesta ' +
-          'al servicio de necesidades concretas de la comunidad.',
+        d:
+          'Tecnología puesta al servicio del desarrollo humanitario y social.',
         u:'https://sight.ieee.org/' }
     ],
 

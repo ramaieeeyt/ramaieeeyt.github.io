@@ -57,6 +57,11 @@ mirarlos, no suponer.
 | **RNR 2023** — campeonas de la feria de ramas junto a ESPOCH; delegación de Ibarra (con UTN) ganó la feria de ciudades; 4 becas ETCM 2023 | [r9.ieee.org Ecuador](https://r9.ieee.org/ecuador/reunion-nacional-de-ramas-estudiantiles-ieee-2023/) |
 | **Feria IEEE YT 2025** — 26 feb, edificio SENESCYT, Urcuquí. Incluyó posesión de directivas; se autofinanció con venta de comida | [vTools m/470014](https://events.vtools.ieee.org/m/470014) |
 | **RNR Ibarra 2025** — 26–28 sep, **Universidad Técnica del Norte**. La rama **participó**, NO organizó | [vTools m/497568](https://events.vtools.ieee.org/m/497568) |
+| **460.000+ miembros en 190+ países** · Xplore con **7 M+ documentos** · hasta **40 %** de descuento en congresos | Guía de membresía de la Rama, rev. ago-2026 (Google Doc enlazado en Únete). Antes el sitio decía 420.000 y 160 países, de una nota más vieja |
+| Membresía estudiantil: **máx. 8 años**, vence el **31 de diciembre**, y quien entra **entre agosto y diciembre** puede extenderla al 31-dic del año siguiente | Misma guía. Ese último dato es el más útil de todos y está en el bloque del precio |
+| **No hace falta estudiar ingeniería eléctrica**: IEEE acepta computación, física, matemática aplicada y afines | Misma guía, FAQ. Es prácticamente el mapa de carreras de Yachay, y por eso está en «Qué es la Rama» |
+| **WIE es gratuita**; el resto de sociedades, 1–13 USD/año | Misma guía |
+| Los enfoques de los diez capítulos salen de **la tabla de la guía**, no de mi resumen | Son las palabras de la propia Rama: EMBS «bioingeniería, dispositivos médicos, neurociencias, señales», CAS «diseño de circuitos, nanoelectrónica, teoría de redes», etc. |
 | Directiva 2026 (6 cargos) | Carrusel de [@ramaieeeyt](https://www.instagram.com/ramaieeeyt/) |
 | Código de rama **100119** · Región **R9** · Sede **Urcuquí, Imbabura** | Tarjetas de la rama |
 
@@ -79,6 +84,15 @@ Interest Group on Humanitarian Technology).
 > El manual contiene además hojas de **MTT-S, Photonics, NPSS y ComSoc**, que
 > **no** aparecen en `logos color.png` ni en la maqueta de Andrés. Pueden ser
 > previstos o inactivos. **No los pongas en el sitio sin confirmar.**
+
+### Datos que existen pero **no** están publicados, a propósito
+
+La guía de membresía trae los **nombres y teléfonos móviles de los diez
+presidentes de capítulo** y de la Coordinadora de Membresías. **No los subí.**
+Son datos personales de gente identificable y publicarlos en una web abierta no
+es decisión de quien hace el sitio: tiene que pedirlo cada persona. Si algún día
+se quiere un contacto por capítulo, lo correcto es un correo institucional, no
+un móvil.
 
 ### Sin verificar — no lo afirmes
 
