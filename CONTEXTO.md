@@ -288,6 +288,14 @@ en las dos páginas, `og:url`, y una ficha `schema.org` de tipo `Organization`
 con los alias por los que la gente busca —«IEEE Yachay Tech», «Rama IEEE Yachay
 Tech», «IEEE YT»— y los perfiles sociales en `sameAs`.
 
+**Estado al 15-08-2026:** propiedad verificada en Google Search Console con la
+etiqueta `google-site-verification` que hay en el `<head>` de las dos páginas
+—**no la borres**, si desaparece Google retira la verificación—. El sitemap se
+envió antes de que el archivo existiera, así que quedó en «No se ha podido
+obtener»; el archivo está bien (comprobado con el user-agent de Googlebot: 200,
+`application/xml`, XML válido) y ese estado se corrige solo cuando Google
+reintenta. Las dos URL se enviaron a indexar a mano.
+
 **Lo que falta, y es lo que de verdad decide:**
 
 1. **Dar de alta el sitio en Google Search Console** y enviar el sitemap. Sin
