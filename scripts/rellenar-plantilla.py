@@ -142,7 +142,7 @@ plan = [
     ('In this part it is necessary', bloques['IV. RESULTS'],    CUERPO_PT),
     ('The results should show',      [],                             None),
     ('Article Evaluation Criteria',
-     ["Evaluation criteria and the site's response to each."],          9),
+     ["Website evaluation criteria and the site's response to each."],          9),
     ('After the event',              bloques['V. CLOSING REMARKS'], CUERPO_PT),
     ('This is the time to reason',   bloques['VI. CONCLUSIONS'], CUERPO_PT),
     ('R9 SAC Team',                  REFS,                              9),

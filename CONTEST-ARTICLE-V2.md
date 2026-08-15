@@ -12,8 +12,11 @@
 > **qué pregunta del visitante responde**.
 >
 > También sigue la plantilla más de cerca: la Tabla 1 usa los criterios de
-> evaluación que la propia plantilla imprime, y frente a cada uno pone lo que el
-> sitio ofrece.
+> evaluación del sitio —los de la Tabla 1 de las bases, no los que imprime la
+> plantilla, que trae mal el nombre del primero— y frente a cada uno pone lo que
+> el sitio ofrece.
+>
+> Qué se entrega y qué no (spoiler: el código no), en `CONTEST-ENTREGA.md`.
 >
 > **Son 2.689 palabras**, prácticamente las mismas que la primera (2.730). No es
 > más corta: lo que se fue en promesas volvió en contenido. Sigue apretando
@@ -301,13 +304,13 @@ Table 1
 
 | Criteria | Points | What the site provides |
 | :--- | :---: | :--- |
-| Content Strategy and Relevance | 40 | 8 opportunities with official marks and links, 6 IEEE tools, 10 chapters and affinity groups, 6 officers, 10 sourced milestones, membership cost stated up front |
+| Content and Opportunities | 40 | 8 opportunities with official marks and links, 6 IEEE tools, 10 chapters and affinity groups, 6 officers, 10 sourced milestones, membership cost stated up front |
 | Branding and IEEE Identity | 20 | IEEE Brand Identity Guidelines Q1 2025: exact palette on IEEE Blue #00629B, Open Sans, Adobe Caslon Pro, official branch and chapter lockups |
 | Information Accessibility and Navigation | 15 | Fixed section spine with position indicator, separate page links, full keyboard navigation, contrast measured at 5.23:1 |
 | Member Engagement and Recruitment | 15 | Price before the pitch, three ways to join in one place, a named contact for every officer |
 | Technical Quality and Accessibility | 10 | ~350 kB from a single origin, responsive from 320 px, no cookies and no third-party request, prefers-reduced-motion honoured |
 
-*Evaluation criteria and the site's response to each.*
+*Website evaluation criteria and the site's response to each.*
 
 ## V. CLOSING REMARKS
 

@@ -95,7 +95,7 @@ for clave in ORDEN[4:]:
                 cr = cp.add_run(txt)
                 cr.font.size, cr.font.name = Pt(9), 'Times New Roman'
                 cr.bold = (i == 0)
-        p("Evaluation criteria and the site's response to each.",
+        p("Website evaluation criteria and the site's response to each.",
           size=9, italic=True, align=C)
 
 d.save(os.path.join(BASE, 'CONTEST-ARTICLE-V2.docx'))
@@ -112,7 +112,7 @@ for clave in ['ABSTRACT', 'KEYWORDS'] + ORDEN[4:]:
         out += ['Table 1', '']
         for fila in tabla:
             out += [' | '.join(fila)]
-        out += ['', "Evaluation criteria and the site's response to each.", '']
+        out += ['', "Website evaluation criteria and the site's response to each.", '']
 io.open(os.path.join(BASE, 'CONTEST-ARTICLE-V2.txt'), 'w', encoding='utf-8')\
   .write('\n'.join(out))
 
