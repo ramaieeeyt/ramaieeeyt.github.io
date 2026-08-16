@@ -50,7 +50,7 @@ y de OU Analytics. Las bases dicen (§10) que **puedes mandarlos a
   · estrategia de contenido con las oportunidades · branding y comunicación ·
   mantenimiento y mejoras futuras
 
-Los cinco puntos están cubiertos en la versión 2: I, IV, IV, II y V.
+Los cinco puntos están cubiertos en la versión 3, por ese orden: I, IV, IV, II y V.
 
 ## Cómo se puntúa
 
