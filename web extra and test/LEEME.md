@@ -8,11 +8,15 @@ registro de mantenimiento de la web.
 
 ```
 web extra and test/
-└── concurso/
-    ├── CONTEST-ARTICLE-V3-PLANTILLA.docx  ← el artículo, lo que se entrega
-    ├── CONTEST-ARTICLE-V3.md              ← ese mismo texto, de referencia
-    ├── CONTEST-ENTREGA.md                 ← qué se sube y qué no, leído del PDF
-    └── CONTEST-VIDEO-SCRIPT.md            ← el guion del vídeo de 3 minutos
+├── concurso/
+│   ├── CONTEST-ARTICLE-V3-PLANTILLA.docx  ← el artículo, lo que se entrega
+│   ├── CONTEST-ARTICLE-V3.md              ← ese mismo texto, de referencia
+│   ├── CONTEST-ENTREGA.md                 ← qué se sube y qué no, leído del PDF
+│   └── CONTEST-VIDEO-SCRIPT.md            ← el guion del vídeo de 3 minutos
+└── rodaje/                    ← el recorrido automático `?demo`, ya retirado
+    ├── rodaje.js              ← initDemo() e initCine()
+    ├── rodaje.css             ← el cronómetro y el cursor dibujado
+    └── espejos-is-cursor.css  ← las 20 reglas gemelas de :hover
 ```
 
 ## Por qué está separado
@@ -41,9 +45,9 @@ habría sido romper la prueba.
 
 De aquí en adelante sí queda separado.
 
-## Lo que NO está aquí
+## El modo de rodaje también salió
 
-El modo demo del vídeo (`?demo` y `?demo=cine`) sigue dentro de `js/main.js`,
-porque es código que se ejecuta en la página. Sacarlo es un cambio en el sitio en
-vivo y se hace **cuando el vídeo esté grabado**, no antes: es la herramienta con
-la que se graba.
+`?demo` y `?demo=cine` vivían dentro de `js/main.js` y `css/style.css`. Con el
+vídeo ya grabado se retiraron: 205 líneas de JavaScript, 31 de CSS y 20 reglas
+gemelas `.is-cursor`. El código está en `rodaje/`, con instrucciones para volver
+a montarlo. La página quedó comprobada después, sección por sección.

@@ -1,0 +1,21 @@
+.opp:hover,.opp.is-cursor{background:var(--paper-2)}
+.opp:hover::before,.opp.is-cursor::before{transform:scaleX(1)}
+.opp:hover .opp__cover img,.opp.is-cursor .opp__cover img{transform:scale(1.04)}
+.opp:hover .opp__go,.opp.is-cursor .opp__go{color:var(--c)}
+.opp:hover .opp__go i,.opp.is-cursor .opp__go i{transform:translate(3px,-3px)}
+.recurso:hover,.recurso.is-cursor{background:var(--paper-2)}
+.recurso:hover .recurso__go i,.recurso.is-cursor .recurso__go i{transform:translate(3px,-3px)}
+.cap:hover,.cap.is-cursor{background:var(--paper);border-color:var(--rule)}
+.cap:hover .cap__logo img,.cap.is-cursor .cap__logo img{transform:scale(1.06)}
+.cap:hover .cap__d,.cap.is-cursor .cap__d{max-height:9rem;opacity:1}
+.subpage--dark .cap:hover,.subpage--dark .cap.is-cursor{background:#fff;border-color:rgba(255,255,255,.34)}
+.capsdoor:hover,.capsdoor.is-cursor{background:var(--paper-2);border-color:var(--ieee-blue)}
+.capsdoor:hover .capsdoor__marks img,.capsdoor.is-cursor .capsdoor__marks img{transform:translateY(-3px)}
+.capsdoor:hover .capsdoor__go i,.capsdoor.is-cursor .capsdoor__go i{transform:translateX(4px)}
+.member:hover .member__frame img,.member.is-cursor .member__frame img{filter:grayscale(0) contrast(1);transform:scale(1.06)}
+.member:hover .member__frame::after,.member.is-cursor .member__frame::after{opacity:1}
+.member:hover .member__quote,.member.is-cursor .member__quote{opacity:1;transform:none}
+.member:hover .member__ig,.member.is-cursor .member__ig{color:var(--ieee-blue)}
+.tile:hover img,.tile.is-cursor img{transform:scale(1.035)}
+.tile:hover figcaption,.tile.is-cursor figcaption{opacity:1;transform:none}
+   `:hover` que hace falta tiene al lado su espejo `.is-cursor`. */

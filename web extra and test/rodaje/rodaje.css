@@ -1,0 +1,31 @@
+/* cronómetro del modo demo (?demo) — solo visible al grabar */
+.demo-hud{
+  position:fixed;z-index:100;right:14px;bottom:14px;
+  background:var(--ieee-blue);color:#fff;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;
+  padding:.42rem .8rem;border-radius:999px;pointer-events:none;
+}
+.demo-hud.is-over{background:var(--ieee-red)}
+/* --------------------------------------------- 15b. CURSOR DE RODAJE
+   Solo existe con `?demo=cine`. Un puntero dibujado que recorre la página
+   sola, para grabar el vídeo del concurso sin que se vea el ratón real
+   temblando. Como CSS no deja disparar `:hover` desde JS, cada regla de
+   `:hover` que hace falta tiene al lado su espejo `.is-cursor`. */
+.cursor{
+  position:fixed;left:0;top:0;z-index:200;pointer-events:none;
+  width:26px;height:26px;
+  transform:translate3d(-100px,-100px,0);
+  transition:transform 1.05s cubic-bezier(.33,.1,.2,1);
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));
+}
+.cursor svg{display:block;width:100%;height:100%}
+/* el clic: un anillo que se abre y se apaga */
+.cursor__eco{
+  position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;
+  border:2px solid var(--ieee-cyan);border-radius:50%;opacity:0;
+}
+.cursor.is-click .cursor__eco{animation:eco .5s var(--ease-out)}
+@keyframes eco{
+  from{transform:scale(.4);opacity:.9}
+  to  {transform:scale(3.4);opacity:0}
+}
