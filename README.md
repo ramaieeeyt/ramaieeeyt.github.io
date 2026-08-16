@@ -57,6 +57,11 @@ IEEE YT webpage/
 ├── js/
 │   ├── ascii.js            ← el motor ASCII medieval + el icono de Yachay
 │   └── main.js             ← CONTENIDO EDITABLE + interacciones
+├── concurso/               ← el concurso R9, aparte de la web
+│   ├── CONTEST-ARTICLE-V3-PLANTILLA.docx  ← lo que se entrega
+│   ├── CONTEST-ARTICLE-V3.md              ← ese texto, de referencia
+│   ├── CONTEST-ENTREGA.md                 ← qué se sube y qué no
+│   └── CONTEST-VIDEO-SCRIPT.md            ← el guion del vídeo
 └── assets/
     ├── logo/               ← lockup oficial de la Rama (ieee-yt-*.png) +
     │                         IEEE Master Brand en azul, negro, blanco y currentColor
