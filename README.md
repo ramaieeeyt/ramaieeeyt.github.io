@@ -57,11 +57,6 @@ IEEE YT webpage/
 ├── js/
 │   ├── ascii.js            ← el motor ASCII medieval + el icono de Yachay
 │   └── main.js             ← CONTENIDO EDITABLE + interacciones
-├── concurso/               ← el concurso R9, aparte de la web
-│   ├── CONTEST-ARTICLE-V3-PLANTILLA.docx  ← lo que se entrega
-│   ├── CONTEST-ARTICLE-V3.md              ← ese texto, de referencia
-│   ├── CONTEST-ENTREGA.md                 ← qué se sube y qué no
-│   └── CONTEST-VIDEO-SCRIPT.md            ← el guion del vídeo
 └── assets/
     ├── logo/               ← lockup oficial de la Rama (ieee-yt-*.png) +
     │                         IEEE Master Brand en azul, negro, blanco y currentColor
@@ -76,7 +71,13 @@ IEEE YT webpage/
         └── call-for-volunteers.jpg   ← fondo de «Únete a la Rama»
 
 LOGOS IEEE YT/             ← tus originales a 5000 px (fuente, no la usa el sitio)
+web extra and test/        ← todo lo que NO es la página: concurso, artículo,
+                             guion del vídeo. Ver su propio LEEME.md
 ```
+
+Lo de `web extra and test/` está aparte a propósito. Esta carpeta es la web, y su
+historial debería leerse como el historial de la web: qué se cambió de la página
+y por qué. Los papeles del concurso viven al lado, no dentro.
 
 Los logos que usa la página salen de ahí, recortados al alfa y exportados a
 tamaño web: `ieee-yt-blue.png` (ficha de «Qué es la Rama»), `ieee-yt-white.png`

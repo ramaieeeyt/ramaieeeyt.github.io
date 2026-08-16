@@ -292,8 +292,8 @@ La **marginalia izquierda** se oculta en escritorio — el lomo ocupa ese margen
   Profesional; el bloqueo es que el registro de desarrollador de Meta pide
   SMS a un número ecuatoriano y el usuario está en EE. UU.
 - **Concurso R9 Student Website 2026**. El artículo es
-  `concurso/CONTEST-ARTICLE-V3-PLANTILLA.docx`: la plantilla oficial con el texto ya
-  dentro, y **es el fichero que se entrega**. `concurso/CONTEST-ARTICLE-V3.md` guarda ese
+  `web extra and test/concurso/CONTEST-ARTICLE-V3-PLANTILLA.docx`: la plantilla oficial con el texto ya
+  dentro, y **es el fichero que se entrega**. `web extra and test/concurso/CONTEST-ARTICLE-V3.md` guarda ese
   mismo texto como referencia, pero **ya no se genera uno del otro** — los
   scripts que lo hacían (`scripts/articulo.py` y `scripts/plantilla.py`) se
   borraron el 16-08-2026, con el .docx ya terminado. Si algún año hay que
@@ -302,8 +302,8 @@ La **marginalia izquierda** se oculta en escritorio — el lomo ocupa ese margen
   segunda las quitó, y la tercera está escrita contra los cinco puntos que pide
   §3.2 de las bases. Las dos primeras se borraron el 16-08-2026 a petición de
   Andrés; si hacen falta, están en el historial (`git log --diff-filter=D`).
-  Qué se entrega y qué no, en `concurso/CONTEST-ENTREGA.md` — **el código no se entrega**.
-  `concurso/CONTEST-VIDEO-SCRIPT.md` listo, **video sin grabar**. Faltan las capturas.
+  Qué se entrega y qué no, en `web extra and test/concurso/CONTEST-ENTREGA.md` — **el código no se entrega**.
+  `web extra and test/concurso/CONTEST-VIDEO-SCRIPT.md` listo, **video sin grabar**. Faltan las capturas.
 
 ---
 
