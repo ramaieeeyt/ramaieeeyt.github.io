@@ -20,7 +20,7 @@ Lo que sí se sube (§8, *Checklist of contest documents*):
 | 3 | El plan enviado en **2026 Student Branch Reporting** | lo tienes que sacar tú |
 | 4 | **Una fotografía** que represente a la Rama | tienes de sobra |
 | 5 | La **URL** del sitio | `https://ramaieeeyt.github.io` |
-| 6 | La **documentación** = el artículo en PDF | `CONTEST-ARTICLE-V2-PLANTILLA.docx` → PDF |
+| 6 | La **documentación** = el artículo en PDF | `CONTEST-ARTICLE-V3-PLANTILLA.docx` → PDF |
 
 Y opcionalmente el **vídeo**, como enlace público. No es un archivo que se suba:
 es un enlace a YouTube, Drive, OneDrive o Vimeo.

@@ -291,9 +291,16 @@ La **marginalia izquierda** se oculta en escritorio — el lomo ocupa ese margen
   **No activa** — falta el secret `IG_TOKEN`. La cuenta @ramaieeeyt ya es
   Profesional; el bloqueo es que el registro de desarrollador de Meta pide
   SMS a un número ecuatoriano y el usuario está en EE. UU.
-- **Concurso R9 Student Website 2026**: `CONTEST-ARTICLE.md` listo (faltan dos
-  correos y tres capturas). `CONTEST-VIDEO-SCRIPT.md` listo, **video sin
-  grabar**. Cierre era el 3 de agosto — confirmar si se envió.
+- **Concurso R9 Student Website 2026**. El artículo es
+  `CONTEST-ARTICLE-V3.md`, y `CONTEST-ARTICLE-V3-PLANTILLA.docx` es la plantilla
+  oficial con ese texto ya dentro — se regenera con
+  `python3 scripts/plantilla.py CONTEST-ARTICLE-V3.md`. **Hubo tres versiones y
+  se quedó la tercera**: la primera vendía cosas que no están en la página, la
+  segunda las quitó, y la tercera está escrita contra los cinco puntos que pide
+  §3.2 de las bases. Las dos primeras se borraron el 16-08-2026 a petición de
+  Andrés; si hacen falta, están en el historial (`git log --diff-filter=D`).
+  Qué se entrega y qué no, en `CONTEST-ENTREGA.md` — **el código no se entrega**.
+  `CONTEST-VIDEO-SCRIPT.md` listo, **video sin grabar**. Faltan las capturas.
 
 ---
 

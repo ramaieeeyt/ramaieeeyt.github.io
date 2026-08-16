@@ -269,13 +269,21 @@ had to be invented, and none can fall out of date. The project also used no
 budget, which matters for replication: any branch in the Region can reproduce it
 without asking its section for funding.
 
-Future improvements. Three are planned. Published records of branch activities
-will be added to the Archive as they occur. An upcoming-events section will be
-generated from the branch's own IEEE vTools Events records by a scheduled job, so
-that it stays current without anyone remembering to update it — and renders
-nothing when there is nothing to show, rather than displaying an empty calendar.
-Synchronization of the Archive with the branch's Instagram account is written and
-waits only on an access token.
+Future improvements. Four are planned, and they share one condition: nothing is
+published that cannot keep itself current. An upcoming-events section will be
+generated from the branch's own IEEE vTools Events records by a scheduled job,
+so that it stays accurate without anyone remembering to update it, and renders
+nothing when there is nothing to show rather than displaying an empty calendar.
+Synchronization with the branch's Instagram account — already written, waiting
+only on an access token — will feed both that section and the Archive with the
+images the branch already publishes, stored as repository files so that they
+outlive the expiry of Instagram's signed URLs. HERBIEEE, a section collecting
+the branch's own visual culture, is built and stays hidden until there is enough
+material to justify a section rather than a placeholder. Last, a short student
+magazine: Section II records that a blog was left out because we had no
+sustainable way to keep it honest, and that remains the condition — a named
+editor in each administration and a fixed cadence come before the first issue,
+not after it.
 ```
 
 ## VI. CONCLUSIONS
