@@ -92,6 +92,16 @@ hubiera añadido después. Cae dentro de §4.4, así que por posición elimina, 
 conviene saber que la redacción no lo dice. Para lo que tienes que hacer da
 igual: en las dos lecturas la plantilla es obligatoria.
 
+**Y es la plantilla del artículo, no de la web.** «Template» sale cuatro veces en
+todo el documento y las tres primeras dicen cuál: §3.2 «the **report** must
+follow the template», §4.3.2 «the **document** must follow the template» y «it
+must be in **IEEE format**, according to the template». La cuarta es esta, y no
+tiene otro referente posible. Del sitio, §3.1 dice justo lo contrario: *«Websites
+hosted on IEEE domains, institutional domains, or independent domains are all
+eligible. The use of an IEEE domain is not mandatory.»* No aparece ni
+«WebInABox» ni «website template» en ninguna parte: la web se monta como uno
+quiera.
+
 > ⚠️ **Pasarse de 4 páginas sale en las dos listas**: en §4.4 como eliminación y
 > en §4.5 como −5 puntos por página. Las bases se contradicen. Trátalo como
 > eliminación y no te acerques al límite.
