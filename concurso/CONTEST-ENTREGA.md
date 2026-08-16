@@ -82,8 +82,15 @@ Te eliminan si:
 - **la documentación no está en inglés**;
 - **el informe pasa de cuatro páginas**;
 - el contenido es inapropiado, engañoso o no original, o viola propiedad
-  intelectual;
-- **no usas la plantilla oficial**.
+  intelectual.
+
+Y cierra la lista una octava viñeta que **no está redactada como condición sino
+como regla**: *«The use of the official template is mandatory.»* Las siete
+primeras dicen «si pasa X»; esta dice «es obligatorio». Además la séptima cierra
+con punto y no con punto y coma, como si la lista acabara ahí y la frase se
+hubiera añadido después. Cae dentro de §4.4, así que por posición elimina, pero
+conviene saber que la redacción no lo dice. Para lo que tienes que hacer da
+igual: en las dos lecturas la plantilla es obligatoria.
 
 > ⚠️ **Pasarse de 4 páginas sale en las dos listas**: en §4.4 como eliminación y
 > en §4.5 como −5 puntos por página. Las bases se contradicen. Trátalo como
