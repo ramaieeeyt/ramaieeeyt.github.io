@@ -292,9 +292,12 @@ La **marginalia izquierda** se oculta en escritorio — el lomo ocupa ese margen
   Profesional; el bloqueo es que el registro de desarrollador de Meta pide
   SMS a un número ecuatoriano y el usuario está en EE. UU.
 - **Concurso R9 Student Website 2026**. El artículo es
-  `CONTEST-ARTICLE-V3.md`, y `CONTEST-ARTICLE-V3-PLANTILLA.docx` es la plantilla
-  oficial con ese texto ya dentro — se regenera con
-  `python3 scripts/plantilla.py CONTEST-ARTICLE-V3.md`. **Hubo tres versiones y
+  `CONTEST-ARTICLE-V3-PLANTILLA.docx`: la plantilla oficial con el texto ya
+  dentro, y **es el fichero que se entrega**. `CONTEST-ARTICLE-V3.md` guarda ese
+  mismo texto como referencia, pero **ya no se genera uno del otro** — los
+  scripts que lo hacían (`scripts/articulo.py` y `scripts/plantilla.py`) se
+  borraron el 16-08-2026, con el .docx ya terminado. Si algún año hay que
+  rehacer el montaje, están en el historial. **Hubo tres versiones y
   se quedó la tercera**: la primera vendía cosas que no están en la página, la
   segunda las quitó, y la tercera está escrita contra los cinco puntos que pide
   §3.2 de las bases. Las dos primeras se borraron el 16-08-2026 a petición de

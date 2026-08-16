@@ -1,11 +1,15 @@
-# IEEE R9 Student Website Contest 2026 — Article, third version
+# IEEE R9 Student Website Contest 2026 — Article
 
-> **Tercera versión. Las dos anteriores siguen intactas.** Entrega solo una.
+> **Lo que se entrega es `CONTEST-ARTICLE-V3-PLANTILLA.docx`.** Este archivo es
+> el texto de referencia: para acordarse de por qué dice lo que dice, y para
+> tener de dónde copiar si hay que rehacer algo en Word. Si editas aquí, el
+> .docx **no** se entera: los cambios hay que hacerlos también allí.
 >
-> **Qué cambia:** está escrita contra los **cinco puntos que las bases piden**
-> para la documentación (§3.2), en este orden y con esas mismas palabras al
-> principio de cada bloque, para que un jurado que va tachando la lista los
-> encuentre sin buscar:
+> Fue la tercera de tres versiones. La primera vendía cosas que no están en la
+> página, la segunda las quitó, y esta se reescribió contra los **cinco puntos
+> que las bases piden** para la documentación (§3.2), en ese orden y con esas
+> mismas palabras al principio de cada bloque, para que un jurado que va
+> tachando la lista los encuentre sin buscar:
 >
 > | Lo que piden las bases | Dónde está |
 > |---|---|
@@ -22,18 +26,22 @@
 > como ejemplo** —becas, travel grants, concursos, eventos, voluntariado y
 > programas IEEE— porque nuestras ocho tarjetas las cubren todas.
 >
-> **2.109 palabras**, frente a 2.689 de la segunda: **un 22 % menos**. Lo que se
-> recortó fue la Sección III, que cuenta las dificultades y **no es ninguno de
-> los cinco puntos**: pasó de 517 palabras a 237. Lo que las bases sí piden
-> creció o se quedó igual.
+> **2.209 palabras**, frente a 2.689 de la segunda: **un 18 % menos**. Casi todo
+> el recorte salió de la Sección III, que cuenta las dificultades y **no es
+> ninguno de los cinco puntos**: pasó de 517 palabras a 237. Lo que las bases sí
+> piden creció o se quedó igual.
 >
-> Si con la segunda te salían 5 páginas, esta debería caer sobre **3,9**. Sigue
-> siendo justo, así que al final tienes una lista de recortes medida, ordenada
-> de lo que menos duele a lo que más.
+> Si con la segunda salían 5 páginas, esta debería caer sobre **4,0**. Va justo,
+> así que al final tienes una lista de recortes medida, ordenada de lo que menos
+> duele a lo que más.
 >
-> `CONTEST-ARTICLE-V3-PLANTILLA.docx` es la plantilla oficial con este texto ya
-> dentro. Ábrela, mete las capturas y exporta a PDF. Se regenera con
-> `python3 scripts/plantilla.py CONTEST-ARTICLE-V3.md`.
+> **Del formato de la plantilla**, por si hay que rehacerlo: es **A4** a dos
+> columnas de 3,42″, y su cuerpo viene a **12 pt**, que es lo que hacía que
+> salieran seis páginas. En el .docx entregado el cuerpo está a **10 pt** —el
+> estándar de artículo IEEE, y el que la propia plantilla usa en su resumen— y el
+> margen inferior del cuerpo bajó de 3,00″ a 1,14″, igualándolo al superior,
+> porque la plantilla se contradecía a sí misma. Títulos a 12 pt negrita y
+> referencias a 9 pt, como venían.
 
 ---
 
