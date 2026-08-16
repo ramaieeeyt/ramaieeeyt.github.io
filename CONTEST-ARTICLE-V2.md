@@ -23,12 +23,12 @@
 > contra el tope de 4 páginas, así que al final tienes una **lista de recortes
 > por orden** para cuando veas el PDF montado.
 >
-> Los tres archivos salen de este `.md` con `scripts/articulo-v2.py`. Si cambias
-> el texto, vuelve a lanzarlo y se regeneran el `.docx` y el `.txt`.
+> Los tres archivos salen de este `.md` con `scripts/articulo.py`. Si cambias
+> el texto, lanza `python3 scripts/articulo.py CONTEST-ARTICLE-V2.md` y se regeneran el `.docx` y el `.txt`.
 
 **Cómo usar este archivo:** ya no hace falta pegar nada.
 `CONTEST-ARTICLE-V2-PLANTILLA.docx` **es la plantilla oficial con este texto
-dentro**, hecha con `scripts/rellenar-plantilla.py`. Ábrela, mete tus capturas y
+dentro**, hecha con `python3 scripts/plantilla.py CONTEST-ARTICLE-V2.md`. Ábrela, mete tus capturas y
 exporta a PDF. Los otros dos formatos (`.docx` suelto y `.txt`) siguen ahí por si
 prefieres pegar a mano.
 
@@ -55,7 +55,7 @@ páginas. Los dos culpables son ese 12 pt y ese margen inferior de tres pulgadas
 que se come un cuarto de cada página y que además **la plantilla se contradice a
 sí misma**: arriba deja 1,14″ y abajo 3,00″.
 
-`rellenar-plantilla.py` corrige las dos cosas:
+`scripts/plantilla.py` corrige las dos cosas:
 
 - **cuerpo a 10 pt**, que es el estándar de artículo IEEE y el que la propia
   plantilla ya usa en su resumen. Los títulos se quedan en 12 pt negrita y las

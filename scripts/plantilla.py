@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Mete el texto de CONTEST-ARTICLE-V2.md dentro de la plantilla oficial.
+"""Mete el texto de un .md del articulo dentro de la plantilla oficial.
 
 Conserva la plantilla tal cual —A4, dos columnas, sus estilos, su tabla, su
 hueco de figura— y solo cambia el texto de relleno por el nuestro. Así el
@@ -9,15 +9,15 @@ Lo único que toca del formato es el tamaño del cuerpo: la plantilla trae 12 pt
 y eso son 6 páginas. Se baja a 10 pt, que es el estándar de artículo IEEE y el
 que la propia plantilla usa en su resumen.
 
-    python3 scripts/rellenar-plantilla.py [plantilla.docx] [salida.docx]
+    python3 scripts/plantilla.py CONTEST-ARTICLE-V3.md [plantilla.docx]
 """
 import io, os, re, sys, shutil, zipfile, tempfile
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PLANTILLA = sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser(
+MD = sys.argv[1] if len(sys.argv) > 1 else 'CONTEST-ARTICLE-V3.md'
+PLANTILLA = sys.argv[2] if len(sys.argv) > 2 else os.path.expanduser(
     '~/Downloads/IEEE Website Contest - Article - Template.docx')
-SALIDA = sys.argv[2] if len(sys.argv) > 2 else os.path.join(
-    BASE, 'CONTEST-ARTICLE-V2-PLANTILLA.docx')
+SALIDA = os.path.join(BASE, os.path.splitext(os.path.basename(MD))[0] + '-PLANTILLA.docx')
 CUERPO_PT = 10          # tamaño del cuerpo; la plantilla trae 12
 
 # La plantilla deja el margen inferior del cuerpo en 4320 twips (3 pulgadas)
@@ -27,7 +27,7 @@ CUERPO_PT = 10          # tamaño del cuerpo; la plantilla trae 12
 MARGEN_INFERIOR = 1641
 
 # ------------------------------------------------------------ el texto
-src = io.open(os.path.join(BASE, 'CONTEST-ARTICLE-V2.md'), encoding='utf-8').read()
+src = io.open(os.path.join(BASE, MD), encoding='utf-8').read()
 
 bloques = {}
 for m in re.finditer(r'^## (.+?)\n(.*?)(?=^## |\Z)', src, re.S | re.M):
@@ -197,6 +197,7 @@ for raiz, _, ficheros in os.walk(tmp):
 zf.close()
 shutil.rmtree(tmp)
 
+print('fuente  :', MD)
 print('escrito :', os.path.basename(SALIDA))
 print('cuerpo  :', CUERPO_PT, 'pt (la plantilla trae 12)')
 print('margen  :', ('inferior %d twips (la plantilla trae 4320)' % MARGEN_INFERIOR)

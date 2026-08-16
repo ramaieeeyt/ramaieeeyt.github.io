@@ -1,13 +1,18 @@
 # -*- coding: utf-8 -*-
-"""CONTEST-ARTICLE-V2.md -> .docx + .txt, solo los bloques en ingles."""
-import io, re, os
+"""Un .md del articulo -> .docx + .txt, solo los bloques en ingles.
+
+    python3 scripts/articulo.py CONTEST-ARTICLE-V3.md
+"""
+import io, re, os, sys
 from docx import Document
 from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 
-BASE = '/Users/dez/Desktop/IEEE YT webpage'
-src  = io.open(os.path.join(BASE, 'CONTEST-ARTICLE-V2.md'), encoding='utf-8').read()
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MD   = sys.argv[1] if len(sys.argv) > 1 else 'CONTEST-ARTICLE-V3.md'
+RAIZ = os.path.join(BASE, os.path.splitext(os.path.basename(MD))[0])
+src  = io.open(os.path.join(BASE, MD), encoding='utf-8').read()
 
 ORDEN = ['TÍTULO', 'BLOQUE DE AUTORES', 'ABSTRACT', 'KEYWORDS',
          'I. INTRODUCTION', 'II. METHODOLOGY', 'III. IMPLEMENTATION',
@@ -98,7 +103,7 @@ for clave in ORDEN[4:]:
         p("Website evaluation criteria and the site's response to each.",
           size=9, italic=True, align=C)
 
-d.save(os.path.join(BASE, 'CONTEST-ARTICLE-V2.docx'))
+d.save(RAIZ + '.docx')
 
 # ============================================================ TXT
 out = []
@@ -113,10 +118,10 @@ for clave in ['ABSTRACT', 'KEYWORDS'] + ORDEN[4:]:
         for fila in tabla:
             out += [' | '.join(fila)]
         out += ['', "Website evaluation criteria and the site's response to each.", '']
-io.open(os.path.join(BASE, 'CONTEST-ARTICLE-V2.txt'), 'w', encoding='utf-8')\
-  .write('\n'.join(out))
+io.open(RAIZ + '.txt', 'w', encoding='utf-8').write('\n'.join(out))
 
 palabras = sum(len(x.split()) for k in ORDEN for x in bloques[k])
+print('fuente   :', MD)
 print('bloques  :', len(bloques))
 print('palabras :', palabras)
 print('tabla    :', len(tabla), 'filas')
