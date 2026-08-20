@@ -21,59 +21,274 @@
 
 var CAPS = {
 
-  /* --------------------------------------------------------- COMPUTER SOCIETY
-     Esta entrada está completa a propósito: sirve de modelo. Lo que lleva
-     [POR CONFIRMAR] es texto de relleno que hay que sustituir — no lo publiques
-     tal cual. */
   'computer-society': {
+    t:     'IEEE Computer Society',
+    corto: 'Computer Society',
+    k:     'Capítulo técnico',
+    img:   'computer-society.png',
+    u:     'https://www.computer.org/',
+    color: 'var(--ieee-cyan)',
+    lede:  'Computación, software, inteligencia artificial, ciberseguridad y arquitectura del computador.',
 
-    /* --- identidad: esto ya existe y está verificado --- */
-    t:      'IEEE Computer Society',
-    corto:  'Computer Society',
-    k:      'Capítulo técnico',
-    img:    'computer-society.png',
-    u:      'https://www.computer.org/',
-    color:  'var(--ieee-cyan)',
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
 
-    /* --- una frase, la que va bajo el nombre en la portada --- */
-    lede:   'Computación, software, inteligencia artificial, ciberseguridad y ' +
-            'arquitectura del computador.',
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
+  },
 
-    /* --- qué somos: uno o dos párrafos --- */
-    resumen: [
-      '[POR CONFIRMAR] Qué es el capítulo dentro de la Rama, desde cuándo ' +
-      'funciona y a quién se dirige. Dos o tres frases bastan.',
-      '[POR CONFIRMAR] Qué lo diferencia: en qué trabaja la gente que está ' +
-      'aquí y qué se lleva alguien que entre.'
-    ],
+  'embs': {
+    t:     'IEEE EMBS',
+    corto: 'EMBS',
+    k:     'Capítulo técnico',
+    img:   'embs.png',
+    u:     'https://www.embs.org/',
+    color: 'var(--ieee-red)',
+    lede:  'Bioingeniería: dispositivos médicos, neurociencias y procesamiento de señales fisiológicas.',
 
-    /* --- qué hacemos: tarjetas cortas. Tres o cuatro, no más --- */
-    hacemos: [
-      { t:'[POR CONFIRMAR]', d:'Una línea explicando la actividad.' },
-      { t:'[POR CONFIRMAR]', d:'Una línea explicando la actividad.' },
-      { t:'[POR CONFIRMAR]', d:'Una línea explicando la actividad.' }
-    ],
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
 
-    /* --- la directiva del capítulo. Vacío = no se dibuja la sección ---
-       `f` es el archivo de foto en assets/img/capitulos/directivas/, opcional:
-       sin foto sale la inicial sobre el color del capítulo. */
-    board: [
-      { name:'[POR CONFIRMAR]', role:'Chair',      ig:'', f:'' },
-      { name:'[POR CONFIRMAR]', role:'Vice Chair', ig:'', f:'' }
-    ],
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
+  },
 
-    /* --- trayectoria. Cada hito necesita FUENTE, como en la portada ---
-       tag: 'hito' | 'premio' | 'encuentro' */
-    timeline: [
-      { y:'[AÑO]', t:'[POR CONFIRMAR]', tag:'hito',
-        d:'Qué pasó, en una o dos frases.',
-        fuente:'de dónde sale este dato — sin fuente, no va' }
-    ],
+  'eps': {
+    t:     'IEEE Electronics Packaging Society',
+    corto: 'Electronics Packaging',
+    k:     'Capítulo técnico',
+    img:   'eps.png',
+    u:     'https://eps.ieee.org/',
+    color: 'var(--ieee-orange)',
+    lede:  'Microchips, ensamblaje, empaque y manufactura electrónica — el hardware que todo lo demás da por sentado.',
 
-    /* --- fotos. Van en assets/img/capitulos/computer-society/ --- */
-    fotos: []
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
+  },
+
+  'cas': {
+    t:     'IEEE Circuits and Systems Society',
+    corto: 'Circuits and Systems',
+    k:     'Capítulo técnico',
+    img:   'cas.png',
+    u:     'https://ieee-cas.org/',
+    color: 'var(--ieee-purple)',
+    lede:  'Diseño de circuitos, nanoelectrónica y teoría de redes.',
+
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
+  },
+
+  'ras': {
+    t:     'IEEE Robotics and Automation Society',
+    corto: 'Robotics and Automation',
+    k:     'Capítulo técnico',
+    img:   'ras.png',
+    u:     'https://www.ieee-ras.org/',
+    color: 'var(--ieee-teal)',
+    lede:  'Robótica, automatización, manufactura avanzada y drones.',
+
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
+  },
+
+  'grss': {
+    t:     'IEEE Geoscience and Remote Sensing',
+    corto: 'Geoscience and Remote Sensing',
+    k:     'Capítulo técnico',
+    img:   'grss.png',
+    u:     'https://www.grss-ieee.org/',
+    color: 'var(--ieee-green)',
+    lede:  'Teledetección, SIG, observación de la Tierra y sensores satelitales.',
+
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
+  },
+
+  'cis': {
+    t:     'IEEE Computational Intelligence Society',
+    corto: 'Computational Intelligence',
+    k:     'Capítulo técnico',
+    img:   'cis.png',
+    u:     'https://cis.ieee.org/',
+    color: 'var(--ieee-dark-teal)',
+    lede:  'Redes neuronales, lógica difusa y algoritmos evolutivos.',
+
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
+  },
+
+  'nano': {
+    t:     'IEEE Nanotechnology Council',
+    corto: 'Nanotechnology Council',
+    k:     'Capítulo técnico',
+    img:   'nano.png',
+    u:     'https://ieeenano.org/',
+    color: 'var(--ieee-dark-blue)',
+    lede:  'Nanotecnología: nanomateriales, nanodispositivos y nanomedicina.',
+
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
+  },
+
+  'wie': {
+    t:     'IEEE Women in Engineering',
+    corto: 'Women in Engineering',
+    k:     'Grupo de afinidad',
+    img:   'wie.png',
+    u:     'https://wie.ieee.org/',
+    color: 'var(--ieee-yellow)',
+    lede:  'Comunidad de mujeres en ingeniería: mentoría, divulgación y diversidad. La membresía del grupo es gratuita.',
+
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
+  },
+
+  'sight': {
+    t:     'IEEE SIGHT',
+    corto: 'SIGHT',
+    k:     'Grupo de afinidad',
+    img:   'sight.png',
+    u:     'https://sight.ieee.org/',
+    color: 'var(--ieee-dark-green)',
+    lede:  'Tecnología puesta al servicio del desarrollo humanitario y social.',
+
+    /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+
+    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
+       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
+       sería inventarlos. */
+    fotos: [
+      { f:'1.jpg' },
+      { f:'2.jpg' },
+      { f:'3.jpg' },
+      { f:'4.jpg' },
+      { f:'5.jpg' }
+    ]
   }
-
-  /* Las otras nueve se añaden aquí abajo con la misma forma. */
 
 };

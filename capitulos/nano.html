@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es-EC">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- ▼▼ LO ÚNICO QUE CAMBIA DE UNA PÁGINA DE CAPÍTULO A OTRA ▼▼ -->
+<title>IEEE Nanotechnology Council · IEEE Yachay Tech</title>
+<meta name="description" content="Capítulo IEEE Nanotechnology Council de la Rama Estudiantil IEEE de la Universidad Yachay Tech: nanotecnología: nanomateriales, nanodispositivos y nanomedicina">
+<link rel="canonical" href="https://ramaieeeyt.github.io/capitulos/nano.html">
+<meta property="og:url" content="https://ramaieeeyt.github.io/capitulos/nano.html">
+<meta property="og:title" content="IEEE Nanotechnology Council · IEEE Yachay Tech">
+<meta property="og:description" content="Nanotecnología: nanomateriales, nanodispositivos y nanomedicina.">
+<!-- ▲▲ y el data-cap del <body>, ahí abajo ▲▲ -->
+
+<meta name="theme-color" content="#00629B">
+<link rel="icon" href="../assets/logo/ieee-blue.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/logo/ieee-blue.svg">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/img/rama-general-2026.jpg">
+<meta property="og:locale" content="es_EC">
+<meta property="og:site_name" content="IEEE Yachay Tech University Student Branch">
+<link rel="stylesheet" href="../css/style.css?v=87">
+</head>
+
+<body class="cappage" data-cap="nano">
+<a class="sr-only" href="#cap-main">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="shell nav__in">
+    <a class="lockup" href="../index.html" aria-label="IEEE Yachay Tech University Student Branch — inicio">
+      <span class="lockup__mark">
+        <img class="is-light" src="../assets/logo/ieee-white.svg" alt="" aria-hidden="true">
+        <img class="is-dark"  src="../assets/logo/ieee-blue.svg"  alt="IEEE">
+      </span>
+      <span class="lockup__bar" aria-hidden="true"></span>
+      <span class="lockup__txt">
+        <b>Yachay Tech University</b>
+        <span>IEEE Student Branch</span>
+      </span>
+    </a>
+    <button class="nav__burger" id="burger" aria-label="Menú" aria-expanded="false"
+            aria-controls="nav-links"><span></span></button>
+    <nav class="nav__links" id="nav-links" aria-label="Principal">
+      <a href="../capitulos.html">Capítulos</a>
+      <a href="../index.html#directiva">Directiva</a>
+      <a href="../index.html#oportunidades">Oportunidades</a>
+      <a href="../index.html#recursos">Recursos</a>
+      <a href="../index.html#trayectoria">Trayectoria</a>
+      <a class="nav__cta" href="../index.html#unete">Únete</a>
+    </nav>
+  </div>
+</header>
+
+<!-- id="top": es lo que le dice a initNav que aquí hay un hero oscuro,
+     así la barra se comporta como en la portada. -->
+<header class="caphero" id="top"></header>
+<main id="cap-main"></main>
+
+<footer class="capfoot">
+  <div class="shell">
+    <p>Rama Estudiantil IEEE · Universidad Yachay Tech · Urcuquí, Ecuador</p>
+    <p><a href="../index.html">Volver a la Rama</a></p>
+  </div>
+</footer>
+
+<!-- orden: primero los datos, luego el renderizador que construye la página,
+     y al final los del sitio — main.js necesita el DOM ya montado para medir
+     la barra, y sus render* de la portada no hacen nada aquí. -->
+<script src="../js/capitulos-data.js?v=87"></script>
+<script src="../js/capitulo.js?v=87"></script>
+<script src="../js/ascii.js?v=87"></script>
+<script src="../js/main.js?v=87"></script>
+</body>
+</html>

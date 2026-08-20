@@ -1512,10 +1512,16 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 .caphero .volver:hover{opacity:1}
 .caphero__logo{
   display:block;width:clamp(74px,9vw,110px);margin-bottom:var(--e4);
-  background:var(--paper);border-radius:3px;padding:10px}
+  background:var(--paper);border-radius:3px;padding:10px;
+  border-bottom:3px solid var(--cap)}
 .caphero__logo img{display:block;width:100%;height:auto}
+/* El acento NO se usa como texto pequeño. Medido contra el papel #FAF9F6 y
+   contra el campo oscuro #001528, ningún color de la paleta IEEE pasa el 4,5:1
+   que pide WCAG AA en los dos sitios: el cian da 7,65 sobre oscuro pero 2,29
+   sobre papel. Así que el color identifica al capítulo en los filetes, los
+   puntos y el tinte del hero, y el texto se queda en tintas medidas. */
 .caphero__k{
-  display:block;color:var(--cap);
+  display:block;color:rgba(255,255,255,.72);
   font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
   margin-bottom:var(--e2)}
 .caphero__t{
@@ -1530,9 +1536,10 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 .capsec:first-child{border-top:0}
 .capsec__head{margin-bottom:var(--e4)}
 .capsec__k{
-  display:block;color:var(--cap);
+  display:block;color:var(--ink-60);
   font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
-  margin-bottom:var(--e1)}
+  margin-bottom:var(--e1);
+  padding-left:var(--e2);border-left:2px solid var(--cap)}
 .capsec__t{
   font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.12;
   letter-spacing:-.015em;margin:0}
@@ -1585,7 +1592,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   width:7px;height:7px;background:var(--cap);border-radius:50%}
 .captime__y{
   display:block;font-family:var(--font-caslon);font-style:italic;
-  color:var(--cap);font-size:1.05rem;margin-bottom:2px}
+  color:var(--ink);font-size:1.05rem;margin-bottom:2px}
 .captime__c h3{font-size:1.02rem;margin:0 0 var(--e1)}
 .captime__c p{margin:0;font-size:.94rem;line-height:1.6;color:var(--ink-60)}
 .captime__tag{

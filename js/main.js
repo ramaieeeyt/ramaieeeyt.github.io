@@ -164,48 +164,48 @@
     ],
 
     caps: [
-      { img:'computer-society.png', k:'Capítulo técnico', t:'IEEE Computer Society',
+      { slug:'computer-society', img:'computer-society.png', k:'Capítulo técnico', t:'IEEE Computer Society',
         d:
           'Computación, software, inteligencia artificial, ciberseguridad y ' +
           'arquitectura del computador.',
         u:'https://www.computer.org/' },
-      { img:'embs.png', k:'Capítulo técnico', t:'IEEE EMBS',
+      { slug:'embs', img:'embs.png', k:'Capítulo técnico', t:'IEEE EMBS',
         d:
           'Bioingeniería: dispositivos médicos, neurociencias y procesamiento ' +
           'de señales fisiológicas.',
         u:'https://www.embs.org/' },
-      { img:'eps.png', k:'Capítulo técnico', t:'IEEE Electronics Packaging Society',
+      { slug:'eps', img:'eps.png', k:'Capítulo técnico', t:'IEEE Electronics Packaging Society',
         d:
           'Microchips, ensamblaje, empaque y manufactura electrónica — el ' +
           'hardware que todo lo demás da por sentado.',
         u:'https://eps.ieee.org/' },
-      { img:'cas.png', k:'Capítulo técnico', t:'IEEE Circuits and Systems Society',
+      { slug:'cas', img:'cas.png', k:'Capítulo técnico', t:'IEEE Circuits and Systems Society',
         d:
           'Diseño de circuitos, nanoelectrónica y teoría de redes.',
         u:'https://ieee-cas.org/' },
-      { img:'ras.png', k:'Capítulo técnico', t:'IEEE Robotics and Automation Society',
+      { slug:'ras', img:'ras.png', k:'Capítulo técnico', t:'IEEE Robotics and Automation Society',
         d:
           'Robótica, automatización, manufactura avanzada y drones.',
         u:'https://www.ieee-ras.org/' },
-      { img:'grss.png', k:'Capítulo técnico', t:'IEEE Geoscience and Remote Sensing',
+      { slug:'grss', img:'grss.png', k:'Capítulo técnico', t:'IEEE Geoscience and Remote Sensing',
         d:
           'Teledetección, SIG, observación de la Tierra y sensores ' +
           'satelitales.',
         u:'https://www.grss-ieee.org/' },
-      { img:'cis.png', k:'Capítulo técnico', t:'IEEE Computational Intelligence Society',
+      { slug:'cis', img:'cis.png', k:'Capítulo técnico', t:'IEEE Computational Intelligence Society',
         d:
           'Redes neuronales, lógica difusa y algoritmos evolutivos.',
         u:'https://cis.ieee.org/' },
-      { img:'nano.png', k:'Capítulo técnico', t:'IEEE Nanotechnology Council',
+      { slug:'nano', img:'nano.png', k:'Capítulo técnico', t:'IEEE Nanotechnology Council',
         d:
           'Nanotecnología: nanomateriales, nanodispositivos y nanomedicina.',
         u:'https://ieeenano.org/' },
-      { img:'wie.png', k:'Grupo de afinidad', t:'IEEE Women in Engineering',
+      { slug:'wie', img:'wie.png', k:'Grupo de afinidad', t:'IEEE Women in Engineering',
         d:
           'Comunidad de mujeres en ingeniería: mentoría, divulgación y ' +
           'diversidad. La membresía del grupo es gratuita.',
         u:'https://wie.ieee.org/' },
-      { img:'sight.png', k:'Grupo de afinidad', t:'IEEE SIGHT',
+      { slug:'sight', img:'sight.png', k:'Grupo de afinidad', t:'IEEE SIGHT',
         d:
           'Tecnología puesta al servicio del desarrollo humanitario y social.',
         u:'https://sight.ieee.org/' }
@@ -289,14 +289,22 @@
        se sustituye por lo que haya traído de @ramaieeeyt. Al abrir el sitio con
        doble clic ese fetch falla (file:// bloquea la lectura) y se queda con
        esta lista, que es justo lo que queremos.                              */
+    /* El Archivo enseña los capítulos, no la directiva: la directiva ya
+       tiene su propia sección justo arriba y repetirla aquí decía que la
+       Rama son seis personas. Las portadas son las piezas que publicó
+       cada capítulo al presentar su directiva 2026. */
     archive: [
-      { f:'rama-general',                c:'Rama General · Directiva 2026' },
-      { f:'chair-ismael-cifuentes',      c:'Chair · Ismael Cifuentes' },
-      { f:'vice-chair-salome-verdugo',   c:'Vice Chair · Salomé Verdugo' },
-      { f:'secretaria-adalys-samaniego', c:'Secretaria · Adalys Samaniego' },
-      { f:'tesorero-mateo-acero',        c:'Tesorero · Mateo Acero' },
-      { f:'webmaster-andres-aveiga',     c:'Web Master · Andrés Aveiga' },
-      { f:'membresias-naomi-macanchi',   c:'Membresías · Naomi Macanchí' }
+      { f:'rama-general',   c:'La Rama al completo · 2026' },
+      { f:'cap-computer-society', c:'Computer Society · Directiva 2026' },
+      { f:'cap-embs',            c:'EMBS · Directiva 2026' },
+      { f:'cap-eps',             c:'Electronics Packaging Society · Directiva 2026' },
+      { f:'cap-cas',             c:'Circuits and Systems Society · Directiva 2026' },
+      { f:'cap-ras',             c:'Robotics and Automation Society · Directiva 2026' },
+      { f:'cap-grss',            c:'Geoscience and Remote Sensing · Directiva 2026' },
+      { f:'cap-cis',             c:'Computational Intelligence Society · Directiva 2026' },
+      { f:'cap-nano',            c:'Nanotechnology Council · Directiva 2026' },
+      { f:'cap-wie',             c:'Women in Engineering · Directiva 2026' },
+      { f:'cap-sight',           c:'SIGHT · Directiva 2026' }
     ]
   };
 
@@ -437,8 +445,11 @@
     var wrap = $('#caps');
     if (!wrap) return;
     DATA.caps.forEach(function (c) {
+      /* La tarjeta lleva a la mini-página del capítulo, no a la sociedad:
+         primero lo nuestro —quiénes son aquí, qué hacen aquí— y el enlace a
+         IEEE va dentro de esa página, al final. */
       var a = el('a', 'cap');
-      a.href = c.u; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.href = 'capitulos/' + c.slug + '.html';
       a.innerHTML =
         '<span class="cap__logo"><img src="assets/img/capitulos/' + esc(c.img) +
           '" alt="Logotipo de ' + esc(c.t) + '" loading="lazy"></span>' +

@@ -10,3 +10,8 @@ LOGOS IEEE YT/
 .claude/
 
 # la plantilla rellenada se regenera con scripts/rellenar-plantilla.py
+
+# Los zips originales de las fotos de capítulo (60 MB). Lo que usa el sitio son
+# los recortes ya procesados en assets/img/capitulos/<slug>/ y las portadas en
+# assets/img/archivo/. Quita esta línea si prefieres versionar los originales.
+fotos de capitulos/
