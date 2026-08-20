@@ -1482,3 +1482,137 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   body{background:#fff;color:#000}
   .hero,.section--ink,.foot{background:#fff !important;color:#000 !important}
 }
+
+/* ============================================ 19. MINI-PÁGINA DE CAPÍTULO
+   Una sola hoja para las diez. Todo el color sale de `--cap`, que fija
+   `capitulo.js` leyendo la paleta oficial IEEE — cambiar el acento de un
+   capítulo es cambiar una línea en capitulos-data.js, no tocar aquí.
+   Las secciones que no tienen contenido no se dibujan (ver capitulo.js), así
+   que esta hoja nunca tiene que maquetar un hueco vacío.                   */
+
+.cappage{--cap:var(--ieee-blue)}
+
+/* --- portada: el campo oscuro de la Rama, teñido del color del capítulo --- */
+.caphero{
+  position:relative;background:var(--ink);color:var(--paper);
+  padding:calc(var(--e7) + var(--e5)) 0 var(--e6);
+  overflow:hidden;
+}
+.caphero::before{                      /* el tinte, muy contenido */
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(160deg,color-mix(in srgb,var(--cap) 26%,transparent),transparent 62%);
+  pointer-events:none;
+}
+.caphero__in{position:relative;z-index:1;max-width:52rem}
+.caphero .volver{
+  display:inline-block;margin-bottom:var(--e5);
+  color:var(--paper);opacity:.62;text-decoration:none;
+  font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
+  transition:opacity .3s var(--ease)}
+.caphero .volver:hover{opacity:1}
+.caphero__logo{
+  display:block;width:clamp(74px,9vw,110px);margin-bottom:var(--e4);
+  background:var(--paper);border-radius:3px;padding:10px}
+.caphero__logo img{display:block;width:100%;height:auto}
+.caphero__k{
+  display:block;color:var(--cap);
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:var(--e2)}
+.caphero__t{
+  font-size:clamp(2.1rem,5.6vw,4.1rem);line-height:1.04;
+  letter-spacing:-.02em;margin:0 0 var(--e3)}
+.caphero__lede{
+  font-size:clamp(1rem,1.6vw,1.22rem);line-height:1.55;
+  opacity:.78;max-width:38rem;margin:0}
+
+/* --- secciones --- */
+.capsec{padding:var(--e6) 0;border-top:1px solid var(--rule)}
+.capsec:first-child{border-top:0}
+.capsec__head{margin-bottom:var(--e4)}
+.capsec__k{
+  display:block;color:var(--cap);
+  font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:var(--e1)}
+.capsec__t{
+  font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.12;
+  letter-spacing:-.015em;margin:0}
+.capsec__p{
+  max-width:40rem;font-size:1.02rem;line-height:1.7;
+  color:var(--ink-60);margin:0 0 var(--e3)}
+.capsec__p:last-child{margin-bottom:0}
+
+/* --- qué hacemos --- */
+.caphace{display:grid;gap:1px;background:var(--rule);
+  grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.caphace__i{background:var(--paper);padding:var(--e4)}
+.caphace__i h3{
+  font-size:1rem;margin:0 0 var(--e2);
+  padding-left:var(--e2);border-left:2px solid var(--cap)}
+.caphace__i p{margin:0;font-size:.94rem;line-height:1.6;color:var(--ink-60)}
+
+/* --- directiva del capítulo --- */
+/* auto-FILL y no auto-fit: con auto-fit, dos personas se estiran a media
+   pantalla cada una y el retrato 4:5 se va a mil píxeles de alto. Con
+   auto-fill las tarjetas conservan su tamaño y la fila queda a la izquierda,
+   que es como se leen los cargos en la portada. */
+.capboard{display:grid;gap:var(--e4);
+  grid-template-columns:repeat(auto-fill,minmax(11rem,1fr))}
+.capboard__i{text-align:left}
+.capboard__foto{
+  display:block;aspect-ratio:4/5;margin-bottom:var(--e3);
+  background:var(--paper-2);overflow:hidden;position:relative}
+.capboard__foto img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(1);transition:filter .5s var(--ease),transform .6s var(--ease)}
+.capboard__i:hover .capboard__foto img{filter:grayscale(0);transform:scale(1.04)}
+.capboard__ini{                        /* sin foto: la inicial sobre el color */
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:var(--cap);color:var(--paper);
+  font-family:var(--font-caslon);font-style:italic;font-size:2.6rem;opacity:.9}
+.capboard__i h3{font-size:1rem;margin:0 0 2px}
+.capboard__rol{display:block;font-size:.82rem;color:var(--ink-60);
+  letter-spacing:.04em}
+.capboard__ig{display:inline-block;margin-top:var(--e1);font-size:.82rem;
+  color:var(--ink-60);text-decoration:none;transition:color .3s var(--ease)}
+.capboard__ig:hover{color:var(--cap)}
+
+/* --- trayectoria --- */
+.captime{list-style:none;margin:0;padding:0;
+  border-left:1px solid var(--rule);max-width:44rem}
+.captime__i{position:relative;padding:0 0 var(--e4) var(--e4)}
+.captime__i:last-child{padding-bottom:0}
+.captime__i::before{
+  content:"";position:absolute;left:-4px;top:.5em;
+  width:7px;height:7px;background:var(--cap);border-radius:50%}
+.captime__y{
+  display:block;font-family:var(--font-caslon);font-style:italic;
+  color:var(--cap);font-size:1.05rem;margin-bottom:2px}
+.captime__c h3{font-size:1.02rem;margin:0 0 var(--e1)}
+.captime__c p{margin:0;font-size:.94rem;line-height:1.6;color:var(--ink-60)}
+.captime__tag{
+  display:inline-block;margin-top:var(--e2);
+  font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-60);border:1px solid var(--rule);padding:2px 8px}
+
+/* --- fotos --- */
+.capfotos{display:grid;gap:var(--e2);
+  grid-template-columns:repeat(auto-fill,minmax(13rem,1fr))}
+.capfotos__i{margin:0}
+.capfotos__i img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.capfotos__i figcaption{
+  margin-top:var(--e1);font-size:.8rem;color:var(--ink-60);line-height:1.45}
+
+/* --- cierre --- */
+.capcierre{padding:var(--e6) 0;border-top:1px solid var(--rule);
+  background:var(--paper-2)}
+.capcierre__btns{display:flex;flex-wrap:wrap;gap:var(--e2);margin-top:var(--e4)}
+
+/* --- pie --- */
+.capfoot{padding:var(--e5) 0;background:var(--ink);color:var(--paper)}
+.capfoot p{margin:0 0 var(--e1);font-size:.86rem;opacity:.7}
+.capfoot a{color:var(--paper);opacity:.7;transition:opacity .3s var(--ease)}
+.capfoot a:hover{opacity:1}
+
+@media (max-width:600px){
+  .caphero{padding-top:calc(var(--e7) + var(--e3))}
+  .capboard{grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr))}
+}

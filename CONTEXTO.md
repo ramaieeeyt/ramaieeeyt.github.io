@@ -551,6 +551,14 @@ dejó así.
   retirado. **Un commit que toca la página no toca esa carpeta, y al revés** —
   el historial de la raíz debe leerse como el registro de mantenimiento de la
   web, que es lo que el artículo enseña de prueba.
+- **Variante nueva del panel roto (19-08-2026):** además de lo de arriba, el
+  panel puede devolver **`innerWidth === 0`**. Cuando pasa, cada `max-width` en
+  `vw` o `%` resuelve a cero y **toda la maquetación colapsa** — `.shell` midió
+  40 px, que es solo su padding. Las capturas tampoco cuadran: la barra fija
+  sale a media página. No es un fallo del CSS. Se nota porque `innerWidth` da 0;
+  si lo ves, **cierra la pestaña y reabre el panel**, y mientras tanto mide con
+  `getBoundingClientRect()`, que sí devolvió bien (1280 px) cuando `innerWidth`
+  mentía.
 - **Comprueba cada enlace** que añadas. Los rotos restan puntos en R9.
 - **El ASCII no es el cuello de botella.** Medido en esta máquina: 0,66 ms escribir un fotograma y 0,61 ms construirlo, a ~11 fps. Es ~1 % de un núcleo, y se para fuera de pantalla y con la pestaña oculta. Si hay que optimizar algo, mide antes: aquí el peso estaba **entero** en las imágenes.
 - **No toques `LOGOS IEEE YT/`** — son los originales del usuario a 5000 px,

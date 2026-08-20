@@ -640,7 +640,10 @@
 
        Se mide una vez y al cambiar el tamaño, nunca en cada scroll: leer la
        posición de un elemento obliga a recalcular la maquetación. */
-    var lockup = $('.hero__lockup');
+    /* En la portada el umbral lo marca el lockup grande. Las mini-páginas
+       de capítulo tienen su propio hero oscuro y marcan el suyo con
+       `data-nav-umbral`, así no hay que duplicar esta lógica. */
+    var lockup = $('.hero__lockup') || $('[data-nav-umbral]');
     var umbral = 24;
     function medirUmbral() {
       if (!lockup) { umbral = 24; return; }
