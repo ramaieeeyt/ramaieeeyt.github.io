@@ -1578,6 +1578,8 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 .capboard__i h3{font-size:1rem;margin:0 0 2px}
 .capboard__rol{display:block;font-size:.82rem;color:var(--ink-60);
   letter-spacing:.04em}
+.capboard__curso{display:block;font-size:.76rem;color:var(--ink-40);
+  letter-spacing:.02em;margin-top:1px}
 .capboard__ig{display:inline-block;margin-top:var(--e1);font-size:.82rem;
   color:var(--ink-60);text-decoration:none;transition:color .3s var(--ease)}
 .capboard__ig:hover{color:var(--cap)}

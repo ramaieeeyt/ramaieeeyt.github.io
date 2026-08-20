@@ -93,6 +93,19 @@ Interest Group on Humanitarian Technology).
 > **no** aparecen en `logos color.png` ni en la maqueta de Andrés. Pueden ser
 > previstos o inactivos. **No los pongas en el sitio sin confirmar.**
 
+**Las cinco directivas de cada capítulo (50 personas)** están en
+`js/capitulos-data.js`, y salen de **transcribir las piezas que publicó cada
+capítulo** en Instagram al presentar su directiva 2026 — nombre, cargo y curso
+van impresos en la propia imagen. Esa es la fuente y es pública por decisión de
+ellos.
+
+> **No las saques de vTools.** Officer Reporting pide iniciar sesión y no tiene
+> API pública (probado el 20-08-2026: 404). Aunque se pudiera, ahí hay datos de
+> miembros que nadie ha decidido publicar. Lo que está en las piezas, sí.
+
+> **GRSS no lleva curso** en sus piezas: solo nombre y cargo. El campo es
+> opcional y esa ficha se dibuja sin él. No lo rellenes a ojo.
+
 ### Datos que existen pero **no** están publicados, a propósito
 
 La guía de membresía trae los **nombres y teléfonos móviles de los diez

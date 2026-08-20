@@ -33,19 +33,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Aldrin Chávez', role:'Chair', curso:'9no - Computation' },
+      { f:'2.jpg', name:'Kevin Sánchez', role:'Vice Chair', curso:'7mo - Computation' },
+      { f:'3.jpg', name:'Pamela Crespo', role:'Secretaria', curso:'5to - Computation' },
+      { f:'4.jpg', name:'Giannirley Calderón', role:'Tesorera', curso:'5to - Computation' },
+      { f:'5.jpg', name:'Jhonny Peñaherrera', role:'Web Master', curso:'7mo - Computation' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   },
 
   'embs': {
@@ -60,19 +57,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Calero Julian', role:'Chair', curso:'8vo - Biomed' },
+      { f:'2.jpg', name:'Karen Shuguli', role:'Vice Chair', curso:'8vo - Biomed' },
+      { f:'3.jpg', name:'Angelly Gómez', role:'Secretaria', curso:'5to - Biomed' },
+      { f:'4.jpg', name:'Jade Mayorga', role:'Tesorera', curso:'8vo - Biomed' },
+      { f:'5.jpg', name:'Camila Alvarado', role:'Web Master', curso:'6to - Biomed' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   },
 
   'eps': {
@@ -87,19 +81,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Brittany Jiménez', role:'Chair', curso:'5to - Nanotech' },
+      { f:'2.jpg', name:'Luis Ruiz', role:'Vice Chair', curso:'5to - Biomed' },
+      { f:'3.jpg', name:'Mateo Jiménez', role:'Secretario', curso:'5to - Computation' },
+      { f:'4.jpg', name:'Domenica Morillo', role:'Tesorera', curso:'5to - Biomed' },
+      { f:'5.jpg', name:'Alexandra Suquillo', role:'Web Master', curso:'3ro - Biomed' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   },
 
   'cas': {
@@ -114,19 +105,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Vanessa García', role:'Chair', curso:'5to - Biomed' },
+      { f:'2.jpg', name:'Daniela Fernandez', role:'Vice Chair', curso:'7mo - Biomed' },
+      { f:'3.jpg', name:'Martin Carrión', role:'Secretario', curso:'5to - Physics' },
+      { f:'4.jpg', name:'Kevin Bravo', role:'Tesorero', curso:'5to - Physics' },
+      { f:'5.jpg', name:'Keyla Soria', role:'Web Master', curso:'6to - Biomed' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   },
 
   'ras': {
@@ -141,19 +129,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Willmer Illescas', role:'Chair', curso:'8vo - Agroindustry' },
+      { f:'2.jpg', name:'Jean Wand', role:'Vice Chair', curso:'4to - Agroindustry' },
+      { f:'3.jpg', name:'Ángeles Guaranga', role:'Secretaria', curso:'6to - Agroindustry' },
+      { f:'4.jpg', name:'Jodie Carrera', role:'Tesorera', curso:'6to - Agroindustry' },
+      { f:'5.jpg', name:'Daniela Käslin', role:'Web Master', curso:'5to - Agroindustry' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   },
 
   'grss': {
@@ -168,19 +153,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Darío Maldonado', role:'Chair' },
+      { f:'2.jpg', name:'Soledad Sandoval', role:'Vice Chair' },
+      { f:'3.jpg', name:'Mateo Salas', role:'Secretario' },
+      { f:'4.jpg', name:'Alejandra Vega', role:'Tesorera' },
+      { f:'5.jpg', name:'Angélica Romero', role:'Web Master' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   },
 
   'cis': {
@@ -195,19 +177,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Manuel Muñoz', role:'Chair', curso:'9no - Computation' },
+      { f:'2.jpg', name:'Joseph Tipan', role:'Vice Chair', curso:'9no - Computation' },
+      { f:'3.jpg', name:'Eimi Sevilla', role:'Secretaria', curso:'5to - Computation' },
+      { f:'4.jpg', name:'Carlos Castro', role:'Tesorero', curso:'9no - Computation' },
+      { f:'5.jpg', name:'Ariel Pincay', role:'Web Master', curso:'8vo - Computation' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   },
 
   'nano': {
@@ -222,19 +201,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Shirley Criollo', role:'Chair', curso:'9no - Biomed' },
+      { f:'2.jpg', name:'Isaac Gavilanes', role:'Vice Chair', curso:'7mo - Biomed' },
+      { f:'3.jpg', name:'Ethan Guevara', role:'Secretario', curso:'7mo - Biomed' },
+      { f:'4.jpg', name:'Emiliy Perez', role:'Tesorera', curso:'4to - Biomed' },
+      { f:'5.jpg', name:'Melanie Landázuri', role:'Web Master', curso:'3ro - Geology' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   },
 
   'wie': {
@@ -249,19 +225,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Cristina Lema', role:'Chair', curso:'9no - Biomed' },
+      { f:'2.jpg', name:'Diana Reina', role:'Vice Chair', curso:'9no - Biology' },
+      { f:'3.jpg', name:'Wendy Guasgua', role:'Secretaria', curso:'7mo - Chemistry' },
+      { f:'4.jpg', name:'Ismael Paredes', role:'Tesorero', curso:'6to - Computation' },
+      { f:'5.jpg', name:'Camila Garcés', role:'Web Master', curso:'5to - Biomed' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   },
 
   'sight': {
@@ -276,19 +249,16 @@ var CAPS = {
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
     resumen:  [],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Domenica Vaca', role:'Chair', curso:'4to - Chemistry' },
+      { f:'2.jpg', name:'Mateo Zhunio', role:'Vice Chair', curso:'3ro - Biology' },
+      { f:'3.jpg', name:'Ainhoa Campoverde', role:'Secretaria', curso:'7mo - Biomed' },
+      { f:'4.jpg', name:'Matheo Ponce', role:'Tesorero', curso:'4to - Biomed' },
+      { f:'5.jpg', name:'Madelyn Calderón', role:'Web Master', curso:'4to - Computation' }
+    ],
     timeline: [],
 
-    /* Las cinco piezas de la directiva 2026 que publicó el capítulo. Sin pie:
-       los nombres van impresos en la imagen y transcribirlos sin comprobarlos
-       sería inventarlos. */
-    fotos: [
-      { f:'1.jpg' },
-      { f:'2.jpg' },
-      { f:'3.jpg' },
-      { f:'4.jpg' },
-      { f:'5.jpg' }
-    ]
+    fotos: []
   }
 
 };

@@ -110,8 +110,8 @@
       var g = el('div', 'capboard');
       c.board.forEach(function (m) {
         var foto = hay(m.f)
-          ? '<img src="../assets/img/capitulos/directivas/' + esc(m.f) +
-            '" alt="" loading="lazy">'
+          ? '<img src="../assets/img/capitulos/' + esc(slug) + '/' + esc(m.f) +
+            '" alt="' + esc(m.name) + ' — ' + esc(m.role) + '" loading="lazy">'
           : '<span class="capboard__ini" aria-hidden="true">' +
             esc((m.name || '?').trim().charAt(0)) + '</span>';
         var ig = hay(m.ig)
@@ -121,7 +121,9 @@
         g.appendChild(el('article', 'capboard__i',
           '<span class="capboard__foto">' + foto + '</span>' +
           '<h3>' + esc(m.name) + '</h3>' +
-          '<span class="capboard__rol">' + esc(m.role) + '</span>' + ig));
+          '<span class="capboard__rol">' + esc(m.role) + '</span>' +
+          (hay(m.curso) ? '<span class="capboard__curso">' + esc(m.curso) +
+                          '</span>' : '') + ig));
       });
       b.appendChild(g);
     }
