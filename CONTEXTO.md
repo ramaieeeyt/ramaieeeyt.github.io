@@ -6,7 +6,7 @@
 > puedas enlazar, **no lo afirmes**. Ya pasó cuatro veces; están anotadas
 > abajo para que no vuelva a pasar.
 
-Última actualización: **12 de agosto de 2026**
+Última actualización: **19 de agosto de 2026**
 
 ---
 
@@ -23,10 +23,18 @@ IEEE de la Universidad Yachay Tech**.
 | Hosting | GitHub Pages · Deploy from a branch · main / (root) |
 | Stack | HTML + CSS + JS planos. **Cero dependencias, cero build.** |
 
-**Publicar:** yo edito, verifico, `git commit`, `git push`. Las credenciales
-están en el llavero del Mac; el push funciona sin pedir nada. GitHub Pages
-reconstruye en 1–2 min. **El usuario ya autorizó que publique sin preguntar
-cada vez.**
+**Publicar: NO sin que Andrés lo pida.** Regla suya del 16-08-2026, y sustituye
+a la anterior (antes había autorizado publicar sin preguntar). Commitear en
+local sí, siempre: no publica nada y deja cada paso recuperable. Lo que publica
+es `git push`, y GitHub Pages reconstruye en 1–2 min sin revisión ninguna.
+
+El motivo es el concurso: **la evaluación corre durante septiembre de 2026**, y
+un sitio inaccesible en esa ventana es causal de eliminación. Andrés quiere ir
+por pasos y elegir cuándo sale cada uno.
+
+Cuando haya trabajo sin publicar, dilo con el número. Después de cada push,
+espera un minuto y comprueba que la página responde — y no te fíes del 200:
+ábrela y cuenta secciones.
 
 ---
 
@@ -119,7 +127,15 @@ un móvil.
    vez de pedir el material de la rama. **Ante una lista, pregunta antes de
    darla por cerrada.**
 
-7. **Me comí 423 líneas de `js/main.js` y las dejé commiteadas** (`d3bc03c`).
+7. **Escribí en el artículo que cada cargo publica su correo directo.** La
+   Sección IV decía *«a direct email address»* para los seis. Lo que la página
+   publica de cada cargo es **su Instagram personal**: en `DATA.board` hay
+   `ig:`, no hay correos. Salió en un barrido del 19-08-2026, con el artículo ya
+   terminado. Las bases hacen responsable al solicitante de la veracidad (§10),
+   así que no era un matiz de redacción. **Antes de afirmar qué enseña la
+   página, ábrela o lee `DATA`.**
+
+8. **Me comí 423 líneas de `js/main.js` y las dejé commiteadas** (`d3bc03c`).
    Al reescribir la sección de capítulos, un `str.replace()` sin verificar se
    llevó todo desde `renderTimeline` hasta el final de la sección 4. El archivo
    quedaba **sintácticamente válido** —cerraba bien la IIFE— así que no saltó
@@ -178,7 +194,7 @@ puede mostrar) **y fotos propias de la rama**. Nada más.
 | El icono de Yachay Tech del fondo es una **máscara 52×52 muestreada cuadrada** | El renderizador estira las columnas según el ancho real de carácter medido, así sale cuadrado con cualquier monoespaciada |
 | Las imágenes de Instagram se **descargan**, no se enlazan | Las URLs de Meta van firmadas y **caducan en días** |
 | Rejilla de Oportunidades a **4/2/1 columnas** | Son los divisores exactos de 8. `auto-fill` dejaba un hueco a 3 columnas |
-| `?demo` recorre la página sola | Para grabar el video del concurso sin tocar el trackpad. Lleva un seguro por si `requestAnimationFrame` se congela al perder foco |
+| ~~`?demo` recorre la página sola~~ **retirado el 16-08-2026** | Existió para grabar el vídeo del concurso. Con el vídeo grabado se sacó de `main.js` y `style.css`: 205 líneas de JS, 31 de CSS y **20 reglas gemelas `.is-cursor`** repartidas por la hoja (existían porque CSS no deja disparar `:hover` desde JS, así que cada hover que el puntero provocaba llevaba al lado una copia con esa clase). Todo está en `web extra and test/rodaje/`, con instrucciones para volver a montarlo |
 | El titular de capítulos se anima **sin medir el DOM** | Lo intenté midiendo con `getBoundingClientRect()` y se realimentaba: el rect llega **ya transformado**, así que cada medición encogía la siguiente hasta dejar la escala en 0. Ahora son `vw`/`vh` en un `@keyframes` |
 | Los logos usan `max-height` en longitud, no en `%` | Dentro de un contenedor con fila automática, `height:100%` se resuelve como `auto` y la imagen vuelve a su tamaño intrínseco. Se desbordaban y pisaban el texto |
 | La navegación se parte en dos: **lomo** a la izquierda y barra arriba | Lo pidió Andrés: lo que salta dentro de la página va al lateral, lo que lleva a otra página se queda arriba. El lomo lo **construye el JS leyendo los `href^="#"` de la barra**, así la lista sigue viviendo solo en el HTML |
@@ -291,19 +307,89 @@ La **marginalia izquierda** se oculta en escritorio — el lomo ocupa ese margen
   **No activa** — falta el secret `IG_TOKEN`. La cuenta @ramaieeeyt ya es
   Profesional; el bloqueo es que el registro de desarrollador de Meta pide
   SMS a un número ecuatoriano y el usuario está en EE. UU.
-- **Concurso R9 Student Website 2026**. El artículo es
-  `web extra and test/concurso/CONTEST-ARTICLE-V3-PLANTILLA.docx`: la plantilla oficial con el texto ya
-  dentro, y **es el fichero que se entrega**. `web extra and test/concurso/CONTEST-ARTICLE-V3.md` guarda ese
-  mismo texto como referencia, pero **ya no se genera uno del otro** — los
-  scripts que lo hacían (`scripts/articulo.py` y `scripts/plantilla.py`) se
-  borraron el 16-08-2026, con el .docx ya terminado. Si algún año hay que
-  rehacer el montaje, están en el historial. **Hubo tres versiones y
-  se quedó la tercera**: la primera vendía cosas que no están en la página, la
-  segunda las quitó, y la tercera está escrita contra los cinco puntos que pide
-  §3.2 de las bases. Las dos primeras se borraron el 16-08-2026 a petición de
-  Andrés; si hacen falta, están en el historial (`git log --diff-filter=D`).
-  Qué se entrega y qué no, en `web extra and test/concurso/CONTEST-ENTREGA.md` — **el código no se entrega**.
-  `web extra and test/concurso/CONTEST-VIDEO-SCRIPT.md` listo, **video sin grabar**. Faltan las capturas.
+- **Concurso R9 Student Website 2026 — entregado.** Lo que se entrega es
+  `web extra and test/concurso/CONTEST-ARTICLE-V3-PLANTILLA.docx` exportado a
+  PDF; el `.md` de al lado guarda ese texto como referencia y **ya no se genera
+  uno del otro** (los scripts se borraron el 16-08-2026, están en el historial).
+  Hubo tres versiones: la primera vendía cosas que no están en la página, la
+  segunda las quitó, y la tercera se escribió contra los cinco puntos de §3.2 de
+  las bases. Qué se sube y qué no, en `CONTEST-ENTREGA.md` — **el código no se
+  entrega**, se entrega la URL. El vídeo está grabado.
+
+  **Pendiente de Andrés:** corregir a mano en su Word las dos frases del error 7
+  de arriba, y contar las páginas del PDF montado — pasarse de cuatro aparece en
+  las bases como **eliminación** (§4.4) además de como −5 por página (§4.5).
+
+  **Durante septiembre de 2026 la página tiene que estar en pie.** No es que no
+  se pueda tocar: dejarla desactualizada también resta (§4.5). Lo que elimina es
+  que no responda.
+
+---
+
+## 7a · Seguridad
+
+La superficie de ataque de este sitio es diminuta y conviene entender por qué,
+para no gastar esfuerzo donde no hace falta: **no hay servidor propio, ni base
+de datos, ni formularios, ni sesiones, ni cookies, ni contenido de terceros**.
+Es HTML, CSS y JS estáticos servidos por GitHub Pages sobre HTTPS. No hay
+inyección SQL porque no hay SQL, ni fuga de datos porque no se recoge ninguno.
+
+**Lo que sí hay que cuidar, por orden de importancia real:**
+
+1. **La cuenta de GitHub.** Es el único camino para cambiar el sitio. Con 2FA
+   activo en todos los propietarios de la organización, el riesgo cae a casi
+   cero. Sin 2FA, todo lo demás sobra.
+2. **El token de Instagram**, cuando se active. Va como *secret* del
+   repositorio, nunca en el código, y es de solo lectura.
+3. **El escape del HTML.** Todo lo que se inserta con `innerHTML` pasa por
+   `esc()`, incluidas las rutas de imagen. Importa porque el Archivo se
+   alimenta de una fuente externa: si mañana un pie de Instagram trae `<script>`,
+   `esc()` es lo único que lo detiene. **Si añades un `innerHTML`, escapa.**
+
+**Puesto el 15-08-2026:** una `Content-Security-Policy` como `<meta>` —GitHub
+Pages no deja poner cabeceras— que restringe todo a origen propio, y
+`referrer: strict-origin-when-cross-origin`. Verificado que no rompe nada:
+fuentes cargadas, cero violaciones, las dos páginas enteras.
+
+**Lo que no se puede tener aquí:** `frame-ancestors` (solo funciona como
+cabecera), así que no hay protección contra *clickjacking*. Para un sitio
+informativo sin acciones que ejecutar, el impacto es nulo.
+
+---
+
+## 7b · Posicionamiento en Google
+
+Al buscar «IEEE Yachay» aparecía primero `edu.ieee.org/ec-ytu`, la página vieja
+de la rama en el portal de IEEE, con información de hace varias directivas.
+Compite con ventaja porque vive en el dominio `ieee.org`, que Google considera
+mucho más fiable que un `github.io`.
+
+**Hecho en el sitio** (15-08-2026): `robots.txt`, `sitemap.xml`, `<link rel=canonical>`
+en las dos páginas, `og:url`, y una ficha `schema.org` de tipo `Organization`
+con los alias por los que la gente busca —«IEEE Yachay Tech», «Rama IEEE Yachay
+Tech», «IEEE YT»— y los perfiles sociales en `sameAs`.
+
+**Estado al 15-08-2026:** propiedad verificada en Google Search Console con la
+etiqueta `google-site-verification` que hay en el `<head>` de las dos páginas
+—**no la borres**, si desaparece Google retira la verificación—. El sitemap se
+envió antes de que el archivo existiera, así que quedó en «No se ha podido
+obtener»; el archivo está bien (comprobado con el user-agent de Googlebot: 200,
+`application/xml`, XML válido) y ese estado se corrige solo cuando Google
+reintenta. Las dos URL se enviaron a indexar a mano.
+
+**Lo que falta, y es lo que de verdad decide:**
+
+1. **Dar de alta el sitio en Google Search Console** y enviar el sitemap. Sin
+   esto Google tarda semanas en enterarse; con esto, días.
+2. **Actualizar o vaciar `edu.ieee.org/ec-ytu`** dejando un enlace bien visible
+   a `ramaieeeyt.github.io`. Es la palanca más fuerte de todas: quita de en
+   medio al competidor y le pasa autoridad al sitio nuevo. La rama debería
+   poder editar esa página.
+3. **Enlaces entrantes**: la biografía de Instagram, la de Facebook, la sección
+   de Ecuador en `r9.ieee.org`, la web de la universidad. Los enlaces son lo que
+   más mueve el orden, más que cualquier etiqueta.
+
+**No** hace falta comprar dominio para esto. Ayudaría a la marca, no al orden.
 
 ---
 
@@ -379,68 +465,67 @@ pasado. El lomo lateral se rehace solo, porque lee la barra.
 
 ---
 
-## 7a · Seguridad
+## 7d · El historial, reescrito el 19-08-2026
 
-La superficie de ataque de este sitio es diminuta y conviene entender por qué,
-para no gastar esfuerzo donde no hace falta: **no hay servidor propio, ni base
-de datos, ni formularios, ni sesiones, ni cookies, ni contenido de terceros**.
-Es HTML, CSS y JS estáticos servidos por GitHub Pages sobre HTTPS. No hay
-inyección SQL porque no hay SQL, ni fuga de datos porque no se recoge ninguno.
+**El repositorio pasó de 72 commits a 37, y se publicó con `push --force`.** Lo
+pidió Andrés: al haber publicado cada cambio según se hacía, cualquiera podía
+navegar el historial y sacar estados de la página a medio construir. En vivo
+nunca se vio nada roto —Pages solo sirve el último commit— pero el andamio sí
+era navegable.
 
-**Lo que sí hay que cuidar, por orden de importancia real:**
+Qué se hizo: los **36 commits del 1 al 14 de agosto** se aplastaron en un único
+commit raíz fechado el 14 a las 23:49, que explica en su mensaje qué es. Los 36
+posteriores se reaplicaron encima **con `--committer-date-is-author-date`**, y
+ese detalle importa: una reescritura normal pone la fecha de *commit* en el
+momento de reescribir, así que los 36 habrían salido creados el mismo día y la
+gráfica de actividad de GitHub —la que sirve de prueba de mantenimiento— se
+habría convertido en un pico único.
 
-1. **La cuenta de GitHub.** Es el único camino para cambiar el sitio. Con 2FA
-   activo en todos los propietarios de la organización, el riesgo cae a casi
-   cero. Sin 2FA, todo lo demás sobra.
-2. **El token de Instagram**, cuando se active. Va como *secret* del
-   repositorio, nunca en el código, y es de solo lectura.
-3. **El escape del HTML.** Todo lo que se inserta con `innerHTML` pasa por
-   `esc()`, incluidas las rutas de imagen. Importa porque el Archivo se
-   alimenta de una fuente externa: si mañana un pie de Instagram trae `<script>`,
-   `esc()` es lo único que lo detiene. **Si añades un `innerHTML`, escapa.**
+Se comprobó antes de publicar que `git diff main prueba` no devolvía **ni una
+línea**: el árbol final es byte a byte el mismo.
 
-**Puesto el 15-08-2026:** una `Content-Security-Policy` como `<meta>` —GitHub
-Pages no deja poner cabeceras— que restringe todo a origen propio, y
-`referrer: strict-origin-when-cross-origin`. Verificado que no rompe nada:
-fuentes cargadas, cero violaciones, las dos páginas enteras.
+**Los 72 commits originales siguen recuperables, solo en el Mac de Andrés:**
 
-**Lo que no se puede tener aquí:** `frame-ancestors` (solo funciona como
-cabecera), así que no hay protección contra *clickjacking*. Para un sitio
-informativo sin acciones que ejecutar, el impacto es nulo.
+| | |
+|---|---|
+| rama | `respaldo-antes-de-limpiar` |
+| tag | `respaldo-19ago` |
+| ambos en | `10b742a` |
 
-## 7b · Posicionamiento en Google
+**No se subieron a GitHub a propósito** — allí ya no existen. No los borres sin
+preguntar, al menos hasta que pase la evaluación de septiembre de 2026.
 
-Al buscar «IEEE Yachay» aparecía primero `edu.ieee.org/ec-ytu`, la página vieja
-de la rama en el portal de IEEE, con información de hace varias directivas.
-Compite con ventaja porque vive en el dominio `ieee.org`, que Google considera
-mucho más fiable que un `github.io`.
+Si hay que reescribir otra vez: haz respaldo primero, trabaja en una rama
+aparte, verifica el `diff` contra `main`, y **enseña el resultado antes de
+publicar**.
 
-**Hecho en el sitio** (15-08-2026): `robots.txt`, `sitemap.xml`, `<link rel=canonical>`
-en las dos páginas, `og:url`, y una ficha `schema.org` de tipo `Organization`
-con los alias por los que la gente busca —«IEEE Yachay Tech», «Rama IEEE Yachay
-Tech», «IEEE YT»— y los perfiles sociales en `sameAs`.
+---
 
-**Estado al 15-08-2026:** propiedad verificada en Google Search Console con la
-etiqueta `google-site-verification` que hay en el `<head>` de las dos páginas
-—**no la borres**, si desaparece Google retira la verificación—. El sitemap se
-envió antes de que el archivo existiera, así que quedó en «No se ha podido
-obtener»; el archivo está bien (comprobado con el user-agent de Googlebot: 200,
-`application/xml`, XML válido) y ese estado se corrige solo cuando Google
-reintenta. Las dos URL se enviaron a indexar a mano.
+## 7e · Qué es público (todo, literalmente)
 
-**Lo que falta, y es lo que de verdad decide:**
+El repositorio **es** el sitio, así que GitHub Pages sirve cada fichero que
+contiene. Comprobado con `curl` el 19-08-2026: devuelven 200 `CONTEXTO.md`
+(este archivo), `.gitignore`, `web extra and test/concurso/CONTEST-ENTREGA.md`
+y `LOGOS/…/IEEE artistry.af` (4,3 MB). Escribe aquí sabiendo que se lee.
 
-1. **Dar de alta el sitio en Google Search Console** y enviar el sitemap. Sin
-   esto Google tarda semanas en enterarse; con esto, días.
-2. **Actualizar o vaciar `edu.ieee.org/ec-ytu`** dejando un enlace bien visible
-   a `ramaieeeyt.github.io`. Es la palanca más fuerte de todas: quita de en
-   medio al competidor y le pasa autoridad al sitio nuevo. La rama debería
-   poder editar esa página.
-3. **Enlaces entrantes**: la biografía de Instagram, la de Facebook, la sección
-   de Ecuador en `r9.ieee.org`, la web de la universidad. Los enlaces son lo que
-   más mueve el orden, más que cualquier etiqueta.
+**Barrido de secretos, 19-08-2026.** Revisadas 271 versiones de ficheros de
+texto de **todo el historial** buscando claves de Anthropic, tokens de GitHub,
+AWS, Google, Slack e Instagram, llaves privadas y JWT: **cero**. `.claude/`,
+`.env` y `.DS_Store` no aparecen en ningún commit; el `.gitignore` funcionó
+desde el primer día.
 
-**No** hace falta comprar dominio para esto. Ayudaría a la marca, no al orden.
+> Si repites el barrido, **quita las cargas base64 antes de buscar**. Los `.svg`
+> de LOGOS llevan imágenes incrustadas y `fonts.css` las tipografías, y en esas
+> cadenas salen trozos que parecen claves. La primera pasada dio doce falsos
+> positivos por eso.
+
+**Fallo abierto:** `.gitignore` dice `LOGOS IEEE YT/` pero la carpeta se llama
+`LOGOS`. **El nombre no coincide, así que la regla no protege nada**: 20
+ficheros y 22 MB de originales están versionados y sirviéndose en público. El
+`README.md` repite el mismo nombre equivocado. Andrés lo sabe y de momento lo
+dejó así.
+
+---
 
 ## 8 · Cómo trabajar aquí
 
@@ -461,6 +546,11 @@ reintenta. Las dos URL se enviaron a indexar a mano.
     llegan solos: lanza `dispatchEvent(new Event('scroll'))`;
   - `loading="lazy"` no carga nada, así que las imágenes salen con
     `naturalWidth === 0` aunque estén perfectas.
+- **Lo que no es la página va a `web extra and test/`.** Regla del 16-08-2026:
+  ahí viven el concurso, el artículo, el guion del vídeo y el modo de rodaje
+  retirado. **Un commit que toca la página no toca esa carpeta, y al revés** —
+  el historial de la raíz debe leerse como el registro de mantenimiento de la
+  web, que es lo que el artículo enseña de prueba.
 - **Comprueba cada enlace** que añadas. Los rotos restan puntos en R9.
 - **El ASCII no es el cuello de botella.** Medido en esta máquina: 0,66 ms escribir un fotograma y 0,61 ms construirlo, a ~11 fps. Es ~1 % de un núcleo, y se para fuera de pantalla y con la pestaña oculta. Si hay que optimizar algo, mide antes: aquí el peso estaba **entero** en las imágenes.
 - **No toques `LOGOS IEEE YT/`** — son los originales del usuario a 5000 px,
