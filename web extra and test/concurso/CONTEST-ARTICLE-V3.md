@@ -139,7 +139,7 @@ IEEE Blue (#00629B), and Open Sans is used as IEEE's preferred web typeface. The
 official branch lockup identifies the site and each chapter carries its own
 official lockup, so a visitor can tell at a glance that this is an IEEE
 organizational unit. Communication is deliberately many-doored rather than
-centralized: every officer publishes a direct address next to their role, the
+centralized: every officer publishes a direct contact next to their role, the
 branch address and its Instagram account close the page, and each opportunity
 links to the official IEEE page that owns it, so the site routes people onward
 instead of becoming a bottleneck.
@@ -189,7 +189,7 @@ Main sections and resources. The site is public at https://ramaieeeyt.github.io
 [5]. An identity block states the mission and carries university, location, IEEE
 Region and branch code without scrolling. The Board section presents all six 2026
 officers — Chair, Vice Chair, Secretary, Treasurer, Web Master and Membership —
-each with a photograph, a personal statement and a direct email address, so a
+each with a photograph, a personal statement and a direct contact, so a
 visitor reaches the person responsible instead of a generic inbox. Resources
 lists six IEEE tools a member can open today: IEEE Xplore, IEEE Spectrum,
 Collabratec, IEEE Standards, IEEE Access and the conference calendar, with
