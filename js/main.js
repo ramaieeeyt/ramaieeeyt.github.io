@@ -450,6 +450,12 @@
          IEEE va dentro de esa página, al final. */
       var a = el('a', 'cap');
       a.href = 'capitulos/' + c.slug + '.html';
+      /* El color del capítulo vive en CAPS (js/capitulos-data.js), que es el
+         único sitio donde está. Si esa hoja no se cargó, la tarjeta va sin
+         color y no pasa nada. */
+      if (typeof CAPS !== 'undefined' && CAPS[c.slug] && CAPS[c.slug].color) {
+        a.style.setProperty('--c', CAPS[c.slug].color);
+      }
       a.innerHTML =
         '<span class="cap__logo"><img src="assets/img/capitulos/' + esc(c.img) +
           '" alt="Logotipo de ' + esc(c.t) + '" loading="lazy"></span>' +

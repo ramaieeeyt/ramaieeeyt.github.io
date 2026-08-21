@@ -1625,3 +1625,67 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .caphero{padding-top:calc(var(--e7) + var(--e3))}
   .capboard{grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr))}
 }
+
+/* ================================== 20. VELO DE TRANSICIÓN A UN CAPÍTULO
+   Matriz de puntos 5×5 sobre el campo oscuro, cubriendo el salto de la lista
+   de capítulos a la página de uno. Dos animaciones que alternan; ver la nota
+   de arriba de js/transicion.js para de dónde sale cada una.
+   Los tres niveles de opacidad son los del original: .08 apagado, .52 medio,
+   1 pico.                                                                  */
+
+.velo{
+  position:fixed;inset:0;z-index:200;
+  display:grid;place-items:center;
+  background:var(--ink);
+  opacity:0;transition:opacity .34s var(--ease);
+  --cap:var(--ieee-cyan);
+}
+.velo.is-on{opacity:1}
+.velo--salida{transition:opacity .42s var(--ease)}
+
+.velo__grid{
+  display:grid;gap:6px;
+  grid-template-columns:repeat(5,14px);
+  grid-template-rows:repeat(5,14px);
+}
+.velo__punto{
+  display:block;width:14px;height:14px;border-radius:999px;
+  background:var(--cap);
+  opacity:.52;                       /* el nivel medio, el de reposo */
+  will-change:opacity;
+}
+
+/* --- NEON DRIFT: barrido diagonal, diagonales alternas medio ciclo atrás --- */
+.velo__grid--neon .velo__punto{
+  animation:velo-neon 1.5s linear infinite;
+  animation-delay:calc((var(--path,0) * .2 + var(--parity,0) * .5) * 1.5s);
+}
+@keyframes velo-neon{
+  0%,100%{opacity:.08}
+  14%    {opacity:1}
+  30%    {opacity:.12}
+}
+
+/* --- STROBE STACK: un punto baja por cada columna dejando rastro --------- */
+.velo__grid--strobe .velo__punto{
+  animation:velo-strobe 1.75s steps(1,end) infinite;
+  animation-delay:calc(var(--orden,0) * -70ms);
+}
+@keyframes velo-strobe{
+  0%  {opacity:1}
+  8%  {opacity:.52}
+  16% {opacity:.08}
+  32% {opacity:.52}
+  100%{opacity:.52}
+}
+
+@media (max-width:600px){
+  .velo__grid{grid-template-columns:repeat(5,11px);grid-template-rows:repeat(5,11px);gap:5px}
+  .velo__punto{width:11px;height:11px}
+}
+
+/* Quien pide menos movimiento no ve el velo: transicion.js ni lo crea. Esto
+   es el cinturón por si alguna vez se dibujara desde otro sitio. */
+@media (prefers-reduced-motion:reduce){
+  .velo{display:none}
+}

@@ -339,6 +339,41 @@ La **marginalia izquierda** se oculta en escritorio — el lomo ocupa ese margen
 
 ---
 
+## 7f · El velo de transición a un capítulo
+
+Al pulsar una tarjeta en `capitulos.html`, un velo con una matriz de puntos 5×5
+cubre el salto. `js/transicion.js` + sección 20 del CSS.
+
+**De dónde salen las dos animaciones.** Andrés las eligió en
+`dotmatrix.zzzzshawn.cloud`, que son loaders en React/Tailwind/shadcn — aquí no
+se pueden instalar, así que se reprodujeron:
+
+| | |
+|---|---|
+| **Neon Drift** | **Exacta**, leída de su CSS. `path = (fila − col + 4) / 8`, `parity = (fila + col) % 2`, retardo `(path·0,2 + parity·0,5) × 1,5s`, y los keyframes .08 → 1 al 14 % → .12 al 30 %. Comprobado: el primer punto da 0,15 s, igual que el original |
+| **Strobe Stack** | **Reconstruida.** La original va por estado de React y **no se pudo muestrear** — un bucle síncrono bloquea su render y un muestreo asíncrono cuelga el panel. Se copiaron sus tres niveles (.08 · .52 · 1) y su lectura: un punto que baja por cada columna dejando rastro. **No es fiel, es interpretación** |
+
+**Alternan por posición en la lista**, pares una e impares otra. Nada de sorteo
+ni de recordar cuál tocó: guardarlo exigiría `localStorage`, y que el sitio no
+usa almacenamiento es una afirmación del artículo entregado y de la CSP.
+
+**No es una espera falsa.** El velo entra, la navegación ocurre debajo y la
+página nueva lo retira al cargar. Añade ~620 ms reales. Si alguna vez alguien
+quiere «que dure más», que sepa lo que está haciendo: retrasar a un visitante en
+un sitio que aparece en menos que la animación.
+
+El velo de llegada **solo se dibuja si se viene de `capitulos.html`** (mira
+`document.referrer`). Entrar directo por la URL o desde Google no lo enseña.
+
+Con `prefers-reduced-motion` no se crea nada y el enlace va directo.
+
+El color del punto es el del capítulo, que vive **solo** en `CAPS`
+(`js/capitulos-data.js`). Por eso `capitulos.html` carga esa hoja: para que
+`renderCaps` ponga `--c` en la tarjeta y el velo lo herede. No dupliques el
+color en `DATA.caps`.
+
+---
+
 ## 7a · Seguridad
 
 La superficie de ataque de este sitio es diminuta y conviene entender por qué,
