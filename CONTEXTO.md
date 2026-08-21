@@ -367,6 +367,23 @@ El velo de llegada **solo se dibuja si se viene de `capitulos.html`** (mira
 
 Con `prefers-reduced-motion` no se crea nada y el enlace va directo.
 
+**La bfcache: el fallo que salió y por qué no era evidente.** Al volver atrás,
+el navegador restaura la página **tal como la dejaste** — con el velo dentro y
+animando — y **no vuelve a disparar `DOMContentLoaded` ni `load`**, así que nada
+lo retiraba y quedaba una pantalla de carga encima de una página ya cargada. Se
+resuelve con `pageshow` y su bandera `persisted`, que es el único evento que
+avisa de esa vuelta. Y ya que el velo está ahí, se deja ver 260 ms y se retira:
+volver atrás también enseña la pantalla, que es lo que quería Andrés.
+
+> **El mismo error tenía una segunda puerta:** el velo de llegada esperaba a
+> `window.load`, y si la página ya había terminado de cargar ese evento no
+> vuelve a dispararse nunca. Ahora se mira `document.readyState` en vez de
+> confiar en el evento.
+
+> **Hay dos seguros de 4 s**, uno en la salida y otro en la llegada. Una
+> pantalla de carga tapando una página que ya está es de los fallos que más
+> enfadan, y no debe poder ocurrir por ningún camino. Si tocas esto, déjalos.
+
 El color del punto es el del capítulo, que vive **solo** en `CAPS`
 (`js/capitulos-data.js`). Por eso `capitulos.html` carga esa hoja: para que
 `renderCaps` ponga `--c` en la tarjeta y el velo lo herede. No dupliques el

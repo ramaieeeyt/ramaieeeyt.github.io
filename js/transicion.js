@@ -64,6 +64,34 @@
     return v;
   }
 
+  /* -- quitar un velo: se apaga y luego se borra --------------------------- */
+  function retirar(v, espera) {
+    if (!v || v.dataset.yendose) return;
+    v.dataset.yendose = '1';
+    setTimeout(function () {
+      v.classList.remove('is-on');
+      setTimeout(function () { if (v.parentNode) v.remove(); }, 460);
+    }, espera || 0);
+  }
+
+  function retirarTodos(espera) {
+    Array.prototype.forEach.call(document.querySelectorAll('.velo'),
+      function (v) { retirar(v, espera); });
+  }
+
+  /* -- volver atrás -------------------------------------------------------
+     El navegador guarda la página en la bfcache tal como la dejaste: si te
+     fuiste con el velo puesto, al volver reaparece con el velo puesto y
+     animando, y ni `DOMContentLoaded` ni `load` se disparan otra vez. Ese era
+     el atasco. `pageshow` con `persisted` sí avisa de esa vuelta.
+
+     Y ya que el velo está ahí, se aprovecha: se deja ver un instante y se
+     retira. Volver atrás también enseña la pantalla, que es lo que pidió
+     Andrés. */
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) retirarTodos(260);
+  });
+
   /* -- salida: se pulsa una tarjeta de capítulo ---------------------------- */
   function initSalida() {
     var tarjetas = document.querySelectorAll('#caps .cap');
@@ -80,6 +108,9 @@
         document.body.appendChild(v);
         requestAnimationFrame(function () { v.classList.add('is-on'); });
         setTimeout(function () { location.href = destino; }, ESPERA);
+        /* Cinturón: si por lo que sea seguimos aquí, el velo se va solo. Nunca
+           debe quedar una pantalla de carga tapando una página que ya está. */
+        setTimeout(function () { retirar(v); }, ESPERA + 4000);
       });
     });
   }
@@ -93,12 +124,15 @@
     var v = velo('neon');
     v.classList.add('is-on', 'velo--salida');
     document.body.appendChild(v);
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        v.classList.remove('is-on');
-        setTimeout(function () { v.remove(); }, 420);
-      }, 90);
-    });
+
+    /* Si la página ya terminó de cargar, `load` no se dispara otra vez y el
+       velo se quedaría puesto. Se comprueba el estado en lugar de confiar en
+       el evento. */
+    if (document.readyState === 'complete') { retirar(v, 90); }
+    else { window.addEventListener('load', function () { retirar(v, 90); }); }
+
+    /* El mismo cinturón que en la salida. */
+    setTimeout(function () { retirar(v); }, 4000);
   }
 
   function boot() { initSalida(); initEntrada(); }
