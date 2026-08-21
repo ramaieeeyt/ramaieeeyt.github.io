@@ -82,11 +82,12 @@
          debajo, apagándose bajo la foto. */
       hero.style.setProperty('--foto',
         'url("../assets/img/capitulos/hero/' + slug + '.jpg")');
+      if (hay(c.foco)) hero.style.setProperty('--foco', c.foco);
       hero.classList.add('caphero--foto');
       hero.innerHTML =
         '<div class="ascii-field" aria-hidden="true">' +
           '<pre class="ascii" id="ascii-caps"></pre></div>' +
-        '<div class="shell caphero__in">' +
+        '<div class="shell caphero__in"><div class="caphero__col">' +
           '<a class="volver" href="../capitulos.html">' +
             '<span aria-hidden="true">←</span> Capítulos y grupos</a>' +
           '<span class="caphero__logo" data-nav-umbral>' +
@@ -95,7 +96,13 @@
           '<span class="caphero__k">' + esc(c.k) + '</span>' +
           '<h1 class="caphero__t">' + caslon(c.t) + '</h1>' +
           (hay(c.lede) ? '<p class="caphero__lede">' + esc(c.lede) + '</p>' : '') +
-        '</div>';
+          /* El enlace a la sociedad, aquí arriba. Abajo estaba sobre papel
+             claro con el estilo fantasma, que es blanco sobre transparente, y
+             no se leía. Sobre la foto oscura sí. */
+          '<a class="btn btn--ghost caphero__btn" href="' + esc(c.u) + '" ' +
+            'target="_blank" rel="noopener noreferrer">La sociedad en IEEE ' +
+            '<span class="btn__arrow" aria-hidden="true">↗</span></a>' +
+        '</div></div>';
     }
 
     var main = $('#cap-main');
@@ -183,10 +190,9 @@
         '<p class="capsec__p">Escríbenos y te contamos cómo entrar. Para ser ' +
         'parte de un capítulo hace falta ser miembro de IEEE.</p>' +
         '<div class="capcierre__btns">' +
-          '<a class="btn" href="../index.html#unete">Únete a la Rama ' +
-            '<span class="btn__arrow" aria-hidden="true">↗</span></a>' +
-          '<a class="btn btn--ghost" href="' + esc(c.u) + '" target="_blank" ' +
-            'rel="noopener noreferrer">La sociedad en IEEE ' +
+          /* Azul, no blanco: el cierre va sobre papel y un botón blanco ahí
+             desaparece. */
+          '<a class="btn btn--blue" href="../index.html#unete">Únete a la Rama ' +
             '<span class="btn__arrow" aria-hidden="true">↗</span></a>' +
         '</div>' +
       '</div>';

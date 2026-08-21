@@ -60,6 +60,9 @@ var CAPS = {
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
        contra el punto medio del degradado. */
+    /* Su foto tiene la cabeza del más alto pegada al borde: el encuadre
+       baja para que no se le corte. El resto va al 34 % por defecto. */
+    foco:  '10%',
     grad:  ['#A169B0', '#7484CF'],
     punto: 'tinta',
     lede:  'Bioingeniería: dispositivos médicos, neurociencias y procesamiento de señales fisiológicas.',

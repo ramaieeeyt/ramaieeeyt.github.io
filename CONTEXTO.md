@@ -419,6 +419,21 @@ arriba se pierde el banderín, más abajo se cortan las caras.
 > **Computer Society no tiene banderín en su foto**: van con los brazos por los
 > hombros. No es un fallo del recorte, es su pieza.
 
+> **El encuadre vertical es por capítulo.** 34 % de serie; `foco` en
+> `capitulos-data.js` lo cambia para uno solo. **EMBS lo tiene al 10 %** porque
+> la cabeza del más alto queda pegada al borde de su foto y se le cortaba. Si
+> añades un capítulo, míralo: no todas las fotos encuadran igual.
+
+**El texto del hero va en `.caphero__col`, dentro del `.shell`, no en su lugar.**
+`.shell` se centra sola con `margin-inline:auto`, así que estrecharla empuja el
+texto **al medio** en vez de al margen izquierdo. Costó un rato verlo: el texto
+salía a 336 px cuando el logotipo de la barra está a 64.
+
+**El enlace a la sociedad va en el hero, no en el cierre.** `.btn--ghost` es
+blanco sobre transparente —hecho para fondo oscuro— y en el cierre, que es papel
+claro, no se leía. En el cierre se queda «Únete a la Rama» en `.btn--blue`, por
+lo mismo: el `.btn` normal es blanco y desaparece sobre papel.
+
 **La itálica Caslon sigue la pauta de la portada**: la última palabra del
 titular, en minúscula y cursiva, con el resto en versales — «IEEE GEOSCIENCE AND
 REMOTE *Sensing*». `caslon()` en `capitulo.js` **no parte títulos de menos de
