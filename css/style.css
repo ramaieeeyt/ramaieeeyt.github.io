@@ -1539,7 +1539,10 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
    vea entera a la derecha. El ancho va aquí y no en `.shell`: esa clase se
    centra sola, así que estrecharla habría empujado el texto al medio en vez de
    al margen. */
-.caphero__col{max-width:min(38rem,58%)}
+.caphero__col{max-width:min(46rem,64%)}
+/* El titular sí se queda estrecho: es lo que más ancho ocupa y lo que más
+   taparía. */
+.caphero__t{max-width:min(34rem,48vw)}
 .caphero .volver{
   display:inline-block;margin-bottom:var(--e5);
   color:var(--paper);opacity:.62;text-decoration:none;
@@ -1564,10 +1567,29 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   font-size:clamp(2.1rem,5.6vw,4.1rem);line-height:1.02;
   font-weight:800;letter-spacing:-.03em;text-transform:uppercase;
   margin:0 0 var(--e3);text-wrap:balance}
+/* La frase y el botón, en fila. El botón a la derecha y centrado con el
+   texto; la frase se queda estrecha para no cruzar por encima de quien está a
+   la izquierda de la foto. Si no caben, el botón baja solo. */
+.caphero__pie{
+  display:flex;align-items:center;gap:var(--e4);flex-wrap:wrap;
+  margin-top:var(--e3)}
 .caphero__lede{
-  font-size:clamp(1rem,1.6vw,1.22rem);line-height:1.55;
-  opacity:.82;max-width:34rem;margin:0}
-.caphero__btn{margin-top:var(--e4)}
+  font-size:clamp(1rem,1.6vw,1.22rem);line-height:1.5;
+  opacity:.82;max-width:29rem;margin:0;flex:1 1 18rem}
+/* El botón cae sobre la foto, donde el velo ya casi no llega y puede tocar un
+   banderín blanco. Con el estilo fantasma —texto blanco sin fondo— ahí no se
+   lee, así que en el hero lleva su propia base oscura y difuminada. */
+.caphero__btn{
+  flex:0 0 auto;margin:0;white-space:nowrap;
+  background:color-mix(in srgb,var(--ink) 62%,transparent);
+  backdrop-filter:blur(10px) saturate(140%);
+  -webkit-backdrop-filter:blur(10px) saturate(140%);
+  border-color:rgba(255,255,255,.42);
+}
+.caphero__btn:hover{
+  background:#fff;color:var(--ieee-dark-blue);border-color:#fff;
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+}
 
 /* --- secciones --- */
 .capsec{padding:var(--e6) 0;border-top:1px solid var(--rule)}

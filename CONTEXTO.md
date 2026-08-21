@@ -429,6 +429,15 @@ arriba se pierde el banderín, más abajo se cortan las caras.
 texto **al medio** en vez de al margen izquierdo. Costó un rato verlo: el texto
 salía a 336 px cuando el logotipo de la barra está a 64.
 
+**El enlace («Míralo en IEEE oficial») va en el hero, a la derecha de la frase
+y centrado con ella**, no debajo: así el bloque de texto baja una línea de alto
+y tapa menos foto. En pantallas estrechas el botón cae solo bajo la frase.
+
+> Ese botón **lleva base oscura difuminada propia**, y no es un capricho: cae
+> sobre la foto, donde el velo ya casi no llega, y en varios capítulos aterriza
+> justo encima del banderín blanco. Con el estilo fantasma —texto blanco sin
+> fondo— ahí no se leía.
+
 **El enlace a la sociedad va en el hero, no en el cierre.** `.btn--ghost` es
 blanco sobre transparente —hecho para fondo oscuro— y en el cierre, que es papel
 claro, no se leía. En el cierre se queda «Únete a la Rama» en `.btn--blue`, por
