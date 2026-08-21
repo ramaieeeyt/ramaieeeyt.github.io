@@ -1,15 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- La portada y la lista de capítulos cambian con cada directiva; las
+       diez páginas de capítulo, cuando su capítulo actualiza algo. -->
   <url>
     <loc>https://ramaieeeyt.github.io/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ramaieeeyt.github.io/capitulos.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/computer-society.html</loc>
+    <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/embs.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/eps.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/cas.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/ras.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/grss.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/cis.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/nano.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/wie.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ramaieeeyt.github.io/capitulos/sight.html</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
