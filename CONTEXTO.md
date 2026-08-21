@@ -459,6 +459,29 @@ REMOTE *Sensing*». `caslon()` en `capitulo.js` **no parte títulos de menos de
 tres palabras**, porque «IEEE EMBS» e «IEEE SIGHT» son siglas y en cursiva
 quedan mal.
 
+**La entrada del hero reutiliza `slide-out` y `mark-in`**, las mismas de la
+portada, escalonadas: volver 0,12 s · logo 0 · antetítulo 0,28 · titular 0,38 ·
+la fila de abajo 0,72. No se inventaron animaciones nuevas. Todas quedan
+apagadas con `prefers-reduced-motion`, y el estado final está comprobado: si la
+animación no llegara a correr, nada se queda invisible.
+
+**Los SVG de `LOGOS/Logos capitulos y grupos/` NO sirven para la web.** Se
+revisaron el 20-08-2026:
+
+- **No son vectores.** Cada `.svg` es una hoja del manual con imágenes
+  rasterizadas incrustadas en base64 — `11.svg` son dos PNG de 4000×4000 con un
+  solo `<path>`. Pesan de 263 KB a 3,3 MB cada uno.
+- **No cubren los diez capítulos.** Las trece hojas son EPS, NANO, WIE, varios
+  lockups de la Rama… y MTT-S, NPSS y ComSoc, que **no son capítulos de esta
+  Rama**. Faltan Computer Society, EMBS, CAS, RAS, GRSS, CIS y SIGHT.
+- Los PNG que usa la página hoy miden 247–480 px para ranuras de 110–124 px:
+  ya van a 2–4× de lo que se muestra. **La calidad no es el cuello de botella.**
+
+> Si algún día hacen falta mejores: pide **un SVG por logotipo y variante, con el
+> texto convertido a curvas y sin ninguna etiqueta `<image>` dentro**. Si la
+> herramienta no puede, un PNG con transparencia al doble del tamaño mostrado
+> vale igual — que es justo lo que ya hay.
+
 **Las fotos, al tamaño en que se muestran.** Hero 1400×852 (~118 KB), retratos
 de la directiva 432×540 para una ficha de 176 px (~34 KB). La carpeta entera son
 3,2 MB para diez páginas. El error que costó 3 MB en este repo fue guardar a 900
