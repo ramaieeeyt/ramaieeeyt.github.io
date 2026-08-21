@@ -26,6 +26,16 @@
       .replace(/"/g, '&quot;');
   }
 
+  /* La última palabra en Caslon itálica, como en «Qué es la *Rama*» de la
+     portada. Con dos palabras o menos no se parte: «IEEE EMBS» e «IEEE SIGHT»
+     son siglas y en cursiva quedan raras. */
+  function caslon(txt) {
+    var w = String(txt).trim().split(/\s+/);
+    if (w.length < 3) return esc(txt);
+    var ultima = w.pop();
+    return esc(w.join(' ')) + ' <span class="caslon">' + esc(ultima) + '</span>';
+  }
+
   /* ¿hay algo que dibujar? un array con elementos, o un texto no vacío */
   function hay(x) {
     return Array.isArray(x) ? x.length > 0 : !!(x && String(x).trim());
@@ -40,7 +50,7 @@
       '<div class="shell">' +
         '<header class="capsec__head">' +
           '<span class="capsec__k">' + esc(kicker) + '</span>' +
-          '<h2 class="capsec__t">' + esc(titulo) + '</h2>' +
+          '<h2 class="capsec__t">' + caslon(titulo) + '</h2>' +
         '</header>' +
         '<div class="capsec__body"></div>' +
       '</div>';
@@ -67,6 +77,12 @@
     /* ------------------------------------------------------------- PORTADA */
     var hero = $('.caphero');
     if (hero) {
+      /* De fondo, la foto de su directiva con el banderín del capítulo,
+         recortada de la portada que publicaron. El campo ASCII se queda
+         debajo, apagándose bajo la foto. */
+      hero.style.setProperty('--foto',
+        'url("../assets/img/capitulos/hero/' + slug + '.jpg")');
+      hero.classList.add('caphero--foto');
       hero.innerHTML =
         '<div class="ascii-field" aria-hidden="true">' +
           '<pre class="ascii" id="ascii-caps"></pre></div>' +
@@ -77,7 +93,7 @@
             '<img src="../assets/img/capitulos/' + esc(c.img) +
             '" alt="Logotipo de ' + esc(c.t) + '"></span>' +
           '<span class="caphero__k">' + esc(c.k) + '</span>' +
-          '<h1 class="caphero__t">' + esc(c.t) + '</h1>' +
+          '<h1 class="caphero__t">' + caslon(c.t) + '</h1>' +
           (hay(c.lede) ? '<p class="caphero__lede">' + esc(c.lede) + '</p>' : '') +
         '</div>';
     }
@@ -94,7 +110,7 @@
     }
 
     /* --------------------------------------------------------- QUÉ HACEMOS */
-    b = seccion(main, 'hacemos', 'Actividad', 'Qué hacemos', c.hacemos);
+    b = seccion(main, 'hacemos', 'Actividad', 'Qué es lo que hacemos', c.hacemos);
     if (b) {
       var rej = el('div', 'caphace');
       c.hacemos.forEach(function (h) {
@@ -105,7 +121,7 @@
     }
 
     /* ----------------------------------------------------------- DIRECTIVA */
-    b = seccion(main, 'directiva', 'Quiénes', 'La directiva', c.board);
+    b = seccion(main, 'directiva', 'Quiénes', 'Quiénes la dirigen', c.board);
     if (b) {
       var g = el('div', 'capboard');
       c.board.forEach(function (m) {
@@ -129,7 +145,7 @@
     }
 
     /* --------------------------------------------------------- TRAYECTORIA */
-    b = seccion(main, 'trayectoria', 'Historia', 'Trayectoria', c.timeline);
+    b = seccion(main, 'trayectoria', 'Historia', 'Nuestra trayectoria', c.timeline);
     if (b) {
       var ol = el('ol', 'captime');
       c.timeline.forEach(function (h) {
@@ -145,7 +161,7 @@
     }
 
     /* --------------------------------------------------------------- FOTOS */
-    b = seccion(main, 'fotos', 'Archivo', 'En imágenes', c.fotos);
+    b = seccion(main, 'fotos', 'Archivo', 'El archivo del capítulo', c.fotos);
     if (b) {
       var m2 = el('div', 'capfotos');
       c.fotos.forEach(function (f) {

@@ -403,6 +403,35 @@ color en `DATA.caps`.
 
 ---
 
+## 7g · Las mini-páginas de capítulo
+
+Diez páginas, **una sola plantilla**: la estructura en `js/capitulo.js`, el
+contenido en `js/capitulos-data.js`, y cada `.html` son 70 líneas de las que
+solo cambian siete. Una sección sin contenido **no se dibuja**: rellenar el
+array la hace aparecer. Nunca dejes un hueco vacío ni un «próximamente».
+
+**El hero lleva de fondo la foto de la directiva del capítulo con su
+banderín**, recortada de la portada que publicaron
+(`assets/img/capitulos/hero/<slug>.jpg`). Va bajo dos velos —uno lateral donde
+se apoya el texto y otro suave desde abajo— y anclada al **34 % de altura**: más
+arriba se pierde el banderín, más abajo se cortan las caras.
+
+> **Computer Society no tiene banderín en su foto**: van con los brazos por los
+> hombros. No es un fallo del recorte, es su pieza.
+
+**La itálica Caslon sigue la pauta de la portada**: la última palabra del
+titular, en minúscula y cursiva, con el resto en versales — «IEEE GEOSCIENCE AND
+REMOTE *Sensing*». `caslon()` en `capitulo.js` **no parte títulos de menos de
+tres palabras**, porque «IEEE EMBS» e «IEEE SIGHT» son siglas y en cursiva
+quedan mal.
+
+**Las fotos, al tamaño en que se muestran.** Hero 1400×852 (~118 KB), retratos
+de la directiva 432×540 para una ficha de 176 px (~34 KB). La carpeta entera son
+3,2 MB para diez páginas. El error que costó 3 MB en este repo fue guardar a 900
+y mostrar a 124: no lo repitas.
+
+---
+
 ## 7a · Seguridad
 
 La superficie de ataque de este sitio es diminuta y conviene entender por qué,
