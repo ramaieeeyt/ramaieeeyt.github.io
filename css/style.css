@@ -1497,6 +1497,11 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   position:relative;background:var(--ink);color:var(--paper);
   padding:calc(var(--e7) + var(--e5)) 0 var(--e6);
   overflow:hidden;
+  /* Alto propio, y el contenido apoyado abajo. Sin esto el alto lo decidía el
+     texto: GRSS, con titular de tres líneas, enseñaba mucha más foto que EMBS,
+     que tiene una. El hueco que sobra se lo queda la imagen. */
+  min-height:clamp(30rem,72vh,44rem);
+  display:flex;flex-direction:column;justify-content:flex-end;
 }
 .caphero::before{                      /* el tinte, muy contenido */
   content:"";position:absolute;inset:0;
@@ -1539,10 +1544,9 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
    vea entera a la derecha. El ancho va aquí y no en `.shell`: esa clase se
    centra sola, así que estrecharla habría empujado el texto al medio en vez de
    al margen. */
-.caphero__col{max-width:min(46rem,64%)}
+.caphero__col{max-width:min(40rem,56%)}
 /* El titular sí se queda estrecho: es lo que más ancho ocupa y lo que más
    taparía. */
-.caphero__t{max-width:min(34rem,48vw)}
 .caphero .volver{
   display:inline-block;margin-bottom:var(--e5);
   color:var(--paper);opacity:.62;text-decoration:none;
@@ -1564,18 +1568,23 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
   margin-bottom:var(--e2)}
 .caphero__t{
-  font-size:clamp(2.1rem,5.6vw,4.1rem);line-height:1.02;
+  /* Más pequeño y algo más ancho que en el primer intento: con 30rem y 4,1rem,
+     «IEEE GEOSCIENCE AND REMOTE Sensing» caía en cuatro líneas y disparaba el
+     alto del hero justo lo que se quería evitar. Con esto son tres. */
+  font-size:clamp(1.9rem,4.3vw,3.3rem);line-height:1.04;
   font-weight:800;letter-spacing:-.03em;text-transform:uppercase;
-  margin:0 0 var(--e3);text-wrap:balance}
+  margin:0 0 var(--e3);text-wrap:balance;
+  max-width:min(33rem,46vw)}
 /* La frase y el botón, en fila. El botón a la derecha y centrado con el
    texto; la frase se queda estrecha para no cruzar por encima de quien está a
    la izquierda de la foto. Si no caben, el botón baja solo. */
 .caphero__pie{
-  display:flex;align-items:center;gap:var(--e4);flex-wrap:wrap;
-  margin-top:var(--e3)}
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:var(--e4);flex-wrap:wrap;margin-top:var(--e3)}
 .caphero__lede{
-  font-size:clamp(1rem,1.6vw,1.22rem);line-height:1.5;
-  opacity:.82;max-width:29rem;margin:0;flex:1 1 18rem}
+  font-size:clamp(.96rem,1.4vw,1.1rem);line-height:1.5;
+  opacity:.82;max-width:25rem;margin:0;flex:0 1 25rem}
 /* El botón cae sobre la foto, donde el velo ya casi no llega y puede tocar un
    banderín blanco. Con el estilo fantasma —texto blanco sin fondo— ahí no se
    lee, así que en el hero lleva su propia base oscura y difuminada. */

@@ -424,6 +424,16 @@ arriba se pierde el banderín, más abajo se cortan las caras.
 > la cabeza del más alto queda pegada al borde de su foto y se le cortaba. Si
 > añades un capítulo, míralo: no todas las fotos encuadran igual.
 
+**El hero tiene alto propio** (`min-height` + `justify-content:flex-end`), y no
+es cosmético: sin él lo decidía el texto, y GRSS —con el titular más largo—
+enseñaba 200 px más de foto que EMBS. El hueco que sobra se lo queda la imagen.
+
+> Y por eso el titular es de **3,3rem y no 4,1**: al estrecharlo para que no
+> tapase a la gente, «IEEE GEOSCIENCE AND REMOTE *Sensing*» caía en **cuatro
+> líneas** y disparaba el alto justo lo que se quería evitar. Con 3,3rem y
+> 33rem de ancho, ninguno de los diez pasa de dos líneas. Medido: EMBS 641 px,
+> RAS 652, GRSS 683.
+
 **El texto del hero va en `.caphero__col`, dentro del `.shell`, no en su lugar.**
 `.shell` se centra sola con `margin-inline:auto`, así que estrecharla empuja el
 texto **al medio** en vez de al margen izquierdo. Costó un rato verlo: el texto

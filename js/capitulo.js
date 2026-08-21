@@ -95,16 +95,17 @@
             '" alt="Logotipo de ' + esc(c.t) + '"></span>' +
           '<span class="caphero__k">' + esc(c.k) + '</span>' +
           '<h1 class="caphero__t">' + caslon(c.t) + '</h1>' +
-          /* La frase y el enlace van en la misma fila, el botón a la derecha
-             y centrado con el texto. Así el bloque baja una línea de alto y
-             tapa menos foto — antes el botón colgaba debajo. */
+        '</div>' +
+          /* La fila ocupa el ancho entero del shell: la frase se queda a la
+             izquierda y el enlace se va al margen derecho del todo, centrado
+             con ella. Por eso sale de la columna estrecha. */
           '<div class="caphero__pie">' +
             (hay(c.lede) ? '<p class="caphero__lede">' + esc(c.lede) + '</p>' : '') +
             '<a class="btn btn--ghost caphero__btn" href="' + esc(c.u) + '" ' +
               'target="_blank" rel="noopener noreferrer">Míralo en IEEE oficial ' +
               '<span class="btn__arrow" aria-hidden="true">↗</span></a>' +
           '</div>' +
-        '</div></div>';
+        '</div>';
     }
 
     var main = $('#cap-main');
