@@ -384,6 +384,18 @@ volver atrás también enseña la pantalla, que es lo que quería Andrés.
 > pantalla de carga tapando una página que ya está es de los fallos que más
 > enfadan, y no debe poder ocurrir por ningún camino. Si tocas esto, déjalos.
 
+**El fondo del velo es el degradado de las propias piezas del capítulo**, no un
+color inventado: se muestrearon las dos esquinas de cada portada
+(`assets/img/archivo/cap-*.jpg`) y viven en `CAPS` como `grad: ['#a','#b']`. Por
+eso Computer Society entra en naranja y oliva, y SIGHT en arena y rosa: son los
+colores que eligió cada capítulo para sus propias publicaciones.
+
+**Los puntos van encima, y su tinta está medida, no elegida a ojo.** Se calculó
+el contraste de blanco y de negro contra el punto medio de cada degradado: en
+ocho de diez lee mejor la tinta oscura, y en NANO y RAS —los dos degradados
+oscuros— la clara. Está en `CAPS` como `punto: 'tinta' | 'papel'`. Si añades un
+capítulo, mídelo; no lo copies del vecino.
+
 El color del punto es el del capítulo, que vive **solo** en `CAPS`
 (`js/capitulos-data.js`). Por eso `capitulos.html` carga esa hoja: para que
 `renderCaps` ponga `--c` en la tarjeta y el velo lo herede. No dupliques el

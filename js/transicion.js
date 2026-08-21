@@ -53,13 +53,20 @@
     return g;
   }
 
-  function velo(modo, color) {
+  function velo(modo, cap) {
     var v = document.createElement('div');
     v.className = 'velo';
     v.setAttribute('role', 'status');
     v.setAttribute('aria-live', 'polite');
     v.setAttribute('aria-label', 'Cargando');
-    if (color) v.style.setProperty('--cap', color);
+    /* El fondo es el degradado de las propias piezas del capítulo, muestreado
+       de su portada; los puntos van encima en la tinta que mejor lee sobre él.
+       Sin datos, el velo cae al campo oscuro del sitio. */
+    if (cap && cap.grad) {
+      v.style.setProperty('--velo-a', cap.grad[0]);
+      v.style.setProperty('--velo-b', cap.grad[1]);
+      v.classList.add('velo--punto-' + (cap.punto || 'papel'));
+    }
     v.appendChild(rejilla(modo));
     return v;
   }
@@ -103,8 +110,9 @@
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
         e.preventDefault();
         var destino = a.getAttribute('href');
-        var v = velo(i % 2 ? 'strobe' : 'neon',
-                     getComputedStyle(a).getPropertyValue('--c').trim());
+        var slug = (destino.match(/([a-z-]+)\.html$/) || [])[1];
+        var cap = (typeof CAPS !== 'undefined') ? CAPS[slug] : null;
+        var v = velo(i % 2 ? 'strobe' : 'neon', cap);
         document.body.appendChild(v);
         requestAnimationFrame(function () { v.classList.add('is-on'); });
         setTimeout(function () { location.href = destino; }, ESPERA);
@@ -121,7 +129,8 @@
     /* Solo si se viene de la lista: entrar directo por la URL no lo enseña. */
     if (!/\/capitulos\.html/.test(document.referrer)) return;
 
-    var v = velo('neon');
+    var slug = document.body.getAttribute('data-cap');
+    var v = velo('neon', (typeof CAPS !== 'undefined') ? CAPS[slug] : null);
     v.classList.add('is-on', 'velo--salida');
     document.body.appendChild(v);
 

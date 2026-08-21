@@ -28,6 +28,11 @@ var CAPS = {
     img:   'computer-society.png',
     u:     'https://www.computer.org/',
     color: 'var(--ieee-cyan)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#EF9D01', '#4A6303'],
+    punto: 'tinta',
     lede:  'Computación, software, inteligencia artificial, ciberseguridad y arquitectura del computador.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -52,6 +57,11 @@ var CAPS = {
     img:   'embs.png',
     u:     'https://www.embs.org/',
     color: 'var(--ieee-red)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#A169B0', '#7484CF'],
+    punto: 'tinta',
     lede:  'Bioingeniería: dispositivos médicos, neurociencias y procesamiento de señales fisiológicas.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -76,6 +86,11 @@ var CAPS = {
     img:   'eps.png',
     u:     'https://eps.ieee.org/',
     color: 'var(--ieee-orange)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#2776AD', '#A9A0DF'],
+    punto: 'tinta',
     lede:  'Microchips, ensamblaje, empaque y manufactura electrónica — el hardware que todo lo demás da por sentado.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -100,6 +115,11 @@ var CAPS = {
     img:   'cas.png',
     u:     'https://ieee-cas.org/',
     color: 'var(--ieee-purple)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#0F7345', '#6AAC45'],
+    punto: 'tinta',
     lede:  'Diseño de circuitos, nanoelectrónica y teoría de redes.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -124,6 +144,11 @@ var CAPS = {
     img:   'ras.png',
     u:     'https://www.ieee-ras.org/',
     color: 'var(--ieee-teal)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#69255F', '#8F3C4B'],
+    punto: 'papel',
     lede:  'Robótica, automatización, manufactura avanzada y drones.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -148,6 +173,11 @@ var CAPS = {
     img:   'grss.png',
     u:     'https://www.grss-ieee.org/',
     color: 'var(--ieee-green)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#B8CDE1', '#165793'],
+    punto: 'tinta',
     lede:  'Teledetección, SIG, observación de la Tierra y sensores satelitales.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -172,6 +202,11 @@ var CAPS = {
     img:   'cis.png',
     u:     'https://cis.ieee.org/',
     color: 'var(--ieee-dark-teal)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#29B5E5', '#3469A6'],
+    punto: 'tinta',
     lede:  'Redes neuronales, lógica difusa y algoritmos evolutivos.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -196,6 +231,11 @@ var CAPS = {
     img:   'nano.png',
     u:     'https://ieeenano.org/',
     color: 'var(--ieee-dark-blue)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#2A486C', '#638595'],
+    punto: 'papel',
     lede:  'Nanotecnología: nanomateriales, nanodispositivos y nanomedicina.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -220,6 +260,11 @@ var CAPS = {
     img:   'wie.png',
     u:     'https://wie.ieee.org/',
     color: 'var(--ieee-yellow)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#AA7EB4', '#90A3F7'],
+    punto: 'tinta',
     lede:  'Comunidad de mujeres en ingeniería: mentoría, divulgación y diversidad. La membresía del grupo es gratuita.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -244,6 +289,11 @@ var CAPS = {
     img:   'sight.png',
     u:     'https://sight.ieee.org/',
     color: 'var(--ieee-dark-green)',
+    /* Los dos extremos del degradado de sus propias piezas, muestreados de
+       la portada. El punto va claro u oscuro según cuál lea mejor: medido
+       contra el punto medio del degradado. */
+    grad:  ['#E0C288', '#F2A9ED'],
+    punto: 'tinta',
     lede:  'Tecnología puesta al servicio del desarrollo humanitario y social.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */

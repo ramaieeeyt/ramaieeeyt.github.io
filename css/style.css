@@ -1636,21 +1636,28 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 .velo{
   position:fixed;inset:0;z-index:200;
   display:grid;place-items:center;
-  background:var(--ink);
   opacity:0;transition:opacity .34s var(--ease);
-  --cap:var(--ieee-cyan);
+  /* Sin datos del capítulo cae al campo oscuro del sitio. */
+  --velo-a:var(--ink);
+  --velo-b:var(--ieee-dark-blue);
+  --velo-punto:var(--paper);
+  background:linear-gradient(158deg,var(--velo-a) 0%,var(--velo-b) 100%);
 }
+/* Qué tinta lleva el punto sobre ese degradado. No se elige a ojo: está medida
+   contra el punto medio de cada degradado y anotada en capitulos-data.js. */
+.velo--punto-papel{--velo-punto:var(--paper)}
+.velo--punto-tinta{--velo-punto:#111}
 .velo.is-on{opacity:1}
 .velo--salida{transition:opacity .42s var(--ease)}
 
 .velo__grid{
-  display:grid;gap:6px;
-  grid-template-columns:repeat(5,14px);
-  grid-template-rows:repeat(5,14px);
+  display:grid;gap:5px;
+  grid-template-columns:repeat(5,10px);
+  grid-template-rows:repeat(5,10px);
 }
 .velo__punto{
-  display:block;width:14px;height:14px;border-radius:999px;
-  background:var(--cap);
+  display:block;width:10px;height:10px;border-radius:999px;
+  background:var(--velo-punto);
   opacity:.52;                       /* el nivel medio, el de reposo */
   will-change:opacity;
 }
@@ -1680,8 +1687,8 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 }
 
 @media (max-width:600px){
-  .velo__grid{grid-template-columns:repeat(5,11px);grid-template-rows:repeat(5,11px);gap:5px}
-  .velo__punto{width:11px;height:11px}
+  .velo__grid{grid-template-columns:repeat(5,8px);grid-template-rows:repeat(5,8px);gap:4px}
+  .velo__punto{width:8px;height:8px}
 }
 
 /* Quien pide menos movimiento no ve el velo: transicion.js ni lo crea. Esto
