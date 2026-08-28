@@ -80,10 +80,15 @@
       /* De fondo, la foto de su directiva con el banderín del capítulo,
          recortada de la portada que publicaron. El campo ASCII se queda
          debajo, apagándose bajo la foto. */
-      hero.style.setProperty('--foto',
-        'url("../assets/img/capitulos/hero/' + slug + '.jpg")');
-      if (hay(c.foco)) hero.style.setProperty('--foco', c.foco);
-      hero.classList.add('caphero--foto');
+      /* Solo si la hay: `grad` sale de esa misma portada, así que su ausencia
+         significa que ese capítulo aún no ha pasado la pieza. Sin ella el hero
+         se queda en el campo oscuro, como estaba antes — nunca roto. */
+      if (c.grad) {
+        hero.style.setProperty('--foto',
+          'url("../assets/img/capitulos/hero/' + slug + '.jpg")');
+        if (hay(c.foco)) hero.style.setProperty('--foco', c.foco);
+        hero.classList.add('caphero--foto');
+      }
       hero.innerHTML =
         '<div class="ascii-field" aria-hidden="true">' +
           '<pre class="ascii" id="ascii-caps"></pre></div>' +

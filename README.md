@@ -47,7 +47,7 @@ medieval sea exactamente la misma forma que la cometa de IEEE.
 ```
 IEEE YT webpage/
 ├── index.html              ← la portada
-├── capitulos.html          ← los diez capítulos y grupos de afinidad
+├── capitulos.html          ← los catorce capítulos y grupos de afinidad
 ├── robots.txt              ← para los buscadores
 ├── sitemap.xml             ← ídem; se envía desde Google Search Console
 ├── css/
@@ -64,7 +64,7 @@ IEEE YT webpage/
     └── img/
         ├── directiva/      ← retratos recortados de la Directiva 2026
         ├── archivo/        ← las piezas de Instagram completas
-        ├── capitulos/      ← los diez logotipos, del manual de marca
+        ├── capitulos/      ← los catorce logotipos, de LOGOS/logos svg/
         ├── oportunidades/  ← portadas de las ocho tarjetas
         ├── herbieee/       ← los memes (la sección está oculta)
         ├── rama-general-2026.jpg
@@ -221,10 +221,18 @@ carpeta.
 Viven en `DATA.caps` y se pintan en **`capitulos.html`**. Desde la portada se
 llega por la tarjeta que hay bajo Oportunidades.
 
-Son **diez**: ocho capítulos técnicos (Computer Society, EMBS, EPS, CAS, RAS,
-GRSS, CIS y Nanotechnology Council) y dos grupos de afinidad (WIE y SIGHT). La
-lista sale del **manual de marca de la rama**, no de la web pública, que está
-desactualizada.
+Son **catorce**: doce capítulos técnicos (Computer Society, EMBS, EPS, CAS, RAS,
+GRSS, CIS, Nanotechnology Council, ComSoc, MTT-S, NPSS y Photonics) y dos grupos
+de afinidad (WIE y SIGHT). La lista sale del **manual de marca de la rama**, no
+de la web pública, que está desactualizada.
+
+Los cuatro últimos —ComSoc, MTT-S, NPSS y Photonics— **los confirmó Andrés el
+28-08-2026**; antes estaban en el manual pero sin confirmar si eran activos.
+Todavía no tienen foto de directiva ni contenido propio: su página se dibuja con
+lo que hay y las secciones vacías no aparecen.
+
+**NTC no lleva a una página nuestra**: tiene web propia en
+`ieee-ntc-ec.github.io/ieee-ntc-yachay/` y su tarjeta va allí.
 
 Los logotipos de `assets/img/capitulos/` se recortaron de las hojas SVG de ese
 manual (`LOGOS/Logos capitulos y grupos/`), quitando el fondo verde con una

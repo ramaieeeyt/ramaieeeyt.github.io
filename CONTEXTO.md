@@ -77,21 +77,36 @@ mirarlos, no suponer.
 Adalys Samaniego (Secretaria), Mateo Acero (Tesorero), Andrés Aveiga
 (Web Master), Naomi Macanchí (Coordinadora de Membresías).
 
-**Capítulos y grupos — son DIEZ.** Fuente definitiva: el **manual de marca de
+**Capítulos y grupos — son CATORCE** (antes decía diez; Andrés confirmó los
+cuatro que faltaban el **28-08-2026**).** Fuente definitiva: el **manual de marca de
 la rama** que entregó Andrés (`LOGOS/Logos capitulos y grupos/*.svg` y
 `logos color.png`), no la web pública, que está desactualizada.
 
-*Ocho capítulos técnicos:* Computer Society · EMBS · Electronics Packaging
+*Doce capítulos técnicos:* Computer Society · EMBS · Electronics Packaging
 Society (EPS) · **Circuits and Systems (CAS)** · Robotics and Automation (RAS) ·
 Geoscience and Remote Sensing (GRSS) · Computational Intelligence (CIS) ·
-Nanotechnology Council (NANO).
+Nanotechnology Council (NANO) · **ComSoc · MTT-S · NPSS · Photonics**.
 
 *Dos grupos de afinidad:* **Women in Engineering (WIE)** · **SIGHT** (Special
 Interest Group on Humanitarian Technology).
 
-> El manual contiene además hojas de **MTT-S, Photonics, NPSS y ComSoc**, que
-> **no** aparecen en `logos color.png` ni en la maqueta de Andrés. Pueden ser
-> previstos o inactivos. **No los pongas en el sitio sin confirmar.**
+> **Corregido el 28-08-2026.** Aquí decía que MTT-S, Photonics, NPSS y ComSoc
+> «pueden ser previstos o inactivos, no los pongas sin confirmar». Andrés
+> confirmó que **sí son capítulos de la Rama**; solo les faltaban los datos. Ya
+> están en el sitio. Sirve de recordatorio de para qué existe este archivo: lo
+> que estaba marcado como sin confirmar, no se publicó hasta confirmarlo.
+
+> **Los cuatro nuevos van incompletos a propósito.** Sus descripciones salen de
+> la página oficial de cada sociedad, **no de la guía de membresía** como las
+> otras diez, y llevan `[POR CONFIRMAR]` encima en `DATA.caps`. No tienen foto de
+> directiva, ni resumen, ni trayectoria: sus páginas se dibujan con lo que hay y
+> las secciones vacías no aparecen. **El hero solo pone foto si el capítulo tiene
+> `grad`**, que sale de esa misma portada — sin ella se queda en el campo oscuro,
+> nunca con una imagen rota.
+
+> **La cifra de la portada** (`DATA.stats`) pasó de 10 a **14**, y «ocho
+> capítulos técnicos» pasó a «doce» en `index.html`, `capitulos.html` y el
+> comentario de `main.js`. Si vuelve a cambiar, están esos cuatro sitios.
 
 **Las cinco directivas de cada capítulo (50 personas)** están en
 `js/capitulos-data.js`, y salen de **transcribir las piezas que publicó cada

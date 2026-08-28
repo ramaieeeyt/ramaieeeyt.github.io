@@ -312,6 +312,82 @@ var CAPS = {
     timeline: [],
 
     fotos: []
+  },
+
+  'comsoc': {
+    t:     'IEEE Communications Society',
+    corto: 'Communications',
+    k:     'Capítulo técnico',
+    img:   'comsoc.png',
+    u:     'https://www.comsoc.org/',
+    color: 'var(--ieee-dark-teal)',
+    /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
+       hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
+       muestrean los dos extremos como en los otros diez. */
+    lede:  'Redes y telecomunicaciones: sistemas inalámbricos, protocolos y transmisión de datos.',
+
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+    fotos:    []
+  },
+
+  'mtts': {
+    t:     'IEEE Microwave Theory and Technology Society',
+    corto: 'Microwave Theory and Technology',
+    k:     'Capítulo técnico',
+    img:   'mtts.png',
+    u:     'https://mtt.org/',
+    color: 'var(--ieee-orange)',
+    /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
+       hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
+       muestrean los dos extremos como en los otros diez. */
+    lede:  'Microondas y radiofrecuencia: antenas, radar y comunicaciones de alta frecuencia.',
+
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+    fotos:    []
+  },
+
+  'npss': {
+    t:     'IEEE Nuclear and Plasma Sciences Society',
+    corto: 'Nuclear and Plasma Sciences',
+    k:     'Capítulo técnico',
+    img:   'npss.png',
+    u:     'https://ieee-npss.org/',
+    color: 'var(--ieee-red)',
+    /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
+       hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
+       muestrean los dos extremos como en los otros diez. */
+    lede:  'Ciencias nucleares y de plasmas: instrumentación, detectores y aplicaciones médicas de la radiación.',
+
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+    fotos:    []
+  },
+
+  'photonics': {
+    t:     'IEEE Photonics Society',
+    corto: 'Photonics',
+    k:     'Capítulo técnico',
+    img:   'photonics.png',
+    u:     'https://ieeephotonics.org/',
+    color: 'var(--ieee-yellow)',
+    /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
+       hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
+       muestrean los dos extremos como en los otros diez. */
+    lede:  'Fotónica y óptica: láseres, fibra óptica y dispositivos optoelectrónicos.',
+
+    resumen:  [],
+    hacemos:  [],
+    board:    [],
+    timeline: [],
+    fotos:    []
   }
 
 };

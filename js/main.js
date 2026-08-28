@@ -42,7 +42,7 @@
          nota más vieja. */
       { n:460000, suf:'+', label:'Miembros en el mundo' },
       { n:190,    suf:'+', label:'Países' },
-      { n:10,     suf:'',  label:'Capítulos y grupos aquí' },
+      { n:14,     suf:'',  label:'Capítulos y grupos aquí' },
       { n:8,      suf:'',  label:'Años de membresía estudiantil' }
     ],
 
@@ -104,7 +104,7 @@
 
     /* --- Capítulos y grupos de afinidad -------------------------------------
        Los DIEZ que aparecen en el manual de marca de la rama (`logos color.png`
-       y las hojas SVG de LOGOS/). Ocho capítulos técnicos y dos grupos de
+       y las hojas SVG de LOGOS/). Doce capítulos técnicos y dos grupos de
        afinidad. Los logotipos se recortaron de esas hojas: son las versiones
        oficiales del capítulo, con el lockup «Yachay Tech University / IEEE
        Student Branch» incluido.
@@ -203,6 +203,30 @@
         d:
           'Nanotecnología: nanomateriales, nanodispositivos y nanomedicina.',
         u:'https://ieeenano.org/' },
+      /* [POR CONFIRMAR] Estos cuatro los confirmó Andrés el 28-08-2026 como
+         capítulos de la Rama; las descripciones salen de la página oficial de
+         cada sociedad, NO de la guía de membresía como las otras diez.
+         Sustitúyelas por las palabras del propio capítulo cuando las pase. */
+      { slug:'comsoc', img:'comsoc.png', k:'Capítulo técnico', t:'IEEE Communications Society',
+        d:
+          'Redes y telecomunicaciones: sistemas inalámbricos, protocolos y ' +
+          'transmisión de datos.',
+        u:'https://www.comsoc.org/' },
+      { slug:'mtts', img:'mtts.png', k:'Capítulo técnico', t:'IEEE Microwave Theory and Technology Society',
+        d:
+          'Microondas y radiofrecuencia: antenas, radar y comunicaciones de ' +
+          'alta frecuencia.',
+        u:'https://mtt.org/' },
+      { slug:'npss', img:'npss.png', k:'Capítulo técnico', t:'IEEE Nuclear and Plasma Sciences Society',
+        d:
+          'Ciencias nucleares y de plasmas: instrumentación, detectores y ' +
+          'aplicaciones médicas de la radiación.',
+        u:'https://ieee-npss.org/' },
+      { slug:'photonics', img:'photonics.png', k:'Capítulo técnico', t:'IEEE Photonics Society',
+        d:
+          'Fotónica y óptica: láseres, fibra óptica y dispositivos ' +
+          'optoelectrónicos.',
+        u:'https://ieeephotonics.org/' },
       { slug:'wie', img:'wie.png', k:'Grupo de afinidad', t:'IEEE Women in Engineering',
         d:
           'Comunidad de mujeres en ingeniería: mentoría, divulgación y ' +
