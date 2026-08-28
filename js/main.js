@@ -196,7 +196,10 @@
         d:
           'Redes neuronales, lógica difusa y algoritmos evolutivos.',
         u:'https://cis.ieee.org/' },
-      { slug:'nano', img:'nano.png', k:'Capítulo técnico', t:'IEEE Nanotechnology Council',
+      /* NTC tiene web propia y es la suya: la tarjeta lleva allí, no a una
+         mini-página nuestra que competiría con ella. */
+      { slug:'nano', externo:'https://ieee-ntc-ec.github.io/ieee-ntc-yachay/',
+        img:'nano.png', k:'Capítulo técnico', t:'IEEE Nanotechnology Council',
         d:
           'Nanotecnología: nanomateriales, nanodispositivos y nanomedicina.',
         u:'https://ieeenano.org/' },
@@ -449,7 +452,12 @@
          primero lo nuestro —quiénes son aquí, qué hacen aquí— y el enlace a
          IEEE va dentro de esa página, al final. */
       var a = el('a', 'cap');
-      a.href = 'capitulos/' + c.slug + '.html';
+      if (c.externo) {
+        a.href = c.externo; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.setAttribute('data-externo', '');
+      } else {
+        a.href = 'capitulos/' + c.slug + '.html';
+      }
       /* El color del capítulo vive en CAPS (js/capitulos-data.js), que es el
          único sitio donde está. Si esa hoja no se cargó, la tarjeta va sin
          color y no pasa nada. */

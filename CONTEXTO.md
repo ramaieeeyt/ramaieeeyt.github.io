@@ -410,6 +410,12 @@ contenido en `js/capitulos-data.js`, y cada `.html` son 70 líneas de las que
 solo cambian siete. Una sección sin contenido **no se dibuja**: rellenar el
 array la hace aparecer. Nunca dejes un hueco vacío ni un «próximamente».
 
+**NTC tiene web propia y su tarjeta lleva allí**
+(`ieee-ntc-ec.github.io/ieee-ntc-yachay/`), en pestaña nueva. Se marca con
+`externo` en `DATA.caps`; `capitulos/nano.html` se borró para no competir con
+la suya, y el velo de transición no se pone cuando el enlace sale del sitio.
+Las otras nueve siguen con nuestra plantilla.
+
 **El hero lleva de fondo la foto de la directiva del capítulo con su
 banderín**, recortada de la portada que publicaron
 (`assets/img/capitulos/hero/<slug>.jpg`). Va bajo dos velos —uno lateral donde
@@ -465,7 +471,28 @@ la fila de abajo 0,72. No se inventaron animaciones nuevas. Todas quedan
 apagadas con `prefers-reduced-motion`, y el estado final está comprobado: si la
 animación no llegara a correr, nada se queda invisible.
 
-**Los SVG de `LOGOS/Logos capitulos y grupos/` NO sirven para la web.** Se
+**Los logotipos vienen de `LOGOS/logos svg/`** (entregados el 28-08-2026), y
+**se re-exportan a PNG, no se sirven como SVG**:
+
+- Están los diez de la Rama. Ojo con dos nombres: **`comp` es Computer Society**
+  y **`com` es ComSoc**, que no es de esta Rama — como `mtts`, `npps` y `photo`.
+- Siguen llevando `<image>` incrustado: unos son casi vector (embs son 35 KB con
+  37 paths y un raster de 7 KB), otros son raster puro (`cas`, `nano`, `wie`).
+  Servirlos tal cual serían **1,3 MB frente a 215 KB** en PNG, para una ranura de
+  124 px donde no se nota. Por eso se rasterizan.
+- **Falta `comp white`**: Computer Society solo tiene negro y color.
+
+> **Cómo se rasterizan.** `qlmanage -t` es lo único que hay en este Mac que
+> renderiza SVG, y **dibuja sobre blanco opaco**: el PNG sale con caja blanca y
+> sin alfa. La salida es renderizar **dos veces, sobre blanco y sobre negro**, y
+> despejar el alfa de la diferencia: `a = 1 − (A−B)/255` y `color = B/a`. Así
+> los bordes suavizados salen exactos. Recortar por `getbbox()` después, que el
+> lienzo es un cuadrado de 1000×1000 con el logo dentro.
+
+> Salen a **360 px de alto**, que es 3× de los 124 px de `.cap__logo`, con
+> paleta y alfa. Los diez pesan 215 KB.
+
+**Los SVG viejos de `LOGOS/Logos capitulos y grupos/` NO sirven para la web.** Se
 revisaron el 20-08-2026:
 
 - **No son vectores.** Cada `.svg` es una hoja del manual con imágenes

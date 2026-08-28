@@ -108,6 +108,9 @@
       a.addEventListener('click', function (e) {
         /* respeta abrir en pestaña nueva, y no secuestra el clic del medio */
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        /* Si la tarjeta lleva fuera del sitio no hay nada que cubrir: el velo
+           es para la transición entre nuestras páginas. */
+        if (a.hasAttribute('data-externo')) return;
         e.preventDefault();
         var destino = a.getAttribute('href');
         var slug = (destino.match(/([a-z-]+)\.html$/) || [])[1];
