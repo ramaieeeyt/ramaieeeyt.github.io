@@ -512,6 +512,23 @@ vertical entre medias: es el montaje del lockup de la portada —marca, filete,
 texto— aplicado al capítulo. Con la versión **blanca** va suelto sobre el campo
 oscuro, sin plancha de papel.
 
+> **Los logotipos se igualan por área, no por ancho.** Van de casi cuadrados
+> (WIE, 0,96) a muy apaisados (MTT-S, 2,21), y con ancho fijo el apaisado
+> quedaba con menos de la mitad de presencia: MTT-S salía a 136×62 frente a los
+> 136×120 de CAS. `medirLogo()` en `capitulo.js` calcula
+> `alto = objetivo / √proporción`. Así el cuadrado no se mueve y el apaisado
+> crece hasta un 42 %.
+>
+> El objetivo se lee de **la altura que el CSS ya calculó**, no de la variable
+> `--logo-area`: `getPropertyValue` devuelve el `clamp(...)` **sin resolver** y
+> `parseFloat` sobre eso da NaN. Con eso el tamaño dejaba de ser responsivo sin
+> avisar. Hay que limpiar el estilo en línea antes de leer, o en la segunda
+> pasada se lee el valor que pusimos nosotros.
+
+> **Los nombres de más de 36 caracteres bajan un peldaño de tamaño**
+> (`.is-largo`). MTT-S son 44 y caía en cinco líneas, disparando el alto del
+> hero justo lo que costó arreglar en su día.
+
 > **Computer Society es la excepción: no tiene versión blanca.** Ese conserva la
 > plancha con su logotipo en color, que es lo que se ve bien. `blanco: true` en
 > `CAPS` marca quién tiene cuál, y se puso comprobando el disco, no a mano. Si

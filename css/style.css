@@ -1568,15 +1568,24 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   width:1px;flex:none;align-self:stretch;
   background:rgba(255,255,255,.30)}
 
+/* `--logo-area` es el lado que tendría el logo si fuera cuadrado. El alto real
+   lo calcula `medirLogo()` en capitulo.js dividiéndolo por la raíz de la
+   proporción, para que un logo apaisado y uno cuadrado ocupen lo mismo a la
+   vista. Se deja aquí para que siga siendo responsivo. */
 .caphero__logo{
-  flex:0 0 auto;display:block;width:clamp(72px,8.6vw,116px);margin:0;
+  --logo-area:clamp(84px,9.4vw,124px);
+  flex:0 0 auto;display:block;margin:0;
   background:var(--paper);border-radius:3px;padding:9px;
   border-bottom:3px solid var(--cap)}
 /* Con la versión blanca no hace falta plancha: el logo va suelto sobre el
-   campo, que es como se ve en la portada. */
+   campo, que es como se ve en la portada, y puede permitirse algo más. */
 .caphero__logo.is-blanco{
-  background:none;border:0;padding:0;
-  width:clamp(84px,10vw,136px)}
+  --logo-area:clamp(96px,11vw,142px);
+  background:none;border:0;padding:0}
+/* Antes de que el JS mida, el alto de reserva evita el salto. */
+.caphero__logo img{
+  display:block;width:auto;height:var(--logo-area);max-width:min(240px,28vw);
+  object-fit:contain}
 .caphero__logo img{display:block;width:100%;height:auto}
 /* El acento NO se usa como texto pequeño. Medido contra el papel #FAF9F6 y
    contra el campo oscuro #001528, ningún color de la paleta IEEE pasa el 4,5:1
@@ -1594,7 +1603,11 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   font-size:clamp(1.9rem,4.3vw,3.3rem);line-height:1.04;
   font-weight:800;letter-spacing:-.03em;text-transform:uppercase;
   margin:0 0 var(--e3);text-wrap:balance;
-  max-width:min(30rem,42vw)}
+  max-width:min(32rem,44vw)}
+/* Los nombres de sociedad más largos, un peldaño abajo. Lo pone
+   `capitulo.js` a partir de 36 caracteres. */
+.caphero__t.is-largo{font-size:clamp(1.6rem,3.4vw,2.6rem);
+  max-width:min(34rem,46vw)}
 /* La frase y el botón, en fila. El botón a la derecha y centrado con el
    texto; la frase se queda estrecha para no cruzar por encima de quien está a
    la izquierda de la foto. Si no caben, el botón baja solo. */

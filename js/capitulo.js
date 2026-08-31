@@ -58,6 +58,38 @@
     return $('.capsec__body', s);
   }
 
+  /* Los logotipos de capítulo van de casi cuadrados (WIE, 0,96) a muy
+     apaisados (MTT-S, 2,21). Dimensionarlos por ancho fijo —como estaban—
+     deja los apaisados con menos de la mitad de presencia: MTT-S salía a
+     136×62 frente a los 136×120 de CAS.
+
+     Se igualan por **área**: alto = objetivo / √proporción. Así el cuadrado se
+     queda como estaba y el apaisado crece a lo ancho y a lo alto sin pasarse.
+     El objetivo vive en el CSS (`--logo-area`) para que siga siendo
+     responsivo; aquí solo se hace la raíz, que CSS no lleva de forma fiable. */
+  function medirLogo(img) {
+    if (!img.naturalWidth || !img.naturalHeight) return;
+    /* El objetivo se lee de la altura que el CSS ya calculó, no de la variable:
+       `getPropertyValue` devuelve el `clamp(...)` **sin resolver** y
+       `parseFloat` sobre eso da NaN, así que el tamaño dejaba de ser
+       responsivo. Se limpia el estilo en línea primero para no leer el valor
+       que pusimos nosotros en la pasada anterior. */
+    img.style.height = '';
+    var objetivo = parseFloat(getComputedStyle(img).height) || 136;
+    var r = img.naturalWidth / img.naturalHeight;
+    var alto = Math.min(objetivo / Math.sqrt(r), objetivo * 0.97);
+    img.style.height = Math.round(alto) + 'px';
+    img.style.width = 'auto';
+  }
+
+  function initLogo() {
+    var img = $('.caphero__logo img');
+    if (!img) return;
+    var medir = function () { medirLogo(img); };
+    if (img.complete) medir(); else img.addEventListener('load', medir);
+    window.addEventListener('resize', medir, { passive: true });
+  }
+
   function boot() {
     var slug = document.body.getAttribute('data-cap');
     var c = (typeof CAPS !== 'undefined') && CAPS[slug];
@@ -111,7 +143,11 @@
             '<span class="caphero__filete" aria-hidden="true"></span>' +
             '<div class="caphero__titulos">' +
               '<span class="caphero__k">' + esc(c.k) + '</span>' +
-              '<h1 class="caphero__t">' + caslon(c.t) + '</h1>' +
+              /* Los nombres largos —MTT-S son 44 caracteres, NPSS 40— caían en
+                 cinco líneas y disparaban el alto del hero. A partir de 36 se
+                 baja un peldaño de tamaño. */
+              '<h1 class="caphero__t' + (c.t.length > 36 ? ' is-largo' : '') +
+                '">' + caslon(c.t) + '</h1>' +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -126,6 +162,8 @@
           '</div>' +
         '</div>';
     }
+
+    initLogo();
 
     var main = $('#cap-main');
     if (!main) return;
