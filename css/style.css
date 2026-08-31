@@ -1747,11 +1747,6 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   background:var(--paper-2)}
 .capcierre__btns{display:flex;flex-wrap:wrap;gap:var(--e2);margin-top:var(--e4)}
 
-/* --- pie --- */
-.capfoot{padding:var(--e5) 0;background:var(--ink);color:var(--paper)}
-.capfoot p{margin:0 0 var(--e1);font-size:.86rem;opacity:.7}
-.capfoot a{color:var(--paper);opacity:.7;transition:opacity .3s var(--ease)}
-.capfoot a:hover{opacity:1}
 
 @media (max-width:900px){
   /* En pantallas estrechas no hay mitad derecha que enseñar: el texto vuelve a

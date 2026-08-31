@@ -191,6 +191,33 @@
     var main = $('#cap-main');
     if (!main) return;
 
+    /* --------------------------------------------------- DIRECTIVA, PRIMERO
+       Lo pidió Andrés: antes que el resumen. Tiene sentido — a quien entra le
+       importa más quién está que la definición del campo, y son las caras las
+       que hacen que un capítulo parezca vivo. */
+    b = seccion(main, 'directiva', 'Quiénes', 'Quiénes la dirigen', c.board);
+    if (b) {
+      var g = el('div', 'capboard');
+      c.board.forEach(function (m) {
+        var foto = hay(m.f)
+          ? '<img src="../assets/img/capitulos/' + esc(slug) + '/' + esc(m.f) +
+            '" alt="' + esc(m.name) + ' — ' + esc(m.role) + '" loading="lazy">'
+          : '<span class="capboard__ini" aria-hidden="true">' +
+            esc((m.name || '?').trim().charAt(0)) + '</span>';
+        var ig = hay(m.ig)
+          ? '<a class="capboard__ig" href="https://www.instagram.com/' + esc(m.ig) +
+            '/" target="_blank" rel="noopener noreferrer">@' + esc(m.ig) + '</a>'
+          : '';
+        g.appendChild(el('article', 'capboard__i',
+          '<span class="capboard__foto">' + foto + '</span>' +
+          '<h3>' + esc(m.name) + '</h3>' +
+          '<span class="capboard__rol">' + esc(m.role) + '</span>' +
+          (hay(m.curso) ? '<span class="capboard__curso">' + esc(m.curso) +
+                          '</span>' : '') + ig));
+      });
+      b.appendChild(g);
+    }
+
     /* ----------------------------------------------------------- QUÉ SOMOS */
     var b = seccion(main, 'somos', 'Qué es', c.corto || c.t, c.resumen);
     if (b) {
@@ -223,30 +250,6 @@
           '<h3>' + esc(h.t) + '</h3><p>' + esc(h.d) + '</p>'));
       });
       b.appendChild(ra);
-    }
-
-    /* ----------------------------------------------------------- DIRECTIVA */
-    b = seccion(main, 'directiva', 'Quiénes', 'Quiénes la dirigen', c.board);
-    if (b) {
-      var g = el('div', 'capboard');
-      c.board.forEach(function (m) {
-        var foto = hay(m.f)
-          ? '<img src="../assets/img/capitulos/' + esc(slug) + '/' + esc(m.f) +
-            '" alt="' + esc(m.name) + ' — ' + esc(m.role) + '" loading="lazy">'
-          : '<span class="capboard__ini" aria-hidden="true">' +
-            esc((m.name || '?').trim().charAt(0)) + '</span>';
-        var ig = hay(m.ig)
-          ? '<a class="capboard__ig" href="https://www.instagram.com/' + esc(m.ig) +
-            '/" target="_blank" rel="noopener noreferrer">@' + esc(m.ig) + '</a>'
-          : '';
-        g.appendChild(el('article', 'capboard__i',
-          '<span class="capboard__foto">' + foto + '</span>' +
-          '<h3>' + esc(m.name) + '</h3>' +
-          '<span class="capboard__rol">' + esc(m.role) + '</span>' +
-          (hay(m.curso) ? '<span class="capboard__curso">' + esc(m.curso) +
-                          '</span>' : '') + ig));
-      });
-      b.appendChild(g);
     }
 
     /* --------------------------------------------------------- TRAYECTORIA */

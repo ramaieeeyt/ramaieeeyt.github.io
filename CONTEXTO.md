@@ -507,6 +507,16 @@ animación no llegara a correr, nada se queda invisible.
 > Salen a **360 px de alto**, que es 3× de los 124 px de `.cap__logo`, con
 > paleta y alfa. Los catorce en color pesan 293 KB; los trece en blanco, 196.
 
+**El orden de las secciones es: directiva primero**, luego qué es, qué hacemos,
+lo que abre, trayectoria y fotos. Lo pidió Andrés el 30-08-2026 y tiene sentido:
+a quien entra le importa más quién está que la definición del campo, y son las
+caras las que hacen que un capítulo parezca vivo.
+
+**Las páginas de capítulo llevan el pie de la portada**, el mismo `.foot` con su
+campo ASCII, los contactos y la firma. Antes tenían un `.capfoot` propio de tres
+líneas, que se borró: no hay motivo para que el final de una subpágina sea más
+pobre que el de la portada, y mantener dos pies era mantener dos.
+
 **`abre` y `hacemos` son dos secciones distintas, y la línea entre ellas es
 editorial, no técnica.** Los presidentes de capítulo no responden (Andrés,
 29-08-2026), así que los textos los escribí yo. La regla que seguí:
