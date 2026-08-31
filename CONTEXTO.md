@@ -847,7 +847,15 @@ dejó así.
   si lo ves, **cierra la pestaña y reabre el panel**, y mientras tanto mide con
   `getBoundingClientRect()`, que sí devolvió bien (1280 px) cuando `innerWidth`
   mentía.
-- **Comprueba cada enlace** que añadas. Los rotos restan puntos en R9.
+- **Comprueba cada enlace** que añadas. Los rotos restan puntos en R9. Y no
+  basta el código de estado: **comprueba que la página habla de lo que promete
+  la tarjeta**. La de la RNR apuntó un rato a la Sección Ecuador, que responde
+  200 y no menciona la Reunión Nacional en ninguna de sus páginas. Lo vio
+  Andrés, no yo. Ahora va al registro en vTools de la última edición
+  (`events.vtools.ieee.org/m/497568`, Ibarra 2025); **cuando se convoque la
+  siguiente, cambia ese enlace por su registro nuevo**.
+- **Varios dominios de IEEE dan 403 o 202 a `curl`** y funcionan en navegador:
+  `ieee.org`, `ieeefoundation.org` y Facebook. No los des por rotos sin abrirlos.
 - **El ASCII no es el cuello de botella.** Medido en esta máquina: 0,66 ms escribir un fotograma y 0,61 ms construirlo, a ~11 fps. Es ~1 % de un núcleo, y se para fuera de pantalla y con la pestaña oculta. Si hay que optimizar algo, mide antes: aquí el peso estaba **entero** en las imágenes.
 - **No toques `LOGOS IEEE YT/`** — son los originales del usuario a 5000 px,
   excluidos del repo por `.gitignore`.
