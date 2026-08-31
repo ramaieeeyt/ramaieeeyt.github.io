@@ -75,6 +75,10 @@
   function retirar(v, espera) {
     if (!v || v.dataset.yendose) return;
     v.dataset.yendose = '1';
+    /* La tapadera que puso velo-entrada.js desde el <head> se va antes que el
+       velo: si se quedara, el velo se desvanecería sobre ella y no sobre la
+       página. En una salida no está puesta y esto no hace nada. */
+    document.documentElement.classList.remove('velo-cubriendo');
     setTimeout(function () {
       v.classList.remove('is-on');
       setTimeout(function () { if (v.parentNode) v.remove(); }, 460);
@@ -84,6 +88,10 @@
   function retirarTodos(espera) {
     Array.prototype.forEach.call(document.querySelectorAll('.velo'),
       function (v) { retirar(v, espera); });
+    /* Si no había ningún velo, `retirar` no se llama y la tapadera del <head>
+       se quedaría puesta. Es el mismo atasco de la bfcache que ya arreglamos
+       una vez, pero una capa más abajo. */
+    document.documentElement.classList.remove('velo-cubriendo');
   }
 
   /* -- volver atrás -------------------------------------------------------

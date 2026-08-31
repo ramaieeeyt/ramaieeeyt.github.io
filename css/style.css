@@ -1862,8 +1862,25 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .velo__punto{width:8px;height:8px}
 }
 
+/* --- La tapadera del primer fotograma -----------------------------------
+   El velo lo monta transicion.js en DOMContentLoaded, que es después de que el
+   navegador ya haya pintado la página: durante una o dos décimas se veía el
+   capítulo por debajo antes de que lo tapara. Esto lo cubre desde el primer
+   fotograma; lo enciende js/velo-entrada.js desde el <head>, con los colores
+   del capítulo, y lo apaga transicion.js al retirar el velo.
+
+   Va en 199, justo por debajo del velo, así que mientras el velo está puesto
+   esta capa no se ve: es solo el suelo que impide que asome la página. */
+html.velo-cubriendo::before{
+  content:"";position:fixed;inset:0;z-index:199;
+  background:linear-gradient(158deg,
+    var(--velo-a,var(--ink)) 0%,
+    var(--velo-b,var(--ieee-dark-blue)) 100%);
+}
+
 /* Quien pide menos movimiento no ve el velo: transicion.js ni lo crea. Esto
    es el cinturón por si alguna vez se dibujara desde otro sitio. */
 @media (prefers-reduced-motion:reduce){
   .velo{display:none}
+  html.velo-cubriendo::before{display:none}
 }

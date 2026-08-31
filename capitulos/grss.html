@@ -22,7 +22,13 @@
 <meta property="og:image" content="../assets/img/rama-general-2026.jpg">
 <meta property="og:locale" content="es_EC">
 <meta property="og:site_name" content="IEEE Yachay Tech University Student Branch">
-<link rel="stylesheet" href="../css/style.css?v=118">
+<link rel="stylesheet" href="../css/style.css?v=119">
+
+<!-- Estos dos van en la cabecera a propósito, y bloquean el pintado a
+     propósito: el velo tiene que estar puesto en el primer fotograma o se
+     ve la página por debajo. Ver js/velo-entrada.js. -->
+<script src="../js/capitulos-data.js?v=119"></script>
+<script src="../js/velo-entrada.js?v=119"></script>
 </head>
 
 <body class="cappage" data-cap="grss">
@@ -104,10 +110,9 @@
 <!-- orden: primero los datos, luego el renderizador que construye la página,
      y al final los del sitio — main.js necesita el DOM ya montado para medir
      la barra, y sus render* de la portada no hacen nada aquí. -->
-<script src="../js/capitulos-data.js?v=118"></script>
-<script src="../js/capitulo.js?v=118"></script>
-<script src="../js/ascii.js?v=118"></script>
-<script src="../js/main.js?v=118"></script>
-<script src="../js/transicion.js?v=118"></script>
+<script src="../js/capitulo.js?v=119"></script>
+<script src="../js/ascii.js?v=119"></script>
+<script src="../js/main.js?v=119"></script>
+<script src="../js/transicion.js?v=119"></script>
 </body>
 </html>
