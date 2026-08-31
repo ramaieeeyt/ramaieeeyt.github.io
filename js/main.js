@@ -69,12 +69,6 @@
         d:'Ayudas para que miembros de Women in Engineering asistan y presenten en ' +
           'congresos patrocinados por IEEE.',
         u:'https://wie.ieee.org/grants-scholarships/travel-grants/' },
-      { k:'Membresía', c:'var(--ieee-teal)',
-        img:'membresia.jpg',
-        t:'Beneficios de la membresía estudiantil',
-        d:'Acceso a IEEE Xplore, cursos de IEEE Learning Network, descuentos en ' +
-          'congresos y a las 38 sociedades técnicas — con tarifa de estudiante.',
-        u:'https://www.ieee.org/membership/students/index.html' },
       /* Esta tarjeta reúne concursos y SPAx. Estuvieron un rato separadas y
          apuntando las dos al mismo sitio con el mismo logotipo, que es lo que
          detectó la directiva: los dos programas los lleva el mismo comité. */
@@ -90,9 +84,9 @@
       { k:'Comunidad', c:'var(--ieee-green)',
         img:'ieee-students.jpg',
         t:'IEEE Students',
-        d:'El portal de IEEE hecho para estudiantes, y distinto de la página de ' +
-          'beneficios: aquí están los concursos abiertos, las convocatorias del ' +
-          'momento y lo que hacen otras ramas del mundo.',
+        d:'El portal de IEEE para estudiantes: qué te da la membresía —Xplore, ' +
+          'cursos, descuentos en congresos, las sociedades técnicas—, los ' +
+          'concursos abiertos y lo que hacen otras ramas del mundo.',
         u:'https://students.ieee.org/' },
       { k:'Comunidad', c:'var(--ieee-cyan)',
         img:'ieee-day.jpg',
