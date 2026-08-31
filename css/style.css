@@ -1555,10 +1555,28 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
   transition:opacity .3s var(--ease)}
 .caphero .volver:hover{opacity:1}
+/* El logotipo va al costado del titular, no encima. Con la plancha de papel
+   alineada al borde superior del texto, que centrada bailaba según el titular
+   fuera de una línea o de dos. */
+.caphero__ident{
+  display:flex;align-items:center;gap:clamp(.9rem,2.2vw,1.9rem);
+  margin-bottom:var(--e3)}
+.caphero__titulos{min-width:0}
+/* El filete, como el del lockup de la portada: se estira a la altura de lo que
+   tenga al lado, así que crece con el titular sin que haya que medirlo. */
+.caphero__filete{
+  width:1px;flex:none;align-self:stretch;
+  background:rgba(255,255,255,.30)}
+
 .caphero__logo{
-  display:block;width:clamp(74px,9vw,110px);margin-bottom:var(--e4);
-  background:var(--paper);border-radius:3px;padding:10px;
+  flex:0 0 auto;display:block;width:clamp(72px,8.6vw,116px);margin:0;
+  background:var(--paper);border-radius:3px;padding:9px;
   border-bottom:3px solid var(--cap)}
+/* Con la versión blanca no hace falta plancha: el logo va suelto sobre el
+   campo, que es como se ve en la portada. */
+.caphero__logo.is-blanco{
+  background:none;border:0;padding:0;
+  width:clamp(84px,10vw,136px)}
 .caphero__logo img{display:block;width:100%;height:auto}
 /* El acento NO se usa como texto pequeño. Medido contra el papel #FAF9F6 y
    contra el campo oscuro #001528, ningún color de la paleta IEEE pasa el 4,5:1
@@ -1576,7 +1594,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   font-size:clamp(1.9rem,4.3vw,3.3rem);line-height:1.04;
   font-weight:800;letter-spacing:-.03em;text-transform:uppercase;
   margin:0 0 var(--e3);text-wrap:balance;
-  max-width:min(33rem,46vw)}
+  max-width:min(30rem,42vw)}
 /* La frase y el botón, en fila. El botón a la derecha y centrado con el
    texto; la frase se queda estrecha para no cruzar por encima de quien está a
    la izquierda de la foto. Si no caben, el botón baja solo. */
@@ -1714,7 +1732,12 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 
 @media (max-width:900px){
   /* En pantallas estrechas no hay mitad derecha que enseñar: el texto vuelve a
-     ocupar el ancho y el velo lateral se cierra para que se lea. */
+     ocupar el ancho y el velo lateral se cierra para que se lea. Y el logo
+     vuelve encima: al costado dejaría el titular en una tira de dos palabras
+     por línea. */
+  .caphero__ident{display:block}
+  .caphero__logo{margin-bottom:var(--e3)}
+  .caphero__t{max-width:none}
   .caphero__col{max-width:none}
   .caphero--foto::after{
     background-image:

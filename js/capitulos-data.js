@@ -56,6 +56,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'embs.png',
     u:     'https://www.embs.org/',
+    blanco: true,
     color: 'var(--ieee-red)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
@@ -88,6 +89,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'eps.png',
     u:     'https://eps.ieee.org/',
+    blanco: true,
     color: 'var(--ieee-orange)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
@@ -117,6 +119,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'cas.png',
     u:     'https://ieee-cas.org/',
+    blanco: true,
     color: 'var(--ieee-purple)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
@@ -146,6 +149,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'ras.png',
     u:     'https://www.ieee-ras.org/',
+    blanco: true,
     color: 'var(--ieee-teal)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
@@ -175,6 +179,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'grss.png',
     u:     'https://www.grss-ieee.org/',
+    blanco: true,
     color: 'var(--ieee-green)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
@@ -204,6 +209,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'cis.png',
     u:     'https://cis.ieee.org/',
+    blanco: true,
     color: 'var(--ieee-dark-teal)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
@@ -233,6 +239,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'nano.png',
     u:     'https://ieeenano.org/',
+    blanco: true,
     color: 'var(--ieee-dark-blue)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
@@ -262,6 +269,7 @@ var CAPS = {
     k:     'Grupo de afinidad',
     img:   'wie.png',
     u:     'https://wie.ieee.org/',
+    blanco: true,
     color: 'var(--ieee-yellow)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
@@ -291,6 +299,7 @@ var CAPS = {
     k:     'Grupo de afinidad',
     img:   'sight.png',
     u:     'https://sight.ieee.org/',
+    blanco: true,
     color: 'var(--ieee-dark-green)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de
        la portada. El punto va claro u oscuro según cuál lea mejor: medido
@@ -320,6 +329,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'comsoc.png',
     u:     'https://www.comsoc.org/',
+    blanco: true,
     color: 'var(--ieee-dark-teal)',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
@@ -339,6 +349,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'mtts.png',
     u:     'https://mtt.org/',
+    blanco: true,
     color: 'var(--ieee-orange)',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
@@ -358,6 +369,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'npss.png',
     u:     'https://ieee-npss.org/',
+    blanco: true,
     color: 'var(--ieee-red)',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
@@ -377,6 +389,7 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'photonics.png',
     u:     'https://ieeephotonics.org/',
+    blanco: true,
     color: 'var(--ieee-yellow)',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se

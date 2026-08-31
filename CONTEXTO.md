@@ -505,7 +505,18 @@ animación no llegara a correr, nada se queda invisible.
 > lienzo es un cuadrado de 1000×1000 con el logo dentro.
 
 > Salen a **360 px de alto**, que es 3× de los 124 px de `.cap__logo`, con
-> paleta y alfa. Los diez pesan 215 KB.
+> paleta y alfa. Los catorce en color pesan 293 KB; los trece en blanco, 196.
+
+**En el hero del capítulo el logotipo va al costado del titular**, con un filete
+vertical entre medias: es el montaje del lockup de la portada —marca, filete,
+texto— aplicado al capítulo. Con la versión **blanca** va suelto sobre el campo
+oscuro, sin plancha de papel.
+
+> **Computer Society es la excepción: no tiene versión blanca.** Ese conserva la
+> plancha con su logotipo en color, que es lo que se ve bien. `blanco: true` en
+> `CAPS` marca quién tiene cuál, y se puso comprobando el disco, no a mano. Si
+> algún día llega `comp white`, se exporta a `assets/img/capitulos/blanco/` y se
+> añade la marca.
 
 **Los SVG viejos de `LOGOS/Logos capitulos y grupos/` NO sirven para la web.** Se
 revisaron el 20-08-2026:

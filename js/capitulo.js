@@ -95,11 +95,25 @@
         '<div class="shell caphero__in"><div class="caphero__col">' +
           '<a class="volver" href="../capitulos.html">' +
             '<span aria-hidden="true">←</span> Capítulos y grupos</a>' +
-          '<span class="caphero__logo" data-nav-umbral>' +
-            '<img src="../assets/img/capitulos/' + esc(c.img) +
-            '" alt="Logotipo de ' + esc(c.t) + '"></span>' +
-          '<span class="caphero__k">' + esc(c.k) + '</span>' +
-          '<h1 class="caphero__t">' + caslon(c.t) + '</h1>' +
+          /* El logotipo al costado del titular, con un filete entre medias:
+             es el mismo montaje del lockup de la portada —marca, filete,
+             texto— aplicado al capítulo.
+
+             Con la versión blanca va suelto sobre el campo oscuro, sin plancha
+             de papel. Computer Society no tiene blanca, así que ese conserva
+             la plancha con su versión en color: es lo que se ve bien, y una
+             excepción de una línea vale más que forzar las catorce. */
+          '<div class="caphero__ident">' +
+            '<span class="caphero__logo' + (c.blanco ? ' is-blanco' : '') +
+              '" data-nav-umbral><img src="../assets/img/capitulos/' +
+              (c.blanco ? 'blanco/' + esc(slug) + '.png' : esc(c.img)) +
+              '" alt="Logotipo de ' + esc(c.t) + '"></span>' +
+            '<span class="caphero__filete" aria-hidden="true"></span>' +
+            '<div class="caphero__titulos">' +
+              '<span class="caphero__k">' + esc(c.k) + '</span>' +
+              '<h1 class="caphero__t">' + caslon(c.t) + '</h1>' +
+            '</div>' +
+          '</div>' +
         '</div>' +
           /* La fila ocupa el ancho entero del shell: la frase se queda a la
              izquierda y el enlace se va al margen derecho del todo, centrado
