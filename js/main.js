@@ -101,24 +101,6 @@
           'Engineering— abren convocatorias cada semestre. Escríbenos y te contamos ' +
           'cuál encaja contigo.',
         u:'https://www.instagram.com/ramaieeeyt/' },
-      /* La RNR es NACIONAL, no regional: por eso ni el logotipo de Región 9 —que
-         es toda Latinoamérica— ni el enlace a r9.ieee.org, que es lo que tenía.
-
-         Y tampoco vale la Sección Ecuador: se comprobó el 31-08-2026 y **ni su
-         portada ni su página de estudiantes mencionan la RNR**. El enlace
-         prometía una cosa y llevaba a otra.
-
-         Va al registro en vTools de la última edición, que es donde el encuentro
-         sí está documentado: fechas, sede y programa, y es fuente oficial de
-         IEEE. Cuando se convoque la siguiente, cambia el `u` por su registro
-         nuevo — se busca en events.vtools.ieee.org. */
-      { k:'Encuentro', c:'var(--ieee-dark-teal)',
-        img:'seccion-ecuador.jpg',
-        t:'Reunión Nacional de Ramas',
-        d:'El encuentro anual de las ramas estudiantiles del Ecuador: tres días de ' +
-          'charlas, competencias entre ramas y gente de todo el país. La última ' +
-          'fue en Ibarra, en septiembre de 2025.',
-        u:'https://events.vtools.ieee.org/m/497568' }
     ],
 
     /* --- Capítulos y grupos de afinidad -------------------------------------

@@ -661,8 +661,10 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
    El criterio que más pesa en el concurso R9 (40 de 100). Cada tarjeta es un
    enlace entero, con su color de la paleta IEEE como filo superior. */
 .opps{
-  /* 8 tarjetas: 4, 2 o 1 columnas — los tres divisores exactos de 8, así la
-     última fila nunca queda coja. auto-fill dejaba un hueco a 3 columnas. */
+  /* 4, 2 o 1 columnas. Se eligieron por ser divisores exactos de 8 cuando eran
+     ocho tarjetas; al quedar siete, la última fila sí queda coja y el fondo de
+     la rejilla —que es el filete— asomaba como un rectángulo gris de 273 px.
+     Lo resuelven las reglas de más abajo estirando la última. */
   display:grid;grid-template-columns:repeat(4,1fr);
   /* el hueco de 1 px NO es espaciado: es el filete que se ve entre tarjetas,
      porque el fondo de la rejilla es el color de la regla. No lo pases a la
@@ -710,6 +712,16 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 .opp__go i{font-style:normal;font-family:var(--font-mono);
   transition:transform .45s var(--ease-out)}
 .opp:hover .opp__go i{transform:translate(3px,-3px)}
+
+/* La última tarjeta se estira para llenar su fila. Sin esto el fondo de la
+   rejilla asoma como un bloque gris del tamaño de una tarjeta, que se lee como
+   una ficha rota. La regla vale para cualquier número de tarjetas, que aquí
+   cambian a menudo. Su portada se aplana a 32:9: a doble ancho, un 16:9 queda
+   desproporcionado. */
+.opps .opp:last-child:nth-child(4n+1){grid-column:span 4}
+.opps .opp:last-child:nth-child(4n+2){grid-column:span 3}
+.opps .opp:last-child:nth-child(4n+3){grid-column:span 2}
+.opps .opp:last-child:not(:nth-child(4n)) .opp__cover{aspect-ratio:32/9}
 
 /* ---------------------------------------------------------- 11b1. PRECIO
    La cifra manda: quien llega a Oportunidades quiere saber cuánto cuesta
@@ -1283,6 +1295,11 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .manifiesto__aside{position:static}
   .board{grid-template-columns:1fr 1fr}
   .opps{grid-template-columns:repeat(2,1fr)}
+  /* A dos columnas mandan estas: anulan las de cuatro. */
+  .opps .opp:last-child{grid-column:auto}
+  .opps .opp:last-child .opp__cover{aspect-ratio:16/9}
+  .opps .opp:last-child:nth-child(2n+1){grid-column:span 2}
+  .opps .opp:last-child:nth-child(2n+1) .opp__cover{aspect-ratio:32/9}
   .recursos{grid-template-columns:repeat(2,minmax(0,1fr))}
   .capsdoor{grid-template-columns:1fr;gap:1.2rem}
   .capshead{grid-template-columns:1fr;align-items:start}
@@ -1417,6 +1434,13 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 @media (max-width:600px){
   .board{grid-template-columns:1fr 1fr;gap:.9rem}
   .opps{grid-template-columns:1fr}
+  /* A una columna no hay fila coja posible, así que se anula el estirado. El
+     `:nth-child(n)` no filtra nada: está para igualar la especificidad de las
+     reglas de dos y cuatro columnas, que llevan `:nth-child(2n+1)`. Sin él
+     ganaban ellas, el `span 2` creaba una segunda columna implícita y el móvil
+     salía a dos columnas. */
+  .opps .opp:last-child:nth-child(n){grid-column:auto}
+  .opps .opp:last-child:nth-child(n) .opp__cover{aspect-ratio:16/9}
   .recursos{grid-template-columns:1fr}
   .precio{grid-template-columns:1fr;gap:1rem}
   .precio__cifra{border-right:0;border-bottom:1px solid var(--rule);padding-right:0;padding-bottom:.9rem}

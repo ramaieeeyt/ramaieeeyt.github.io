@@ -854,6 +854,18 @@ dejó así.
   Andrés, no yo. Ahora va al registro en vTools de la última edición
   (`events.vtools.ieee.org/m/497568`, Ibarra 2025); **cuando se convoque la
   siguiente, cambia ese enlace por su registro nuevo**.
+- **La rejilla de Oportunidades ya no depende de que las tarjetas sean ocho.**
+  Se eligieron 4, 2 y 1 columnas por ser divisores exactos de 8; al quedar
+  siete, la última fila dejaba un rectángulo gris de 273 px —el fondo de la
+  rejilla, que es el color del filete— y se leía como una ficha rota. Ahora la
+  última tarjeta se estira hasta llenar su fila y su portada pasa a 32:9.
+  **Añade o quita tarjetas sin preocuparte del número.**
+
+  > Cuidado con la especificidad si tocas esas reglas: el reinicio a una columna
+  > lleva un `:nth-child(n)` que no filtra nada, solo iguala la especificidad de
+  > las reglas de dos y cuatro columnas. Sin él ganaban ellas, el `span 2` creaba
+  > una columna implícita y **el móvil salía a dos columnas**.
+
 - **Varios dominios de IEEE dan 403 o 202 a `curl`** y funcionan en navegador:
   `ieee.org`, `ieeefoundation.org` y Facebook. No los des por rotos sin abrirlos.
 - **El ASCII no es el cuello de botella.** Medido en esta máquina: 0,66 ms escribir un fotograma y 0,61 ms construirlo, a ~11 fps. Es ~1 % de un núcleo, y se para fuera de pantalla y con la pestaña oculta. Si hay que optimizar algo, mide antes: aquí el peso estaba **entero** en las imágenes.
