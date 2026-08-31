@@ -66,7 +66,9 @@ mirarlos, no suponer.
 | **Feria IEEE YT 2025** — 26 feb, edificio SENESCYT, Urcuquí. Incluyó posesión de directivas; se autofinanció con venta de comida | [vTools m/470014](https://events.vtools.ieee.org/m/470014) |
 | **RNR Ibarra 2025** — 26–28 sep, **Universidad Técnica del Norte**. La rama **participó**, NO organizó | [vTools m/497568](https://events.vtools.ieee.org/m/497568) |
 | **460.000+ miembros en 190+ países** · Xplore con **7 M+ documentos** · hasta **40 %** de descuento en congresos | Guía de membresía de la Rama, rev. ago-2026 (Google Doc enlazado en Únete). Antes el sitio decía 420.000 y 160 países, de una nota más vieja |
+| Membresía estudiantil **de pregrado: ~14 USD/año**. Los ~28 son **Graduate Student** | La guía tiene una tabla de tres columnas —Graduate 28, Pregrado 14, descuento especial 7— y yo tomé la primera. Lo corrigió la directiva el 31-08-2026 |
 | Membresía estudiantil: **máx. 8 años**, vence el **31 de diciembre**, y quien entra **entre agosto y diciembre** puede extenderla al 31-dic del año siguiente | Misma guía. Ese último dato es el más útil de todos y está en el bloque del precio |
+| El **50 % de descuento** en sociedades **caducó el 15-08-2026** | Misma guía. **No lo anuncies como vigente** |
 | **No hace falta estudiar ingeniería eléctrica**: IEEE acepta computación, física, matemática aplicada y afines | Misma guía, FAQ. Es prácticamente el mapa de carreras de Yachay, y por eso está en «Qué es la Rama» |
 | **WIE es gratuita**; el resto de sociedades, 1–13 USD/año | Misma guía |
 | Los enfoques de los diez capítulos salen de **la tabla de la guía**, no de mi resumen | Son las palabras de la propia Rama: EMBS «bioingeniería, dispositivos médicos, neurociencias, señales», CAS «diseño de circuitos, nanoelectrónica, teoría de redes», etc. |
@@ -163,7 +165,19 @@ un móvil.
    así que no era un matiz de redacción. **Antes de afirmar qué enseña la
    página, ábrela o lee `DATA`.**
 
-8. **Me comí 423 líneas de `js/main.js` y las dejé commiteadas** (`d3bc03c`).
+8. **Puse la tarifa de posgrado como si fuera la de pregrado.** La guía tiene
+   una tabla de tres columnas —Graduate Student ~28 USD, **Pregrado ~14 USD**,
+   descuento especial ~7— y leí la primera. Estuvo meses en el bloque del precio,
+   que es justo el dato con el que alguien decide si se apunta. **Cuando una
+   fuente es una tabla, mira qué columna estás leyendo.**
+
+9. **Me inventé que la membresía costaba la mitad desde marzo.** No está en la
+   guía por ninguna parte. Probablemente confundí el «descuento de medio año»
+   que la guía menciona hablando del periodo de gracia tras graduarse. Lo
+   descubrí buscando de dónde salía, a petición de Andrés — no lo habría
+   encontrado solo.
+
+10. **Me comí 423 líneas de `js/main.js` y las dejé commiteadas** (`d3bc03c`).
    Al reescribir la sección de capítulos, un `str.replace()` sin verificar se
    llevó todo desde `renderTimeline` hasta el final de la sección 4. El archivo
    quedaba **sintácticamente válido** —cerraba bien la IIFE— así que no saltó

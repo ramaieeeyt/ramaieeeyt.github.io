@@ -75,26 +75,25 @@
         d:'Acceso a IEEE Xplore, cursos de IEEE Learning Network, descuentos en ' +
           'congresos y a las 38 sociedades técnicas — con tarifa de estudiante.',
         u:'https://www.ieee.org/membership/students/index.html' },
+      /* Esta tarjeta reúne concursos y SPAx. Estuvieron un rato separadas y
+         apuntando las dos al mismo sitio con el mismo logotipo, que es lo que
+         detectó la directiva: los dos programas los lleva el mismo comité. */
       { k:'Concursos', c:'var(--ieee-orange)',
         img:'r9-sac.jpg',
-        t:'Concursos del R9 Student Activities Committee',
-        d:'Convocatorias anuales de la Región 9 para ramas estudiantiles: sitios web, ' +
-          'proyectos, videos y reconocimientos a la labor voluntaria.',
+        t:'Concursos y programas del R9 SAC',
+        d:'El comité de actividades estudiantiles de la Región 9 convoca cada año ' +
+          'concursos de sitios web, proyectos y video, y respalda los SPAx: ' +
+          'encuentros donde ingenieros en ejercicio cuentan cómo se trabaja de ' +
+          'verdad. Los organiza tu propia rama.',
         u:'https://r9.ieee.org/sac/' },
       /* Las dos siguientes las pidió la directiva el 31-08-2026. */
-      { k:'Comunidad', c:'var(--ieee-blue)',
-        img:'membresia.jpg',
+      { k:'Comunidad', c:'var(--ieee-green)',
+        img:'ieee-students.jpg',
         t:'IEEE Students',
-        d:'El portal para estudiantes de IEEE: guías para empezar, concursos, ' +
-          'becas y las comunidades a las que puedes entrar desde el primer año.',
+        d:'El portal de IEEE hecho para estudiantes, y distinto de la página de ' +
+          'beneficios: aquí están los concursos abiertos, las convocatorias del ' +
+          'momento y lo que hacen otras ramas del mundo.',
         u:'https://students.ieee.org/' },
-      { k:'Formación', c:'var(--ieee-teal)',
-        img:'r9-sac.jpg',
-        t:'SPAx — Student Professional Awareness',
-        d:'Encuentros que organiza la propia Rama para que sus miembros escuchen ' +
-          'a ingenieros en ejercicio hablar de carrera, liderazgo y cómo se ' +
-          'trabaja de verdad. Los respalda el SAC de la Región 9.',
-        u:'https://r9.ieee.org/sac/' },
       { k:'Comunidad', c:'var(--ieee-cyan)',
         img:'ieee-day.jpg',
         t:'IEEE Day',
@@ -112,10 +111,10 @@
          no a r9.ieee.org, y por eso su tarjeta no debe llevar el logotipo de
          Región 9 —que es toda Latinoamérica— como llevaba. Lo señaló la
          directiva el 31-08-2026.
-         [FALTA IMAGEN] `rnr.jpg` sigue siendo el logo de R9. Sustituir por una
-         foto de la Rama en una RNR, que es lo que manda la regla de imágenes. */
+         Su tarjeta llevaba el logotipo de Región 9; ahora lleva el de la Sección
+         Ecuador, que es de quien depende el encuentro. */
       { k:'Encuentro', c:'var(--ieee-dark-teal)',
-        img:'rnr.jpg',
+        img:'seccion-ecuador.jpg',
         t:'Reunión Nacional de Ramas',
         d:'El encuentro anual de las ramas estudiantiles del Ecuador. La rama ' +
           'participa cada año; en 2023 fue campeona de la feria de ramas.',
