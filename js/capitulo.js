@@ -69,15 +69,34 @@
      responsivo; aquí solo se hace la raíz, que CSS no lleva de forma fiable. */
   function medirLogo(img) {
     if (!img.naturalWidth || !img.naturalHeight) return;
+    var caja = img.closest('.caphero__logo');
+    if (!caja) return;
     /* El objetivo se lee de la altura que el CSS ya calculó, no de la variable:
        `getPropertyValue` devuelve el `clamp(...)` **sin resolver** y
        `parseFloat` sobre eso da NaN, así que el tamaño dejaba de ser
        responsivo. Se limpia el estilo en línea primero para no leer el valor
        que pusimos nosotros en la pasada anterior. */
-    img.style.height = '';
-    var objetivo = parseFloat(getComputedStyle(img).height) || 136;
+    /* El objetivo se mide con un testigo invisible, no sobre la propia imagen.
+       Medir la imagen no funciona: sus propios topes —`max-width`, la relación
+       natural— alteran la altura que devuelve el navegador, así que la escala
+       se aplicaba sobre un número que ya venía recortado. El testigo solo
+       lleva `height: var(--logo-area)` y no tiene nada que lo perturbe. */
+    var testigo = caja.querySelector('.caphero__medida');
+    if (!testigo) {
+      testigo = document.createElement('i');
+      testigo.className = 'caphero__medida';
+      testigo.setAttribute('aria-hidden', 'true');
+      caja.appendChild(testigo);
+    }
+    var objetivo = testigo.getBoundingClientRect().height || 136;
+    /* `--logo-escala` deja corregir un capítulo suelto sin tocar la regla de
+       los demás. Igualar por área funciona para casi todos, pero un logotipo
+       muy **denso** —EPS lleva cuatro líneas de nombre más la de Yachay— queda
+       con el texto ilegible al mismo área que uno de dos líneas. */
+    var escala = parseFloat(
+      getComputedStyle(caja).getPropertyValue('--logo-escala')) || 1;
     var r = img.naturalWidth / img.naturalHeight;
-    var alto = Math.min(objetivo / Math.sqrt(r), objetivo * 0.97);
+    var alto = Math.min(objetivo * escala / Math.sqrt(r), objetivo * 1.15);
     img.style.height = Math.round(alto) + 'px';
     img.style.width = 'auto';
   }
@@ -137,16 +156,20 @@
              excepción de una línea vale más que forzar las catorce. */
           '<div class="caphero__ident">' +
             '<span class="caphero__logo' + (c.blanco ? ' is-blanco' : '') +
-              '" data-nav-umbral><img src="../assets/img/capitulos/' +
+              '" data-nav-umbral' +
+              (c.logoEscala ? ' style="--logo-escala:' + (+c.logoEscala) + '"' : '') +
+              '><img src="../assets/img/capitulos/' +
               (c.blanco ? 'blanco/' + esc(slug) + '.png' : esc(c.img)) +
               '" alt="Logotipo de ' + esc(c.t) + '"></span>' +
             '<span class="caphero__filete" aria-hidden="true"></span>' +
             '<div class="caphero__titulos">' +
               '<span class="caphero__k">' + esc(c.k) + '</span>' +
-              /* Los nombres largos —MTT-S son 44 caracteres, NPSS 40— caían en
-                 cinco líneas y disparaban el alto del hero. A partir de 36 se
-                 baja un peldaño de tamaño. */
-              '<h1 class="caphero__t' + (c.t.length > 36 ? ' is-largo' : '') +
+              /* Los nombres largos disparan el alto del hero: a partir de 32
+                 caracteres el titular baja un peldaño. El umbral bajó de 36 a
+                 32 al agrandar el logotipo de EPS —«IEEE Electronics Packaging
+                 Society» son 34 y con el logo más ancho caía en cuatro
+                 líneas. */
+              '<h1 class="caphero__t' + (c.t.length > 32 ? ' is-largo' : '') +
                 '">' + caslon(c.t) + '</h1>' +
             '</div>' +
           '</div>' +

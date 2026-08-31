@@ -537,11 +537,24 @@ oscuro, sin plancha de papel.
 > `alto = objetivo / √proporción`. Así el cuadrado no se mueve y el apaisado
 > crece hasta un 42 %.
 >
-> El objetivo se lee de **la altura que el CSS ya calculó**, no de la variable
-> `--logo-area`: `getPropertyValue` devuelve el `clamp(...)` **sin resolver** y
-> `parseFloat` sobre eso da NaN. Con eso el tamaño dejaba de ser responsivo sin
-> avisar. Hay que limpiar el estilo en línea antes de leer, o en la segunda
-> pasada se lee el valor que pusimos nosotros.
+> **El objetivo se mide con un testigo invisible** (`.caphero__medida`), no
+> sobre la imagen. Dos formas de medirlo fallaron antes:
+>
+> 1. Leer `--logo-area` con `getPropertyValue` devuelve el `clamp(...)` **sin
+>    resolver**, y `parseFloat` sobre eso da NaN. El tamaño dejaba de ser
+>    responsivo sin avisar.
+> 2. Leer la altura calculada de la propia imagen tampoco: su `max-width` la
+>    recorta antes, así que se leía un objetivo ya encogido y la escala se
+>    aplicaba sobre el número equivocado.
+>
+> El testigo solo lleva `height: var(--logo-area)` y no tiene topes, así que
+> devuelve el valor limpio. **Si tocas esto, no vuelvas a medir sobre la
+> imagen.**
+
+> **`logoEscala` corrige un capítulo suelto** sin mover la regla de los demás.
+> **EPS lo tiene a 1,22**: su logotipo es el más denso de los catorce —cuatro
+> líneas de nombre más la de Yachay— y al mismo área que uno de dos líneas el
+> texto salía ilegible. Pasó de 136×66 a 213×104.
 
 > **Los nombres de más de 36 caracteres bajan un peldaño de tamaño**
 > (`.is-largo`). MTT-S son 44 y caía en cinco líneas, disparando el alto del

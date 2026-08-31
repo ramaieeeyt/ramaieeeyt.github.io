@@ -131,6 +131,9 @@ var CAPS = {
     k:     'Capítulo técnico',
     img:   'eps.png',
     u:     'https://eps.ieee.org/',
+    /* Su logotipo es el más denso de los catorce: cuatro líneas de nombre
+       más la de Yachay. Igualado por área quedaba con el texto ilegible. */
+    logoEscala: 1.22,
     blanco: true,
     color: 'var(--ieee-orange)',
     /* Los dos extremos del degradado de sus propias piezas, muestreados de

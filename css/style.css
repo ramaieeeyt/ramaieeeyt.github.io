@@ -1582,9 +1582,19 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
 .caphero__logo.is-blanco{
   --logo-area:clamp(96px,11vw,142px);
   background:none;border:0;padding:0}
+/* El testigo con el que `medirLogo()` lee el objetivo ya resuelto: solo lleva
+   la altura, sin topes que la alteren. No ocupa sitio ni se ve. */
+.caphero__medida{
+  position:absolute;width:0;height:var(--logo-area);
+  visibility:hidden;pointer-events:none}
+.caphero__logo{position:relative}
+
 /* Antes de que el JS mida, el alto de reserva evita el salto. */
 .caphero__logo img{
-  display:block;width:auto;height:var(--logo-area);max-width:min(240px,28vw);
+  display:block;width:auto;height:var(--logo-area);
+  /* Tope para que un logotipo muy apaisado no empuje al titular. Subió de
+     240 a 290 al agrandar EPS, que a su tamaño bueno mide 246 de ancho. */
+  max-width:min(290px,32vw);
   object-fit:contain}
 .caphero__logo img{display:block;width:100%;height:auto}
 /* El acento NO se usa como texto pequeño. Medido contra el papel #FAF9F6 y
