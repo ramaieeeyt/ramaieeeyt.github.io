@@ -81,6 +81,20 @@
         d:'Convocatorias anuales de la Región 9 para ramas estudiantiles: sitios web, ' +
           'proyectos, videos y reconocimientos a la labor voluntaria.',
         u:'https://r9.ieee.org/sac/' },
+      /* Las dos siguientes las pidió la directiva el 31-08-2026. */
+      { k:'Comunidad', c:'var(--ieee-blue)',
+        img:'membresia.jpg',
+        t:'IEEE Students',
+        d:'El portal para estudiantes de IEEE: guías para empezar, concursos, ' +
+          'becas y las comunidades a las que puedes entrar desde el primer año.',
+        u:'https://students.ieee.org/' },
+      { k:'Formación', c:'var(--ieee-teal)',
+        img:'r9-sac.jpg',
+        t:'SPAx — Student Professional Awareness',
+        d:'Encuentros que organiza la propia Rama para que sus miembros escuchen ' +
+          'a ingenieros en ejercicio hablar de carrera, liderazgo y cómo se ' +
+          'trabaja de verdad. Los respalda el SAC de la Región 9.',
+        u:'https://r9.ieee.org/sac/' },
       { k:'Comunidad', c:'var(--ieee-cyan)',
         img:'ieee-day.jpg',
         t:'IEEE Day',
@@ -94,12 +108,18 @@
           'Engineering— abren convocatorias cada semestre. Escríbenos y te contamos ' +
           'cuál encaja contigo.',
         u:'https://www.instagram.com/ramaieeeyt/' },
+      /* La RNR es NACIONAL, no regional: por eso enlaza a la Sección Ecuador y
+         no a r9.ieee.org, y por eso su tarjeta no debe llevar el logotipo de
+         Región 9 —que es toda Latinoamérica— como llevaba. Lo señaló la
+         directiva el 31-08-2026.
+         [FALTA IMAGEN] `rnr.jpg` sigue siendo el logo de R9. Sustituir por una
+         foto de la Rama en una RNR, que es lo que manda la regla de imágenes. */
       { k:'Encuentro', c:'var(--ieee-dark-teal)',
         img:'rnr.jpg',
         t:'Reunión Nacional de Ramas',
         d:'El encuentro anual de las ramas estudiantiles del Ecuador. La rama ' +
           'participa cada año; en 2023 fue campeona de la feria de ramas.',
-        u:'https://r9.ieee.org/' }
+        u:'https://r9.ieee.org/ecuador/' }
     ],
 
     /* --- Capítulos y grupos de afinidad -------------------------------------
