@@ -507,6 +507,24 @@ animación no llegara a correr, nada se queda invisible.
 > Salen a **360 px de alto**, que es 3× de los 124 px de `.cap__logo`, con
 > paleta y alfa. Los catorce en color pesan 293 KB; los trece en blanco, 196.
 
+**`abre` y `hacemos` son dos secciones distintas, y la línea entre ellas es
+editorial, no técnica.** Los presidentes de capítulo no responden (Andrés,
+29-08-2026), así que los textos los escribí yo. La regla que seguí:
+
+| campo | qué va | por qué se puede |
+|---|---|---|
+| `resumen` | Qué es el campo y a quién le sirve en Yachay | Es descripción del área, verificable |
+| `abre` | Revistas, congresos y programas de **la sociedad** | Son hechos de IEEE, no de este capítulo |
+| `hacemos` | Actividades que **este capítulo** ha hecho | **Vacío.** Escribirlo sería inventar su historia |
+
+**No rellenes `hacemos` sin una fuente.** Es la frontera que separa «describir un
+campo» de «atribuir a alguien algo que no hizo», y este archivo tiene ocho
+errores anotados por cruzarla.
+
+> Las carreras que se citan en los resúmenes —Computación, Biomedicina, Física,
+> Nanotecnología, Geología, Química, Biología, Agroindustria— **no son inventadas**:
+> salen de las 50 fichas de directiva transcritas de las piezas de cada capítulo.
+
 **En el hero del capítulo el logotipo va al costado del titular**, con un filete
 vertical entre medias: es el montaje del lockup de la portada —marca, filete,
 texto— aplicado al capítulo. Con la versión **blanca** va suelto sobre el campo

@@ -36,7 +36,28 @@ var CAPS = {
     lede:  'Computación, software, inteligencia artificial, ciberseguridad y arquitectura del computador.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
-    resumen:  [],
+    resumen: [
+      'La sociedad más grande de IEEE, y la que más se parece a lo que ya ' +
+        'estudias si vienes de Computación. Cubre desde la arquitectura del ' +
+        'procesador hasta la ingeniería de software, pasando por seguridad, ' +
+        'sistemas distribuidos e inteligencia artificial. ',
+      'Es el capítulo natural para quien programa, pero no solo: la ' +
+        'computación atraviesa todas las carreras de Yachay, y aquí se ' +
+        'cruza con quien hace simulación en Física, tratamiento de datos en ' +
+        'Biomedicina o modelos en Matemática Aplicada. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'Computer',
+        d:'La revista insignia de la sociedad, con panorámicas del estado del campo escritas para leerse, no para especialistas.' },
+      { t:'Las Transactions',
+        d:'Una veintena de revistas por área: computadores, software, seguridad, patrones, visión.' },
+      { t:'Concursos y congresos',
+        d:'La sociedad organiza competencias estudiantiles y respalda congresos donde un trabajo de pregrado tiene sitio.' }
+    ],
     hacemos:  [],
     board: [
       { f:'1.jpg', name:'Aldrin Chávez', role:'Chair', curso:'9no - Computation' },
@@ -69,7 +90,28 @@ var CAPS = {
     lede:  'Bioingeniería: dispositivos médicos, neurociencias y procesamiento de señales fisiológicas.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
-    resumen:  [],
+    resumen: [
+      'Ingeniería aplicada a la medicina y la biología: dispositivos ' +
+        'médicos, procesamiento de señales fisiológicas, imagen médica, ' +
+        'neurociencia computacional y biomecánica. Donde el ' +
+        'electrocardiograma deja de ser un dibujo y pasa a ser una señal ' +
+        'que se filtra, se mide y se interpreta. ',
+      'Es el capítulo con más terreno común en Yachay: Biomedicina de ' +
+        'entrada, pero también Computación cuando toca procesar, Física ' +
+        'cuando toca instrumentar y Química cuando toca sensar. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'IEEE Pulse',
+        d:'La revista de divulgación de la sociedad: casos reales de ingeniería biomédica contados de forma legible.' },
+      { t:'Transactions on Biomedical Engineering',
+        d:'La referencia del área, y el sitio donde se publica lo que luego acaba en un hospital.' },
+      { t:'EMBC',
+        d:'El congreso anual de la sociedad, uno de los mayores del mundo en el campo, con vía propia para estudiantes.' }
+    ],
     hacemos:  [],
     board: [
       { f:'1.jpg', name:'Calero Julian', role:'Chair', curso:'8vo - Biomed' },
@@ -99,7 +141,27 @@ var CAPS = {
     lede:  'Microchips, ensamblaje, empaque y manufactura electrónica — el hardware que todo lo demás da por sentado.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
-    resumen:  [],
+    resumen: [
+      'El hardware que todo lo demás da por sentado. Empaque electrónico ' +
+        'es cómo un chip se conecta, se protege, se enfría y sobrevive: ' +
+        'sustratos, soldadura, disipación térmica, fiabilidad y ' +
+        'manufactura. ',
+      'Es el capítulo más físico de los técnicos, y el que más se toca ' +
+        'con Nanotecnología y Materiales. Si te interesa que las cosas se ' +
+        'puedan fabricar de verdad y no solo simular, este es el sitio. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'Transactions on Components, Packaging and Manufacturing Technology',
+        d:'La revista del área, del componente a la línea de montaje.' },
+      { t:'ECTC',
+        d:'El congreso de referencia en empaque electrónico, donde la industria enseña lo que viene.' },
+      { t:'Puente con la industria',
+        d:'De las sociedades con vínculo más directo con fabricantes: es un campo donde se contrata.' }
+    ],
     hacemos:  [],
     board: [
       { f:'1.jpg', name:'Brittany Jiménez', role:'Chair', curso:'5to - Nanotech' },
@@ -129,7 +191,28 @@ var CAPS = {
     lede:  'Diseño de circuitos, nanoelectrónica y teoría de redes.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
-    resumen:  [],
+    resumen: [
+      'Circuitos y sistemas: el diseño de lo analógico y lo digital, la ' +
+        'teoría de redes, el procesamiento de señales en silicio y la ' +
+        'nanoelectrónica. La capa donde las matemáticas se convierten en un ' +
+        'circuito que funciona. ',
+      'Vive entre Física y Computación, y es de los capítulos más ' +
+        'teóricos: aquí las herramientas son el álgebra lineal y la ' +
+        'transformada, no el destornillador. Buen sitio para quien disfruta ' +
+        'de que las cuentas cuadren antes de encender nada. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'Transactions on Circuits and Systems',
+        d:'Dividida en dos: teoría y fundamentos por un lado, sistemas y aplicaciones por otro.' },
+      { t:'ISCAS',
+        d:'El simposio internacional de la sociedad, con presencia estudiantil fuerte.' },
+      { t:'Cursos y escuelas',
+        d:'La sociedad mantiene escuelas de verano y material formativo abierto sobre diseño de circuitos.' }
+    ],
     hacemos:  [],
     board: [
       { f:'1.jpg', name:'Vanessa García', role:'Chair', curso:'5to - Biomed' },
@@ -159,7 +242,27 @@ var CAPS = {
     lede:  'Robótica, automatización, manufactura avanzada y drones.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
-    resumen:  [],
+    resumen: [
+      'Robótica y automatización: percepción, control, planificación de ' +
+        'movimiento, manipulación, vehículos autónomos y sistemas de ' +
+        'manufactura. Es de los campos más visibles de la ingeniería, y de ' +
+        'los que más rápido pasan del papel al prototipo. ',
+      'En Yachay tira sobre todo de Agroindustria y Computación, que es ' +
+        'una mezcla poco común y muy aprovechable: la automatización ' +
+        'agrícola es un problema real, local y todavía abierto. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'IEEE Robotics & Automation Magazine',
+        d:'La revista de la sociedad, más cercana al proyecto que al paper.' },
+      { t:'ICRA e IROS',
+        d:'Los dos grandes congresos de robótica del mundo, ambos con competiciones y talleres para estudiantes.' },
+      { t:'Retos estudiantiles',
+        d:'La sociedad respalda competencias donde se compite con robots construidos por el propio equipo.' }
+    ],
     hacemos:  [],
     board: [
       { f:'1.jpg', name:'Willmer Illescas', role:'Chair', curso:'8vo - Agroindustry' },
@@ -189,7 +292,28 @@ var CAPS = {
     lede:  'Teledetección, SIG, observación de la Tierra y sensores satelitales.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
-    resumen:  [],
+    resumen: [
+      'Observar la Tierra desde lejos y entender lo que se ve: ' +
+        'teledetección, satélites, radar, sistemas de información ' +
+        'geográfica y análisis de imagen sobre datos que llegan del ' +
+        'espacio. ',
+      'Es el capítulo con más sentido geográfico de todos: Ecuador tiene ' +
+        'volcanes, glaciares, deforestación y agricultura, y todo eso se ' +
+        'mide desde órbita. Cruza Geología, Física, Computación y ' +
+        'Agroindustria. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'Transactions on Geoscience and Remote Sensing',
+        d:'La revista de referencia del área.' },
+      { t:'IGARSS',
+        d:'El simposio anual, con datos abiertos y concursos de análisis de imagen satelital.' },
+      { t:'Datos abiertos',
+        d:'La sociedad promueve conjuntos de datos públicos con los que se puede trabajar sin presupuesto.' }
+    ],
     hacemos:  [],
     board: [
       { f:'1.jpg', name:'Darío Maldonado', role:'Chair' },
@@ -219,7 +343,27 @@ var CAPS = {
     lede:  'Redes neuronales, lógica difusa y algoritmos evolutivos.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
-    resumen:  [],
+    resumen: [
+      'Inteligencia computacional: redes neuronales, lógica difusa y ' +
+        'computación evolutiva. Es la rama de la IA que viene de la ' +
+        'ingeniería más que de la informática teórica, y la que se ocupa de ' +
+        'problemas donde no hay una fórmula cerrada. ',
+      'Es el capítulo más transversal de todos, porque casi cualquier ' +
+        'carrera de Yachay acaba teniendo un problema de optimización o de ' +
+        'clasificación encima de la mesa. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'IEEE Computational Intelligence Magazine',
+        d:'Divulgación de calidad sobre el campo, sin la barrera de entrada del paper.' },
+      { t:'Transactions on Neural Networks and Learning Systems',
+        d:'De las revistas más citadas del área.' },
+      { t:'Competiciones',
+        d:'La sociedad organiza competencias abiertas de optimización y aprendizaje donde se participa con código.' }
+    ],
     hacemos:  [],
     board: [
       { f:'1.jpg', name:'Manuel Muñoz', role:'Chair', curso:'9no - Computation' },
@@ -279,7 +423,29 @@ var CAPS = {
     lede:  'Comunidad de mujeres en ingeniería: mentoría, divulgación y diversidad. La membresía del grupo es gratuita.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
-    resumen:  [],
+    resumen: [
+      'Women in Engineering es la red de IEEE para promover la ' +
+        'participación de las mujeres en ingeniería y ciencia: mentoría, ' +
+        'visibilidad, formación y comunidad. No es un capítulo técnico, es ' +
+        'un grupo de afinidad, y esa diferencia importa — su terreno son ' +
+        'las personas, no un área de conocimiento. ',
+      'Está abierto a cualquier carrera y a cualquier persona: se es ' +
+        'parte de WIE por apoyar el objetivo, no por el género. Y su ' +
+        'membresía es gratuita, que es el único grupo del que se puede ' +
+        'decir eso. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'Membresía sin coste',
+        d:'A diferencia de las sociedades técnicas, afiliarse a WIE no añade nada a la cuota.' },
+      { t:'WIE International Leadership Summit',
+        d:'Encuentros regionales de liderazgo, varios de ellos en América Latina.' },
+      { t:'Travel grants',
+        d:'La red WIE convoca ayudas de viaje para asistir a congresos, y están en Oportunidades.' }
+    ],
     hacemos:  [],
     board: [
       { f:'1.jpg', name:'Cristina Lema', role:'Chair', curso:'9no - Biomed' },
@@ -309,7 +475,29 @@ var CAPS = {
     lede:  'Tecnología puesta al servicio del desarrollo humanitario y social.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
-    resumen:  [],
+    resumen: [
+      'SIGHT es el grupo de tecnología humanitaria de IEEE: aplicar ' +
+        'ingeniería a problemas de comunidades concretas, trabajando con ' +
+        'ellas y no sobre ellas. Agua, energía, salud, conectividad y ' +
+        'desastres. ',
+      'Es el grupo menos técnico en su enunciado y el más exigente en la ' +
+        'práctica, porque obliga a salir del campus y a medir el resultado ' +
+        'en algo que le sirva a alguien. Abierto a todas las carreras, y ' +
+        'probablemente el sitio donde una idea de Agroindustria o Química ' +
+        'encuentra antes su aplicación. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'Financiación de proyectos',
+        d:'SIGHT convoca fondos para proyectos de grupos locales, pensados para presupuestos pequeños.' },
+      { t:'Red de grupos',
+        d:'Cientos de grupos SIGHT en el mundo, con proyectos documentados que sirven de punto de partida.' },
+      { t:'IEEE HTC',
+        d:'La conferencia de tecnología humanitaria, donde se presentan proyectos de este tipo.' }
+    ],
     hacemos:  [],
     board: [
       { f:'1.jpg', name:'Domenica Vaca', role:'Chair', curso:'4to - Chemistry' },
@@ -336,7 +524,27 @@ var CAPS = {
        muestrean los dos extremos como en los otros diez. */
     lede:  'Redes y telecomunicaciones: sistemas inalámbricos, protocolos y transmisión de datos.',
 
-    resumen:  [],
+    resumen: [
+      'Comunicaciones: redes, protocolos, sistemas inalámbricos, óptica ' +
+        'de transmisión y todo lo que hace que un dato salga de un sitio y ' +
+        'llegue a otro. Es la infraestructura invisible sobre la que corre ' +
+        'lo demás. ',
+      'Terreno natural para Computación, y con puente hacia Física en la ' +
+        'parte de propagación y medio. En un país con geografía difícil, la ' +
+        'conectividad es un problema de ingeniería con consecuencias. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'IEEE Communications Magazine',
+        d:'De las revistas más leídas de todo IEEE, escrita para entenderse.' },
+      { t:'Transactions on Communications',
+        d:'El archivo técnico del área.' },
+      { t:'ICC y GLOBECOM',
+        d:'Los dos congresos anuales de la sociedad, con programa estudiantil propio.' }
+    ],
     hacemos:  [],
     board:    [],
     timeline: [],
@@ -356,7 +564,27 @@ var CAPS = {
        muestrean los dos extremos como en los otros diez. */
     lede:  'Microondas y radiofrecuencia: antenas, radar y comunicaciones de alta frecuencia.',
 
-    resumen:  [],
+    resumen: [
+      'Microondas y radiofrecuencia: antenas, guías de onda, radar, ' +
+        'circuitos de alta frecuencia y las comunicaciones que dependen de ' +
+        'ellos. Donde el cable deja de comportarse como un cable y hay que ' +
+        'pensar en ondas. ',
+      'Es de los capítulos más exigentes en física, y precisamente por ' +
+        'eso encaja con Física y con Nanotecnología. También es la puerta a ' +
+        'un campo que sigue creciendo con cada generación de redes móviles. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'IEEE Microwave Magazine',
+        d:'La revista de la sociedad, con buen material introductorio.' },
+      { t:'Transactions on Microwave Theory and Techniques',
+        d:'La referencia histórica del campo.' },
+      { t:'IMS',
+        d:'El simposio internacional de microondas, con concursos de diseño para estudiantes.' }
+    ],
     hacemos:  [],
     board:    [],
     timeline: [],
@@ -376,7 +604,27 @@ var CAPS = {
        muestrean los dos extremos como en los otros diez. */
     lede:  'Ciencias nucleares y de plasmas: instrumentación, detectores y aplicaciones médicas de la radiación.',
 
-    resumen:  [],
+    resumen: [
+      'Ciencias nucleares y de plasmas: instrumentación de radiación, ' +
+        'detectores, física de plasmas, fusión y las aplicaciones médicas e ' +
+        'industriales de todo ello. Desde el detector de un tomógrafo hasta ' +
+        'el confinamiento en un reactor. ',
+      'Es el capítulo más ligado a Física de los técnicos, con salida ' +
+        'hacia Biomedicina en la parte de imagen médica y dosimetría. Un ' +
+        'campo pequeño en número y grande en instrumentación. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'Transactions on Nuclear Science',
+        d:'La revista clásica del área, muy centrada en instrumentación.' },
+      { t:'Transactions on Plasma Science',
+        d:'La otra mitad de la sociedad: descargas, fusión y aplicaciones.' },
+      { t:'NSS-MIC',
+        d:'El congreso conjunto de ciencia nuclear e imagen médica, con cursos cortos para quien empieza.' }
+    ],
     hacemos:  [],
     board:    [],
     timeline: [],
@@ -396,7 +644,26 @@ var CAPS = {
        muestrean los dos extremos como en los otros diez. */
     lede:  'Fotónica y óptica: láseres, fibra óptica y dispositivos optoelectrónicos.',
 
-    resumen:  [],
+    resumen: [
+      'Fotónica: láseres, fibra óptica, dispositivos optoelectrónicos, ' +
+        'espectroscopía y sensores ópticos. La luz usada como herramienta ' +
+        'de medida, de transmisión y de fabricación. ',
+      'Cruza Física, Nanotecnología y Química, y es de los campos donde ' +
+        'un laboratorio de pregrado puede hacer cosas de verdad: mucha ' +
+        'óptica se monta sobre una mesa y se ve con los ojos. '
+    ],
+
+    /* Hechos de la sociedad, no actividades de este capítulo: se pueden
+       afirmar sin preguntarle a nadie. `hacemos` sigue vacío hasta que
+       haya actividades reales que contar. */
+    abre: [
+      { t:'IEEE Photonics Journal',
+        d:'Revista de acceso abierto, así que se lee sin depender de la suscripción de la universidad.' },
+      { t:'Photonics Technology Letters',
+        d:'Artículos cortos: buen formato para un primer trabajo publicable.' },
+      { t:'Capítulos estudiantiles activos',
+        d:'La sociedad financia actividades de capítulo estudiantil mediante convocatorias propias.' }
+    ],
     hacemos:  [],
     board:    [],
     timeline: [],

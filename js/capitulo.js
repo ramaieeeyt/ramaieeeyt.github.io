@@ -187,6 +187,21 @@
       b.appendChild(rej);
     }
 
+    /* ------------------------------------------------------------- QUÉ ABRE
+       Separada de `hacemos` a propósito: aquí van hechos de la sociedad —sus
+       revistas, sus congresos, sus programas—, que se pueden afirmar sin
+       preguntarle a nadie. `hacemos` queda para las actividades que el
+       capítulo haya hecho de verdad, y hasta entonces no se dibuja. */
+    b = seccion(main, 'abre', 'Qué abre', 'Lo que se abre al entrar', c.abre);
+    if (b) {
+      var ra = el('div', 'caphace');
+      c.abre.forEach(function (h) {
+        ra.appendChild(el('article', 'caphace__i',
+          '<h3>' + esc(h.t) + '</h3><p>' + esc(h.d) + '</p>'));
+      });
+      b.appendChild(ra);
+    }
+
     /* ----------------------------------------------------------- DIRECTIVA */
     b = seccion(main, 'directiva', 'Quiénes', 'Quiénes la dirigen', c.board);
     if (b) {
