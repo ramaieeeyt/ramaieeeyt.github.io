@@ -122,7 +122,7 @@ Este plano son cuatro tiempos seguidos, sin corte duro entre ellos:
 | | |
 |---|---|
 | 0:12–0:14½ | La rejilla de logotipos, escalonados, tres o cuatro por fila |
-| 0:14½ | **El velo de puntos** hace de corte — la grabación R1 |
+| 0:14½ | **Corte encadenado sobre un logotipo** — ver abajo |
 | 0:14½–0:17½ | Una mini-página de capítulo, foto de directiva de fondo, el título entrando |
 | 0:17½–0:20 | **La web propia de NANO**, entrando por un lado |
 
@@ -148,10 +148,19 @@ mudo.
 Los logotipos en blanco sobre el campo oscuro, que es como ya se ven en las
 páginas de capítulo.
 
-**El velo hace de corte.** Es lo más reconocible que tiene el sitio y aquí cae
-donde tiene sentido: se pulsa un capítulo, la pantalla se llena de puntos del
-color de ese capítulo, y al despejarse ya estás dentro. No lo metas como plano
-aparte; que sea la transición.
+**La pantalla de carga NO va en el vídeo.** Es decisión tomada y es buena: el
+velo de puntos se descubre entrando en la web, y enseñarlo aquí gasta la
+sorpresa a cambio de segundo y medio de vídeo. Que lo encuentren ellos.
+
+Eso deja el corte de 0:14½ sin transición, y la que mejor lo sustituye es un
+**encadenado sobre el propio logotipo**: el logo del capítulo que está en su
+tarjeta de la rejilla crece, se mueve y se convierte en el logo blanco del hero
+de su mini-página. La misma marca en los dos planos, en dos tratamientos. Sale
+motivado por el contenido en vez de ser un efecto pegado encima, y no destripa
+nada.
+
+Si no da tiempo a montarlo, un corte seco también funciona. Lo que no hace falta
+es inventarse una transición de plantilla.
 
 ---
 
@@ -271,31 +280,59 @@ web de verdad.
 transparencia en `assets/img/capitulos/blanco/` — trece PNG. Se arrastran
 directamente al editor.
 
-### Grabaciones · 4
+### Grabaciones · 5
 
-Van en la misma carpeta, con `R` delante: `R1-velo.mov`, `R2-ascii.mov`…
+Todas a **3344 × 1834 y 60 fps**, en la misma carpeta.
 
-| # | Qué grabar | Cómo | Dura | Plano |
-|---|---|---|---|---|
-| **R1** | **El velo de puntos** | Abre `capitulos.html`, espera dos segundos quieto, pulsa una tarjeta y **no toques nada** hasta que el capítulo esté cargado y el título haya entrado | ~8 s | 4 → 5 |
-| **R2** | El campo ASCII | Portada, quieta, sin mover el ratón ni desplazar | ~10 s | 2 |
-| **R3** | El título del capítulo, limpio | Ya en una página de capítulo, recarga con `⌘R` y deja correr | ~5 s | 4 |
-| **R4** | **La directiva volviendo a color** | En la página de un capítulo, baja hasta «Quiénes la dirigen» y pasa el ratón despacio por tres o cuatro fichas | ~8 s | 4 |
+| Fichero | Qué trae | Dura | Plano |
+|---|---|---|---|
+| `R1-wie-velo-titulo-hover.mov` | Página de WIE: cola del velo en violeta, el título entrando, y después el scroll hasta la directiva con el hover | 13,2 s | 4 → 5 |
+| `R2-ascii.mov` | Portada: el lockup montándose y el campo ASCII derivando | 11,2 s | 2 |
+| `R3-titulo-ras.mov` | Página de RAS: cola del velo en magenta y el título entrando limpio | 5,9 s | 4 |
+| `R4-directiva-portada.mov` | Portada, sección Directiva 2026: los retratos pasan de gris a color y sale la cita de cada uno | 22,4 s | 4 |
+| `velo.mov` | El recorrido entero: rejilla → velo cerrado → velo disuelto → **el título entrando limpio** | 14,1 s | 4 → 5 |
 
-**R1 te da tres cosas de una sola toma:** el velo saliendo, el velo entrando en
-la página nueva, y el título aterrizando. Si sale bien, R3 sobra. R3 está por si
-quieres el título aislado y sin el velo delante.
+**Los nombres no son los que se pusieron al grabar.** Se renombraron por lo que
+cada fichero contiene de verdad, que no era lo que decía la etiqueta. Ninguna
+toma se perdió: entre las cuatro está todo lo que el guion pedía, y R4 salió en
+la portada en vez de en un capítulo, que para el vídeo es mejor.
 
-**R4 cambió, y a mejor.** Antes era pasar el cursor por la rejilla de logotipos,
-donde apenas se nota. Las fichas de la directiva hacen algo mucho más vistoso:
-salen **en blanco y negro** y recuperan el color al pasar por encima, en siete
-décimas, mientras la foto crece un poco. En WIE, que tiene las fichas moradas y
-naranjas, el salto es enorme.
+**Falta una toma limpia del título, y hay un truco para sacarla.**
 
-Pásalo **despacio y en línea recta**, una ficha tras otra sin volver atrás. El
-color tarda 0,7 s en entrar: si vas rápido, grabas cinco fotos a medio teñir.
-Y aquí sí **deja activado «Mostrar clics del ratón»** —o al menos que el cursor
-se vea—, porque el plano trata justamente de que alguien está tocando la página.
+Como el velo no va en el vídeo, hay que recortarlo de la cabecera de R1 y R3. El
+problema es que **el título entra por debajo del velo**: cuando el velo termina
+de disolverse, el título ya aterrizó. Medido en las dos tomas, el color del velo
+se apaga hacia el segundo 0,6–0,9, y para entonces no queda animación que
+grabar. Recortar el velo se lleva el título por delante.
+
+Resuelto con `velo.mov`, que trae el recorrido entero desde `capitulos.html`.
+**Ya no hace falta la toma extra del título**: en esta grabación el título entra
+*después* de que el velo se haya ido, así que se puede recortar el velo sin
+perderlo. Estos son los tiempos, medidos fotograma a fotograma:
+
+| Momento | Qué pasa |
+|---|---|
+| hasta 9,9 s | La rejilla de capítulos, montándose y con el cursor encima |
+| 9,9 – 10,33 | **El velo cerrado**, a plena opacidad, con la malla de puntos |
+| 10,36 – 10,50 | **Un parpadeo**: el velo desaparece y asoma el pie de la página de destino |
+| 10,54 – 10,78 | El velo vuelve y se disuelve sobre la página del capítulo |
+| 10,85 – 11,25 | **El título entrando**, ya sin velo delante |
+| desde 11,3 | Todo asentado |
+
+**Si el velo no va en el vídeo, corta en 10,78** y te queda el título entrando
+limpio, que era justo lo que faltaba.
+
+**Si alguna vez se usa el velo, hay que saltarse el parpadeo** de 10,36 a 10,50:
+es un hueco de una o dos décimas donde se ve el pie del capítulo antes de tiempo.
+No es cosa de la grabación, es de la web —está anotado abajo.
+
+**R4 es la mejor de las cuatro.** Los seis retratos de la Directiva 2026 pasan
+de blanco y negro a color al pasar el cursor, en siete décimas, y encima aparece
+la frase de cada uno. Veintidós segundos dan de sobra: recorta los tres o cuatro
+que mejor entren.
+
+Salió en la portada y no en un capítulo, que era lo que decía el guion, y está
+mejor así: son retratos de verdad con su cita, no fichas maquetadas.
 
 ---
 
@@ -317,14 +354,14 @@ Y ahora lo que de verdad arruina una sesión de rodaje:
 ASCII se queda congelado y las animaciones de título no corren. La página lo hace
 a propósito, y no te avisa. **Compruébalo antes de grabar R1, R2 y R3.**
 
-**2 · El velo solo existe si llegas pulsando.** La página de capítulo mira de
-dónde vienes: si no vienes de `capitulos.html`, no dibuja nada. Pegar la URL a
-mano o abrir en pestaña nueva con `⌘` no sirve. **Clic normal, desde la lista.**
+**2 · El velo aparece solo, y aquí no lo queremos.** La página de capítulo mira
+de dónde vienes: si vienes de `capitulos.html`, dibuja el velo encima del título
+que estás intentando grabar. **Entra pegando la URL en una pestaña nueva** y no
+sale. Recargar con `⌘R` no vale: el `referrer` se conserva.
 
-**3 · El velo también se salta si abres en pestaña nueva** — `⌘`, `ctrl`, `⇧` o
-el botón central lo desactivan a propósito, para no secuestrarte el navegador.
-**Y no pulses NANO para grabar R1:** esa tarjeta sale del sitio a propósito, así
-que el velo no se dibuja. Para R1 sirve cualquier otra.
+**3 · La tarjeta de NANO sale del sitio.** Si la pulsas acabas grabando
+`ieee-ntc-ec.github.io`, que es otra web. Para las tomas de mini-página, usa
+cualquiera de las otras.
 
 **4 · Modo incógnito, sin barra de marcadores** (`⌘⇧B`). Ni extensiones, ni tu
 avatar de Google, ni las pestañas de ayer asomando por arriba.
@@ -356,3 +393,21 @@ capítulos*».
 Biblioteca de audio de YouTube o Pixabay. **Nada con derechos**: Instagram lo
 detecta y silencia el vídeo, y un vídeo mudo pensado para verse mudo funciona,
 pero uno silenciado a la fuerza pierde la música que sí querías.
+
+---
+
+## Una cosa de la web que salió en la grabación
+
+Entre que el velo se cierra y vuelve a aparecer hay **un hueco de una o dos
+décimas** en el que se ve el pie de la página de destino, ya cargada, antes de
+que el velo la tape otra vez.
+
+No es la grabación: es cómo está montado. `transicion.js` es el último de los
+cinco scripts del final del `<body>` y pone el velo en `DOMContentLoaded`, o sea
+**después** de que el navegador haya pintado la página entera. Ese primer
+pintado es el parpadeo. Se nota más si venías con la lista desplazada hacia
+abajo, porque entonces lo que asoma es el pie.
+
+Se arregla poniendo el velo en el HTML de cada capítulo en vez de creándolo
+desde JavaScript, para que exista en el primer fotograma. Toca las trece páginas
+y no es urgente: dura menos de dos décimas y solo lo ve quien llega pulsando.
