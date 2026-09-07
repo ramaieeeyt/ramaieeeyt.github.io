@@ -13,22 +13,37 @@ anterior de este guion abierta, tírala.
 
 | | |
 |---|---|
-| Formato | **9:16 vertical**, 1080 × 1920 |
-| Duración | **26 segundos** |
+| Formato | **16:9 apaisado**, 1920 × 1080 |
+| Duración | **~30 segundos** |
+| Registro | **Motion graphics.** Piezas diseñadas que se mueven, no capturas quietas |
 | Sonido | **Se ve sin sonido.** El texto en pantalla lo lleva todo |
 | Público | Estudiantes de Yachay que no saben qué es la Rama |
+
+**Corregido el 31 de agosto de 2026.** Este guion nació en 9:16 para Reels, y
+esa decisión era mía, no de Andrés. Va en **16:9**: redes y un vídeo corto de
+YouTube. Cambia más que el marco — en apaisado caben rejillas, y una rejilla que
+se monta sola es el plano que más se parece a lo que se pedía.
 
 **Sin voz en off, y no por pereza:** la mayoría de la gente ve Reels en silencio.
 Si el mensaje depende del audio, no llega. La música va de acompañamiento, no de
 soporte.
 
-**Vertical y no apaisado**, aunque la web sea de escritorio. Un pantallazo de
-escritorio dentro de un 9:16 deja dos franjas negras y se lee la mitad. Se
-resuelve de dos maneras y las dos se usan aquí:
+**Apaisado, que es donde vive el material.** Las capturas son de escritorio y en
+16:9 entran enteras, sin recortes ni franjas. Y lo que antes no cabía —los trece
+logotipos de capítulo en rejilla— ahora es el mejor plano del vídeo.
 
-- **Capturas de móvil a pantalla completa** cuando toca leer contenido.
-- **Capturas de escritorio inclinadas en 3D**, flotando sobre el campo oscuro,
-  cuando toca enseñar el sitio como objeto.
+**Y el registro cambia: motion graphics, no pase de diapositivas.** La diferencia
+práctica es qué hace el trabajo:
+
+- **El 14 no se escribe, se cuenta.** Un bloque contador subiendo hasta catorce.
+- **Los logotipos se montan solos**, escalonados 40-90 ms, mientras la cámara
+  abre para descubrir la rejilla y luego entra sobre el titular.
+- **Las capturas dejan de ser el contenido y pasan a ser materia**: inclinadas
+  36-48°, separadas en z, bajo travellings de verdad. Dos o tres, no seis.
+- **El lockup se ensambla** al final en vez de aparecer: la marca entra a escala
+  y el texto barre a su lado.
+- **Formas y filetes trabajan**: la barra del lockup, una regla que crece con el
+  precio.
 
 **26 segundos.** Menos no da para seis ideas; más y se abandona. Los dos primeros
 segundos deciden si alguien se queda.
