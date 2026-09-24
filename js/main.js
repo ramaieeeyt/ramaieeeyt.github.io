@@ -331,6 +331,10 @@
       { f:'cap-grss',            c:'Geoscience and Remote Sensing · Directiva 2026' },
       { f:'cap-cis',             c:'Computational Intelligence Society · Directiva 2026' },
       { f:'cap-nano',            c:'Nanotechnology Council · Directiva 2026' },
+      { f:'cap-comsoc',          c:'Communications Society · Directiva 2026' },
+      { f:'cap-mtts',            c:'Microwave Theory and Technology · Directiva 2026' },
+      { f:'cap-npss',            c:'Nuclear and Plasma Sciences · Directiva 2026' },
+      { f:'cap-photonics',       c:'Photonics Society · Directiva 2026' },
       { f:'cap-wie',             c:'Women in Engineering · Directiva 2026' },
       { f:'cap-sight',           c:'SIGHT · Directiva 2026' }
     ]
