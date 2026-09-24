@@ -522,6 +522,11 @@ var CAPS = {
     u:     'https://www.comsoc.org/',
     blanco: true,
     color: 'var(--ieee-dark-teal)',
+    /* Los dos extremos del degradado de su portada de directiva,
+       muestreados de las esquinas. El punto va claro u oscuro segun
+       cual lea mejor: medido contra el punto medio. */
+    grad:  ['#3D53A0', '#101A3A'],
+    punto: 'papel',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
        muestrean los dos extremos como en los otros diez. */
@@ -549,7 +554,13 @@ var CAPS = {
         d:'Los dos congresos anuales de la sociedad, con programa estudiantil propio.' }
     ],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Marlon Almeida', role:'Chair', curso:'6to - Computation' },
+      { f:'2.jpg', name:'Fausto Gutiérrez', role:'Vice Chair', curso:'6to - Computation' },
+      { f:'3.jpg', name:'Fausto Delgado', role:'Secretario', curso:'6to - Computation' },
+      { f:'4.jpg', name:'Hilary Chaglla', role:'Tesorera', curso:'6to - Computation' },
+      { f:'5.jpg', name:'Ismael Paredes', role:'Web Master', curso:'7mo - Computation' }
+    ],
     timeline: [],
     fotos:    []
   },
@@ -562,6 +573,11 @@ var CAPS = {
     u:     'https://mtt.org/',
     blanco: true,
     color: 'var(--ieee-orange)',
+    /* Los dos extremos del degradado de su portada de directiva,
+       muestreados de las esquinas. El punto va claro u oscuro segun
+       cual lea mejor: medido contra el punto medio. */
+    grad:  ['#567EFC', '#126DA4'],
+    punto: 'papel',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
        muestrean los dos extremos como en los otros diez. */
@@ -589,7 +605,13 @@ var CAPS = {
         d:'El simposio internacional de microondas, con concursos de diseño para estudiantes.' }
     ],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Ismael Cifuentes', role:'Chair', curso:'5to - Computation' },
+      { f:'2.jpg', name:'Luis Ruiz', role:'Vice Chair', curso:'6to - Biomed' },
+      { f:'3.jpg', name:'Urcu Morales', role:'Secretario', curso:'5to - Physics' },
+      { f:'4.jpg', name:'María José Flores', role:'Tesorera', curso:'10mo - Biomed' },
+      { f:'5.jpg', name:'Heidy Vargas', role:'Web Master', curso:'5to - Biomed' }
+    ],
     timeline: [],
     fotos:    []
   },
@@ -602,6 +624,11 @@ var CAPS = {
     u:     'https://ieee-npss.org/',
     blanco: true,
     color: 'var(--ieee-red)',
+    /* Los dos extremos del degradado de su portada de directiva,
+       muestreados de las esquinas. El punto va claro u oscuro segun
+       cual lea mejor: medido contra el punto medio. */
+    grad:  ['#CC678A', '#691C10'],
+    punto: 'papel',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
        muestrean los dos extremos como en los otros diez. */
@@ -629,7 +656,13 @@ var CAPS = {
         d:'El congreso conjunto de ciencia nuclear e imagen médica, con cursos cortos para quien empieza.' }
     ],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Kevin Troya', role:'Chair', curso:'4to - Nanotech' },
+      { f:'2.jpg', name:'Katrina Abril', role:'Vice Chair', curso:'6to - Physics' },
+      { f:'3.jpg', name:'Jerson Chunez', role:'Secretario', curso:'6to - Physics' },
+      { f:'4.jpg', name:'Vivian Alomoto', role:'Tesorera', curso:'5to - Chemistry' },
+      { f:'5.jpg', name:'Josué Fierro', role:'Web Master', curso:'4to - Physics' }
+    ],
     timeline: [],
     fotos:    []
   },
@@ -642,6 +675,11 @@ var CAPS = {
     u:     'https://ieeephotonics.org/',
     blanco: true,
     color: 'var(--ieee-yellow)',
+    /* Los dos extremos del degradado de su portada de directiva,
+       muestreados de las esquinas. El punto va claro u oscuro segun
+       cual lea mejor: medido contra el punto medio. */
+    grad:  ['#3C6B9D', '#F9C526'],
+    punto: 'tinta',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
        muestrean los dos extremos como en los otros diez. */
@@ -668,7 +706,14 @@ var CAPS = {
         d:'La sociedad financia actividades de capítulo estudiantil mediante convocatorias propias.' }
     ],
     hacemos:  [],
-    board:    [],
+    board: [
+      { f:'1.jpg', name:'Joshua Montalvo', role:'Chair', curso:'7mo - Physics' },
+      { f:'2.jpg', name:'Doménica Valdivieso', role:'Vice Chair', curso:'7mo - Nanotech' },
+      { f:'3.jpg', name:'Ronaldo Chamorro', role:'Secretario', curso:'7mo - Physics' },
+      { f:'4.jpg', name:'Alan Guaya', role:'Tesorero', curso:'7mo - Physics' },
+      { f:'5.jpg', name:'Polo Cuchala', role:'Web Master', curso:'6to - Physics' },
+      { f:'6.jpg', name:'Brittany Jiménez', role:'Web Master', curso:'6to - Nanotech' }
+    ],
     timeline: [],
     fotos:    []
   }
