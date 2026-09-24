@@ -527,6 +527,10 @@ var CAPS = {
        cual lea mejor: medido contra el punto medio. */
     grad:  ['#3D53A0', '#101A3A'],
     punto: 'papel',
+    /* Las portadas de directiva vienen recortadas casi a ras de las
+       cabezas -el rotulo CAP. ocupa el aire de arriba-, asi que el
+       encuadre sube casi del todo o la cabecera les corta la cara. */
+    foco:  '4%',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
        muestrean los dos extremos como en los otros diez. */
@@ -578,6 +582,10 @@ var CAPS = {
        cual lea mejor: medido contra el punto medio. */
     grad:  ['#567EFC', '#126DA4'],
     punto: 'papel',
+    /* Las portadas de directiva vienen recortadas casi a ras de las
+       cabezas -el rotulo CAP. ocupa el aire de arriba-, asi que el
+       encuadre sube casi del todo o la cabecera les corta la cara. */
+    foco:  '4%',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
        muestrean los dos extremos como en los otros diez. */
@@ -629,6 +637,10 @@ var CAPS = {
        cual lea mejor: medido contra el punto medio. */
     grad:  ['#CC678A', '#691C10'],
     punto: 'papel',
+    /* Las portadas de directiva vienen recortadas casi a ras de las
+       cabezas -el rotulo CAP. ocupa el aire de arriba-, asi que el
+       encuadre sube casi del todo o la cabecera les corta la cara. */
+    foco:  '4%',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
        muestrean los dos extremos como en los otros diez. */
@@ -680,6 +692,10 @@ var CAPS = {
        cual lea mejor: medido contra el punto medio. */
     grad:  ['#3C6B9D', '#F9C526'],
     punto: 'tinta',
+    /* Las portadas de directiva vienen recortadas casi a ras de las
+       cabezas -el rotulo CAP. ocupa el aire de arriba-, asi que el
+       encuadre sube casi del todo o la cabecera les corta la cara. */
+    foco:  '4%',
     /* Sin portada propia todavía: el velo cae al campo oscuro del sitio y el
        hero no lleva foto. En cuanto Andrés pase la pieza de su directiva, se
        muestrean los dos extremos como en los otros diez. */
