@@ -423,6 +423,9 @@ var CAPS = {
        contra el punto medio del degradado. */
     grad:  ['#AA7EB4', '#90A3F7'],
     punto: 'tinta',
+    /* La grupal nueva viene con poco aire encima de las cabezas, asi que
+       el encuadre sube: con el 34 % de serie la barra les corta la cara. */
+    foco:  '4%',
     lede:  'Comunidad de mujeres en ingeniería: mentoría, divulgación y diversidad. La membresía del grupo es gratuita.',
 
     /* Vacíos = la sección no se dibuja. Rellénalos cuando haya material. */
@@ -450,12 +453,16 @@ var CAPS = {
         d:'La red WIE convoca ayudas de viaje para asistir a congresos, y están en Oportunidades.' }
     ],
     hacemos:  [],
+    /* Directiva renovada en septiembre de 2026. Sin `curso`: la Rama dejo de
+       usar ese formato, y el campo es opcional -si falta, la linea no se
+       dibuja-. Los nombres van como en el resto del sitio, nombre y primer
+       apellido, para que las fichas midan lo mismo en los catorce capitulos. */
     board: [
-      { f:'1.jpg', name:'Cristina Lema', role:'Chair', curso:'9no - Biomed' },
-      { f:'2.jpg', name:'Diana Reina', role:'Vice Chair', curso:'9no - Biology' },
-      { f:'3.jpg', name:'Wendy Guasgua', role:'Secretaria', curso:'7mo - Chemistry' },
-      { f:'4.jpg', name:'Ismael Paredes', role:'Tesorero', curso:'6to - Computation' },
-      { f:'5.jpg', name:'Camila Garcés', role:'Web Master', curso:'5to - Biomed' }
+      { f:'1.jpg', name:'Cristina Lema', role:'Chair' },
+      { f:'2.jpg', name:'Camila Garcés', role:'Vice Chair' },
+      { f:'3.jpg', name:'Iván Vargas', role:'Secretario' },
+      { f:'4.jpg', name:'Kerly Calahorrano', role:'Tesorera' },
+      { f:'5.jpg', name:'Carmen Haro', role:'Web Master' }
     ],
     timeline: [],
 
