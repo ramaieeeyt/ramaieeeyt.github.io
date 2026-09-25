@@ -1371,10 +1371,29 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
      pinta con un pseudoelemento a z-index 1 —por encima del velo— y la marca y
      el botón van a 2, por encima de la banda. Sobre blanco, la marca usa su
      versión azul, que es la principal de la guía. */
-  body.menu-open .nav::after{
+  /* La banda existe SIEMPRE, invisible. Antes nacia con `menu-open` y un
+     pseudoelemento que aparece de la nada no puede desvanecerse: entraba y
+     salia de golpe en un fotograma mientras el circulo del velo tarda .7 s.
+     Ese salto era el parpadeo —blanco de golpe sobre el campo oscuro al
+     abrir, y azul de golpe bajo la marca al cerrar—. */
+  .nav::after{
     content:"";position:absolute;inset:0;z-index:1;
     background:#fff;border-bottom:1px solid var(--rule);
+    opacity:0;pointer-events:none;
+    /* .45s Y SIN RETARDO, a proposito: es exactamente lo que tarda la marca en
+       cambiar entre su version blanca y la azul (.lockup__mark img). Las dos
+       tienen que ir al mismo paso o una pilla a la otra:
+
+         - mas rapida la banda -> al abrir hay blanco antes de que el logo se
+           vuelva azul, y se pierde un instante sobre fondo blanco;
+         - mas lenta la banda  -> al cerrar la banda sigue blanca cuando el
+           logo ya volvio a blanco, y el logo desaparece medio segundo.
+
+       Probe con retardo para esperar al circulo y salio justo ese segundo
+       fallo. Acompanar a la marca es lo que no se nota. */
+    transition:opacity .45s var(--ease);
   }
+  body.menu-open .nav::after{opacity:1}
   .lockup{position:relative;z-index:2}
   /* `!important` a propósito: la subpágina oscura pone la marca en blanco
      cuando la barra está pegada, con cinco clases de especificidad, y sobre la
