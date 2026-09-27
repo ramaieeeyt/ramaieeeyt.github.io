@@ -15,6 +15,15 @@
 
 /* ---------------------------------------------------------------- 1. TOKENS */
 :root{
+  /* El sitio solo existe en claro: el papel y los campos oscuros son
+     decisiones de diseño, no un tema que el navegador pueda reinterpretar.
+     Declararlo apaga el modo noche automático de Chrome y Brave en Android,
+     que reinvierte los colores por su cuenta —y al reinvertir un elemento
+     cuya opacidad está animándose lo hace a mitad de camino, que es como
+     aparece el parpadeo de la banda del menú en unos móviles sí y en otros
+     no. */
+  color-scheme: light;
+
   /* IEEE palette — exact HEX from the brand guidelines */
   --ieee-blue:#00629B;        /* PMS 3015C — primary */
   --ieee-dark-blue:#002855;   /* PMS 295C  */
