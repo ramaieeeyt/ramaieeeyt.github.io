@@ -11,6 +11,24 @@
 (function () {
   'use strict';
 
+  /* LA VERSION DE LAS IMAGENES.
+     El CSS y los scripts ya se renuevan solos porque el HTML los pide con
+     `?v=`. Las fotos no: `wie/1.jpg` se llama igual antes y despues de
+     cambiarla, asi que un movil que la tenga en cache sigue enseñando la cara
+     vieja hasta que caduque -GitHub Pages da diez minutos-. Eso fue justo lo
+     que le paso a Andres al renovar la directiva de WIE.
+
+     La version se lee de la etiqueta <script> de este mismo fichero, no se
+     escribe a mano: asi no hay un segundo numero que acordarse de subir. Si
+     el fichero se abre sin `?v=` -desde el disco, por ejemplo- queda vacia y
+     las rutas salen como siempre. */
+  var V = (function () {
+    var yo = document.currentScript ||
+             document.querySelector('script[src*="capitulo.js"]');
+    var m = yo && yo.src.match(/[?&]v=([^&]+)/);
+    return m ? '?v=' + m[1] : '';
+  })();
+
   var $ = function (s, r) { return (r || document).querySelector(s); };
 
   function el(tag, cls, html) {
@@ -136,7 +154,7 @@
          se queda en el campo oscuro, como estaba antes — nunca roto. */
       if (c.grad) {
         hero.style.setProperty('--foto',
-          'url("../assets/img/capitulos/hero/' + slug + '.jpg")');
+          'url("../assets/img/capitulos/hero/' + slug + '.jpg' + V + '")');
         if (hay(c.foco)) hero.style.setProperty('--foco', c.foco);
         hero.classList.add('caphero--foto');
       }
@@ -159,7 +177,7 @@
               '" data-nav-umbral' +
               (c.logoEscala ? ' style="--logo-escala:' + (+c.logoEscala) + '"' : '') +
               '><img src="../assets/img/capitulos/' +
-              (c.blanco ? 'blanco/' + esc(slug) + '.png' : esc(c.img)) +
+              (c.blanco ? 'blanco/' + esc(slug) + '.png' : esc(c.img)) + V +
               '" alt="Logotipo de ' + esc(c.t) + '"></span>' +
             '<span class="caphero__filete" aria-hidden="true"></span>' +
             '<div class="caphero__titulos">' +
@@ -200,7 +218,7 @@
       var g = el('div', 'capboard');
       c.board.forEach(function (m) {
         var foto = hay(m.f)
-          ? '<img src="../assets/img/capitulos/' + esc(slug) + '/' + esc(m.f) +
+          ? '<img src="../assets/img/capitulos/' + esc(slug) + '/' + esc(m.f) + V +
             '" alt="' + esc(m.name) + ' — ' + esc(m.role) + '" loading="lazy">'
           : '<span class="capboard__ini" aria-hidden="true">' +
             esc((m.name || '?').trim().charAt(0)) + '</span>';
@@ -274,7 +292,7 @@
       var m2 = el('div', 'capfotos');
       c.fotos.forEach(function (f) {
         m2.appendChild(el('figure', 'capfotos__i',
-          '<img src="../assets/img/capitulos/' + esc(slug) + '/' + esc(f.f) +
+          '<img src="../assets/img/capitulos/' + esc(slug) + '/' + esc(f.f) + V +
           '" alt="' + esc(f.c || '') + '" loading="lazy">' +
           (hay(f.c) ? '<figcaption>' + esc(f.c) + '</figcaption>' : '')));
       });

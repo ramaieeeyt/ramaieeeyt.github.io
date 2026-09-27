@@ -359,9 +359,19 @@
 
   /* Las piezas fijas viven en assets/img/archivo/<f>.jpg; las que trae la
      sincronización ya llegan con su nombre de archivo completo. */
+  /* `?v=` tambien en las fotos: ver la nota en js/capitulo.js. Sin esto, una
+     portada reemplazada se queda en la cache del movil con su nombre de
+     siempre. */
+  var V = (function () {
+    var yo = document.currentScript ||
+             document.querySelector('script[src*="main.js"]');
+    var m = yo && yo.src.match(/[?&]v=([^&]+)/);
+    return m ? '?v=' + m[1] : '';
+  })();
+
   function pathOf(a) {
     return a.ig ? 'assets/img/instagram/' + a.f
-                : 'assets/img/archivo/' + a.f + '.jpg';
+                : 'assets/img/archivo/' + a.f + '.jpg' + V;
   }
 
   /* Si la Action ya dejó su manifiesto, el archivo pasa a ser el de Instagram.
@@ -400,7 +410,7 @@
       a.innerHTML =
         '<div class="member__frame">' +
           '<span class="member__rank">' + esc(m.n) + '</span>' +
-          '<img src="assets/img/directiva/' + m.slug + '.jpg" alt="' + esc(m.name) +
+          '<img src="assets/img/directiva/' + m.slug + '.jpg' + V + '" alt="' + esc(m.name) +
               '" loading="lazy" width="720" height="900">' +
           '<p class="member__quote">“' + esc(m.quote) + '”</p>' +
         '</div>' +
