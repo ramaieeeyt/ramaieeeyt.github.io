@@ -7,6 +7,27 @@
 (function () {
   'use strict';
 
+  /* ========================================================== 0. FERIA
+     TEMPORAL — el botón del Mutant Test, para la feria de clubes.
+
+     El enlace está escrito en el HTML (index.html, dentro de .nav__links) para
+     que se pinte con la barra y no aparezca de golpe un instante después. Lo
+     que hace esto es RETIRARLO cuando pasa la fecha. Se comprueba aquí arriba
+     y no dentro de boot() porque boot espera a DOMContentLoaded y el enlace ya
+     habría parpadeado en pantalla.
+
+     Si este bloque falla, el enlace se queda puesto: el juego sigue en
+     /mutant-test/ y no rompe nada. Falla hacia el lado inofensivo.
+
+     PARA BORRARLO DEL TODO: el <a class="nav__feria"> de index.html, el bloque
+     .nav__feria de css/style.css —hay dos, el de la barra y el del panel
+     móvil— y estas líneas.                                                 */
+  var FERIA_HASTA = Date.parse('2026-10-24T05:00:00Z');  /* 00:00 del 24 en Ecuador */
+  if (Date.now() >= FERIA_HASTA) {
+    var feria = document.querySelector('.nav__feria');
+    if (feria && feria.parentNode) feria.parentNode.removeChild(feria);
+  }
+
   /* ======================================================== 1. CONTENT */
 
   var DATA = {

@@ -459,6 +459,24 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .nav.is-stuck .nav__cta:hover{background:var(--ieee-blue);color:#fff !important;
   border-color:var(--ieee-blue)}
 
+/* -- El botón de la feria de clubes — TEMPORAL ---------------------------
+   Vive hasta la fecha que marca FERIA_HASTA en js/main.js, que lo retira
+   solo. Cian IEEE sobre el campo oscuro; sobre la barra blanca pasa a azul,
+   porque el cian sobre papel se queda en 2:1 de contraste y no se lee.
+   Es un píldora como Únete pero más estrecha: tiene que leerse como invitado,
+   no como el botón principal de la barra. */
+.nav__feria{
+  border:1px solid rgba(0,181,226,.45);border-radius:999px;
+  padding:.44rem .95rem !important;color:var(--ieee-cyan) !important;
+  transition:all .35s var(--ease);
+}
+.nav__feria::after{display:none}
+.nav__feria:hover{background:var(--ieee-cyan);color:var(--ieee-dark-blue) !important;
+  border-color:var(--ieee-cyan)}
+.nav.is-stuck .nav__feria{border-color:rgba(0,98,155,.42);color:var(--ieee-blue) !important}
+.nav.is-stuck .nav__feria:hover{background:var(--ieee-blue);color:#fff !important;
+  border-color:var(--ieee-blue)}
+
 .nav__burger{display:none;width:42px;height:42px;align-items:center;justify-content:center}
 .nav__burger span{display:block;width:20px;height:1.5px;background:#fff;position:relative;
   transition:background .4s var(--ease)}
@@ -1365,6 +1383,13 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .nav__cta{
     align-self:flex-start;margin-top:1.5rem;border:1px solid rgba(255,255,255,.34) !important;
     padding:.72rem 1.6rem !important;border-radius:999px;
+  }
+  /* En el panel el botón de la feria deja de ser píldora y vuelve a ser una
+     fila como las demás —aquí el ritmo lo marca el relleno de cada enlace—,
+     pero en cian para que se distinga de las siete fijas. */
+  .nav__links a.nav__feria{
+    border:0;border-bottom:1px solid rgba(255,255,255,.10);border-radius:0;
+    padding:.62rem 0 !important;color:var(--ieee-cyan) !important;background:none;
   }
   .nav__burger{display:flex;position:relative;z-index:2}
 
