@@ -97,9 +97,9 @@
       { k:'Voluntariado', c:'var(--ieee-red)',
         img:'voluntariado.jpg',
         t:'Ser voluntario en la Rama',
-        d:'Los capítulos y grupos de afinidad —Computer Society, EMBS y Women in ' +
-          'Engineering— abren convocatorias cada semestre. Escríbenos y te contamos ' +
-          'cuál encaja contigo.',
+        d:'Las catorce unidades de la Rama —doce capítulos técnicos y dos grupos ' +
+          'de afinidad— abren convocatorias cada semestre. Escríbenos y te ' +
+          'contamos cuál encaja contigo.',
         u:'https://www.instagram.com/ramaieeeyt/' },
     ],
 
@@ -295,9 +295,43 @@
           'Técnica del Norte, las ramas estudiantiles del país se dieron cita para ' +
           'hablar de gestión, buenas prácticas y actividades técnicas. La rama ' +
           'participó, a media hora de casa.' },
-      { y:'2026', k:'hito', t:'Directiva 2026 de la Rama General',
-        d:'El núcleo que conecta a todos los capítulos y sociedades, impulsando la ' +
-          'colaboración, la innovación y el liderazgo estudiantil.' }
+      /* --- 2026 --------------------------------------------------------
+         Los hitos del año salen del consolidado de actividades 2026 de la
+         Rama, cerrado el 17-nov-2026, que se apoya en IEEE vTools Events
+         —consulta pública—, IEEE OU Analytics y las actas de la Rama. Las
+         cifras de asistencia son las reportadas en vTools.
+
+         Van ocho y no las veinte que trae el consolidado: la Trayectoria es
+         una línea de hitos, no un calendario. Lo que queda fuera no se
+         pierde, está en el consolidado.                                  */
+      { y:'2026', k:'encuentro', t:'Posesión de la directiva y 1.ª ExperIEEEncias',
+        d:'El 25 de febrero toman posesión la Rama y sus diez capítulos y grupos de ' +
+          'afinidad, y se estrena ExperIEEEncias con las ramas de la EPN, la Central, ' +
+          'la UTN, la UPS Quito y la ESPE invitadas. 150 asistentes.' },
+      { y:'2026', k:'hito', t:'Cuatro capítulos nuevos entre marzo y abril',
+        d:'Abren CIS, RAS, GRSS y el Nanotechnology Council. Es el principio del año ' +
+          'en que la Rama pasa de seis unidades a catorce.' },
+      { y:'2026', k:'encuentro', t:'COMPUFEST 2026 — 685 asistentes',
+        d:'El 7 de mayo, el evento más concurrido del año: egresados que ya trabajan ' +
+          'en la industria volviendo a contar cómo es. Financiado con fondos IEEE SPAx.' },
+      { y:'2026', k:'hito', t:'WIE lleva el Manual Científico a cinco escuelas',
+        d:'Del 9 al 22 de junio, Women in Engineering recorre cinco escuelas de la ' +
+          'provincia: 544 niñas y niños. La actividad de mayor alcance directo del año.' },
+      { y:'2026', k:'encuentro', t:'IEEE Ecuador Section Day 2026 by Yachay Tech',
+        d:'El 20 y el 27 de agosto la Rama acoge la celebración de los 52 años de la ' +
+          'Sección: feria con quince stands, ExperIEEEncias – Opportunities Ecuador ' +
+          'con ocho ponentes, y la posesión de MTT-S, ComSoc, Photonics y NPSS.' },
+      { y:'2026', k:'premio', t:'IEEE Rising Stars LAC 2026 — diez becados y un podio',
+        d:'Del 4 al 6 de septiembre, diez miembros de la Rama asisten becados y el ' +
+          'equipo se lleva el tercer lugar del HackTech.' },
+      { y:'2026', k:'premio', t:'Tercer lugar en el Student Website de la Región 9',
+        d:'Este mismo sitio quedó tercero en el concurso de páginas web de ramas ' +
+          'estudiantiles de la Región 9. El mismo año, IEEE WIE Yachay Tech ganó el ' +
+          'primer lugar del Exemplary Student Affinity Group Award regional.' },
+      { y:'2026', k:'hito', t:'De 88 a 145 miembros',
+        d:'La Rama cierra noviembre con 145 miembros IEEE activos frente a los 88 de ' +
+          'diciembre de 2025: un 64,8 % más en un año, y catorce unidades donde ' +
+          'había seis.' }
     ],
 
     /* --- HERBIEEE — el archivo de memes de la rama --------------------------
@@ -363,12 +397,11 @@
        dibuja el botón, y el cierre remite a Instagram.                      */
     revista: {
       numeros: [
-        { f:'edicion-02.jpg', t:'Segunda edición',
-          n:'Noviembre 2026', fecha:'En preparación', proximo:true,
-          pie:'La portada la decide el concurso de fotografía: el hueco de la ' +
-              'maqueta es el que ocupará la foto ganadora.',
-          alt:'Maqueta de la portada de la segunda edición, con el espacio ' +
-              'reservado para la foto ganadora del concurso de portada' },
+        { f:'edicion-02.jpg', t:'YIEEE Frontiers',
+          n:'Segunda edición · Vol. 2', fecha:'En preparación', proximo:true,
+          pie:'Abierta a envíos de los miembros en los seis apartados de abajo.',
+          alt:'Portada de la segunda edición de YIEEE Frontiers, sobre una ' +
+              'mancha de acuarela azul, con la portada del sitio web de la Rama' },
         { f:'edicion-01.jpg', t:'YIEEE Frontiers',
           n:'Mayo 2025', fecha:'Primera edición · Vol. 1, N.º 1',
           url:'https://www.flipbookpdf.net/web/site/' +
