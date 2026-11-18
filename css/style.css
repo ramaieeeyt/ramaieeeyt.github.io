@@ -530,7 +530,31 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
              color .34s var(--ease),
              text-shadow .34s var(--ease);
   transition-delay:calc(var(--i) * 42ms);
+  /* Y la recorre sola cada cinco segundos, sin que nadie pase por encima:
+     es el enlace a lo último que ha hecho la Rama y tiene que llamar. El
+     mismo retardo escalonado sirve para la onda, así que la ola se repite
+     igual que al apuntar. Un segundo de pulso y cuatro de quieto: más
+     seguido cansa y deja de leerse como invitación. */
+  animation:tecla-sola 5s var(--ease) infinite;
+  animation-delay:calc(var(--i) * 42ms);
 }
+@keyframes tecla-sola{
+  0%,100%{transform:none;text-shadow:none}
+  5%,11% {transform:translateY(-.34em);
+          text-shadow:0 0 14px rgba(255,255,255,.95),0 0 4px rgba(255,255,255,.8)}
+  20%    {transform:none;text-shadow:none}
+}
+/* Sobre papel el halo blanco no dice nada: ahí el pulso va en azul IEEE. */
+.nav.is-stuck .nav__rev i{animation-name:tecla-sola-papel}
+@keyframes tecla-sola-papel{
+  0%,100%{transform:none;text-shadow:none}
+  5%,11% {transform:translateY(-.34em);
+          text-shadow:0 0 12px #fff,0 2px 10px rgba(0,98,155,.38)}
+  20%    {transform:none;text-shadow:none}
+}
+/* Al apuntar manda la mano, no el reloj: se corta el bucle y toma la
+   transición, que es la que deja las letras arriba mientras se apunta. */
+.nav__rev:hover i,.nav__rev:focus-visible i{animation:none}
 .nav__rev:hover i,.nav__rev:focus-visible i{
   transform:translateY(-.34em);
   color:#fff;
@@ -1768,7 +1792,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .cap{opacity:1;transform:none}
   .cap__d{max-height:none;opacity:1}
   .capstitle{transform:none;animation:none;opacity:1}
-  .nav__rev i{transition:none}
+  .nav__rev i{transition:none;animation:none}
   .revtitle__word i,.revtitle__sub{animation:none;opacity:1;transform:none;filter:none}
   .caphero__logo,.caphero__k,.caphero__t,.caphero__pie,.caphero .volver{
     animation:none;opacity:1;transform:none;clip-path:none}
