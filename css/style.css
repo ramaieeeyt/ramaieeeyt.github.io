@@ -515,6 +515,36 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   border-color:var(--ieee-blue)}
 
 
+/* -- «Revista», tecla a tecla --------------------------------------------
+   Es el enlace que más tiene que destacar de la barra, y el único que lleva
+   a una página que no existía hasta ahora. Al pasar por encima, las letras se
+   levantan una detrás de otra —como la mano recorriendo un teclado— y cada
+   una se enciende en blanco al subir.
+
+   El retardo lo escalona `--i`, que viene escrito en el HTML; no hay
+   JavaScript. La palabra entera va en el `aria-label` del enlace, así que un
+   lector de pantalla oye «Revista» y no siete letras sueltas.             */
+.nav__rev i{
+  display:inline-block;font-style:normal;
+  transition:transform .34s var(--ease-out),
+             color .34s var(--ease),
+             text-shadow .34s var(--ease);
+  transition-delay:calc(var(--i) * 42ms);
+}
+.nav__rev:hover i,.nav__rev:focus-visible i{
+  transform:translateY(-.34em);
+  color:#fff;
+  text-shadow:0 0 14px rgba(255,255,255,.95),0 0 4px rgba(255,255,255,.8);
+}
+/* Sobre la barra blanca un brillo blanco no se ve. La letra sube al azul IEEE
+   con un halo claro detrás: el mismo gesto, pero legible sobre papel. */
+.nav.is-stuck .nav__rev:hover i,.nav.is-stuck .nav__rev:focus-visible i{
+  color:var(--ieee-blue);
+  text-shadow:0 0 12px #fff,0 2px 10px rgba(0,98,155,.38);
+}
+/* Aquí el subrayado sobra: el gesto ya es otro. */
+.nav__rev::after{display:none}
+
 .nav__burger{display:none;width:42px;height:42px;align-items:center;justify-content:center}
 .nav__burger span{display:block;width:20px;height:1.5px;background:#fff;position:relative;
   transition:background .4s var(--ease)}
@@ -1738,6 +1768,7 @@ body.menu-open .nav__burger span::after{transform:translateY(-6px) rotate(-45deg
   .cap{opacity:1;transform:none}
   .cap__d{max-height:none;opacity:1}
   .capstitle{transform:none;animation:none;opacity:1}
+  .nav__rev i{transition:none}
   .revtitle__word i,.revtitle__sub{animation:none;opacity:1;transform:none;filter:none}
   .caphero__logo,.caphero__k,.caphero__t,.caphero__pie,.caphero .volver{
     animation:none;opacity:1;transform:none;clip-path:none}
