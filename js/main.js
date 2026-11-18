@@ -340,10 +340,17 @@
     ],
 
     /* --- La revista ---------------------------------------------------------
-       Portadas en assets/img/revista/. Las de 2025 y 2026 son las que la Rama
-       ya publicó; la de noviembre está en preparación y su portada sale del
-       concurso de fotografía, por eso el número va marcado con `proximo` y se
-       lleva las dos columnas del expositor.
+       Vive en su propia página, revista.html, igual que los capítulos. Las
+       portadas están en assets/img/revista/.
+
+       DOS números, no tres. La primera edición es YIEEE Frontiers de mayo de
+       2025, publicada y legible entera en el enlace: confirmado abriendo el
+       flipbook y comparando la portada. La segunda está en preparación —el
+       cartel de la Rama dice «EN ESTA SEGUNDA EDICIÓN»— y su portada sale del
+       concurso de fotografía, por eso va marcada con `proximo` y se lleva las
+       dos columnas del expositor; la maqueta enseña el hueco reservado.
+
+       `url` = número publicado y se puede leer. Sin `url`, no se enlaza.
 
        REGLA DE SIEMPRE: si `convoca` se queda vacío, la convocatoria no se
        dibuja y la sección se queda solo con las portadas. Una revista sin
@@ -356,16 +363,18 @@
        dibuja el botón, y el cierre remite a Instagram.                      */
     revista: {
       numeros: [
-        { f:'edicion-2026.jpg', t:'Revista IEEE Yachay Tech',
-          n:'Edición 2026', fecha:'Noviembre', proximo:true,
-          alt:'Portada de la edición de noviembre de 2026, con el espacio ' +
+        { f:'edicion-02.jpg', t:'Segunda edición',
+          n:'Noviembre 2026', fecha:'En preparación', proximo:true,
+          pie:'La portada la decide el concurso de fotografía: el hueco de la ' +
+              'maqueta es el que ocupará la foto ganadora.',
+          alt:'Maqueta de la portada de la segunda edición, con el espacio ' +
               'reservado para la foto ganadora del concurso de portada' },
-        { f:'frontiers-v2.jpg', t:'YIEEE Frontiers',
-          n:'Vol. 2', fecha:'Septiembre 2026',
-          alt:'Portada del segundo número de YIEEE Frontiers' },
-        { f:'frontiers-v1.jpg', t:'YIEEE Frontiers',
-          n:'Vol. 1, N.º 1', fecha:'Mayo 2025',
-          alt:'Portada del primer número de YIEEE Frontiers' }
+        { f:'edicion-01.jpg', t:'YIEEE Frontiers',
+          n:'Mayo 2025', fecha:'Primera edición · Vol. 1, N.º 1',
+          url:'https://www.flipbookpdf.net/web/site/' +
+              'cd61f774b7f33622d6ff0e1e0af73ce555173574202509.pdf.html',
+          pie:'Publicada y legible entera.',
+          alt:'Portada de la primera edición, YIEEE Frontiers de mayo de 2025' }
       ],
       convoca: [
         { t:'Galería fotográfica y portada',
@@ -631,13 +640,24 @@
       R.numeros.forEach(function (n) {
         var fig = el('figure',
           'revista__num' + (n.proximo ? ' revista__num--proximo' : ''));
-        fig.innerHTML =
+        /* Un número publicado se puede abrir; uno en preparación, no. La
+           lámina va dentro del enlace solo cuando hay algo que leer, para
+           que no haya un enlace que no lleva a ninguna parte. */
+        var lamina =
           '<img class="revista__lamina" src="assets/img/revista/' + esc(n.f) + V +
-              '" alt="' + esc(n.alt || n.t) + '" loading="lazy" decoding="async">' +
+              '" alt="' + esc(n.alt || n.t) + '" loading="lazy" decoding="async">';
+        fig.innerHTML =
+          (n.url
+            ? '<a class="revista__abrir" href="' + esc(n.url) +
+              '" target="_blank" rel="noopener noreferrer">' + lamina +
+              '<span class="revista__leer">Leerla <i aria-hidden="true">→</i></span></a>'
+            : lamina) +
           '<figcaption class="revista__pie">' +
             '<b>' + esc(n.t) + '</b>' +
-            '<span>' + esc(n.n) + ' · ' + esc(n.fecha) + '</span>' +
-            (n.proximo ? '<em>En preparación</em>' : '') +
+            '<span>' + esc(n.n) + '</span>' +
+            (n.proximo ? '<em>' + esc(n.fecha) + '</em>'
+                       : '<span>' + esc(n.fecha) + '</span>') +
+            (n.pie ? '<small>' + esc(n.pie) + '</small>' : '') +
           '</figcaption>';
         rack.appendChild(fig);
       });

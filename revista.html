@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es-EC">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Misma política que el resto del sitio. Ver la nota larga en index.html. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>La revista · IEEE Yachay Tech</title>
+<meta name="description" content="La revista de la Rama Estudiantil IEEE de la Universidad Yachay Tech. La primera edición, YIEEE Frontiers (mayo de 2025), está publicada y se puede leer entera; la segunda está abierta a envíos de los miembros en seis apartados.">
+<meta name="google-site-verification" content="Z5_LZP4WgQZVqh4_TVViv-Z1zzw27bXw1oujBzgdHto">
+<meta name="theme-color" content="#00629B">
+<link rel="icon" href="assets/logo/ieee-blue.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/logo/ieee-blue.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="La revista · IEEE Yachay Tech">
+<meta property="og:description" content="La escriben sus miembros. Segunda edición abierta a envíos.">
+<meta property="og:image" content="assets/img/revista/edicion-02.jpg">
+<meta property="og:locale" content="es_EC">
+
+<link rel="canonical" href="https://ramaieeeyt.github.io/revista.html">
+<meta property="og:url" content="https://ramaieeeyt.github.io/revista.html">
+<meta property="og:site_name" content="IEEE Yachay Tech University Student Branch">
+
+<link rel="stylesheet" href="css/style.css?v=129">
+</head>
+
+<body class="subpage">
+<a class="sr-only" href="#rev">Saltar al contenido</a>
+
+<!-- ============================================================ NAV -->
+<header class="nav" id="nav">
+  <div class="shell nav__in">
+
+    <a class="lockup" href="index.html" aria-label="IEEE Yachay Tech University Student Branch — inicio">
+      <span class="lockup__mark">
+        <img class="is-light" src="assets/logo/ieee-white.svg" alt="" aria-hidden="true">
+        <img class="is-dark"  src="assets/logo/ieee-blue.svg"  alt="IEEE">
+      </span>
+      <span class="lockup__bar" aria-hidden="true"></span>
+      <span class="lockup__txt">
+        <b>Yachay Tech University</b>
+        <span>IEEE Student Branch</span>
+      </span>
+    </a>
+
+    <button class="nav__burger" id="burger" aria-label="Menú" aria-expanded="false"
+            aria-controls="nav-links"><span></span></button>
+
+    <nav class="nav__links" id="nav-links" aria-label="Principal">
+      <a href="capitulos.html">Capítulos</a>
+      <a href="index.html#directiva">Directiva</a>
+      <a href="index.html#oportunidades">Oportunidades</a>
+      <a href="index.html#recursos">Recursos</a>
+      <a href="index.html#archivo">Archivo</a>
+      <a href="index.html#trayectoria">Trayectoria</a>
+      <a class="nav__cta" href="index.html#unete">Únete</a>
+    </nav>
+
+  </div>
+</header>
+
+<main id="rev">
+<!-- =================================================== PORTADA DE LA PÁGINA
+     Aquí la estética es la de la revista entera: papel cálido, manchas
+     difuminadas y galones cortados contra el borde. El campo ASCII, que es el
+     fondo del resto del sitio, no entra: dos sistemas de fondo compitiendo no
+     dejan leer ninguno. -->
+<section class="revpage">
+  <span class="revista__galon revista__galon--rojo" aria-hidden="true"></span>
+  <span class="revista__galon revista__galon--azul" aria-hidden="true"></span>
+
+  <div class="shell revpage__in">
+    <a class="volver" href="index.html"><span aria-hidden="true">←</span> Volver a la Rama</a>
+
+    <!-- Las letras entran una a una. Van en <i> con su índice para escalonar
+         el retardo desde CSS; el `aria-label` deja la palabra entera para
+         quien use lector de pantalla, y con `prefers-reduced-motion` no se
+         anima nada: aparecen puestas. -->
+    <h1 class="revtitle" aria-label="La revista de la Rama">
+      <span class="revtitle__word" aria-hidden="true"><i style="--i:0">R</i><i style="--i:1">E</i><i style="--i:2">V</i><i style="--i:3">I</i><i style="--i:4">S</i><i style="--i:5">T</i><i style="--i:6">A</i></span>
+      <span class="revtitle__sub caslon" aria-hidden="true">de la Rama</span>
+    </h1>
+
+    <p class="lede revpage__lede">
+      La escriben sus miembros. Artículos, fotografías, logros y testimonios de
+      quienes están aquí — no una memoria institucional, sino lo que la gente de
+      la Rama tiene que contar.
+    </p>
+  </div>
+</section>
+
+<!-- =================================================== LOS NÚMEROS -->
+<section class="section revpage__nums">
+  <div class="shell">
+    <header class="section__head">
+      <h2 class="h2" data-reveal>Los <span class="caslon">números</span></h2>
+    </header>
+    <div class="revista__rack" id="revista-rack" data-reveal></div>
+  </div>
+</section>
+
+<!-- =================================================== LA CONVOCATORIA -->
+<section class="section section--tint" id="convocatoria">
+  <div class="shell">
+    <header class="section__head">
+      <h2 class="h2" data-reveal>Qué entra en <span class="caslon">esta edición</span></h2>
+      <p class="lede" data-reveal data-delay="1">
+        Seis apartados abiertos a cualquier miembro o voluntario de la Rama.
+        Cada uno tiene su regla, y la regla es corta a propósito.
+      </p>
+    </header>
+
+    <div class="convs" id="revista-convoca" data-reveal data-delay="1"></div>
+
+    <p class="caps__nota" id="revista-cierre"></p>
+  </div>
+</section>
+</main>
+
+<!-- =========================================================== FOOTER -->
+<footer class="foot" id="contacto">
+  <div class="ascii-field" aria-hidden="true"><pre class="ascii" id="ascii-foot"></pre></div>
+
+  <div class="shell foot__in">
+    <div class="foot__top">
+      <div>
+        <h2>Hablemos<br><em>de ingeniería</em></h2>
+        <a class="foot__mail" href="mailto:ieee@yachaytech.edu.ec">ieee@yachaytech.edu.ec</a>
+      </div>
+
+      <div class="foot__col">
+        <h3>Encuéntranos</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/ramaieeeyt/" target="_blank" rel="noopener noreferrer">Instagram — @ramaieeeyt</a></li>
+          <li><a href="https://www.facebook.com/RamaIEEEYT/" target="_blank" rel="noopener noreferrer">Facebook — /RamaIEEEYT</a></li>
+          <li><a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer">ieee.org — sitio oficial</a></li>
+        </ul>
+      </div>
+
+      <div class="foot__col">
+        <h3>Dónde</h3>
+        <ul>
+          <li>Universidad Yachay Tech</li>
+          <li>Urcuquí — Imbabura</li>
+          <li>Ecuador</li>
+          <li>Lun — Vie · 8:00 — 20:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot__bottom">
+      <p class="foot__legal">
+        © <span id="year">2026</span> Rama Estudiantil IEEE — Universidad Yachay Tech.
+        IEEE y el símbolo de la cometa son marcas registradas de
+        <a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer">IEEE</a>,
+        usadas aquí conforme a las Brand Identity Guidelines para ramas estudiantiles.
+      </p>
+
+      <a class="signature" href="https://www.instagram.com/a.dres_/" target="_blank" rel="noopener noreferrer">
+        <span class="signature__by">Diseño y desarrollo</span>
+        <span class="signature__mark">Aveiga Design</span>
+        <span class="signature__rule" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/ascii.js?v=129"></script>
+<script src="js/main.js?v=129"></script>
+</body>
+</html>

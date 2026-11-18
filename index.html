@@ -65,7 +65,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="css/style.css?v=128">
+<link rel="stylesheet" href="css/style.css?v=129">
 </head>
 
 <body>
@@ -102,7 +102,7 @@
       <a href="#recursos">Recursos</a>
       <a href="capitulos.html">Capítulos</a>
       <a href="#archivo">Archivo</a>
-      <a href="#revista">Revista</a>
+      <a href="revista.html">Revista</a>
       <a href="#trayectoria">Trayectoria</a>
       <a class="nav__cta" href="#unete">Únete</a>
     </nav>
@@ -368,36 +368,24 @@
     </header>
 
     <div class="mosaic" id="mosaic"></div>
+
+    <!-- La puerta a la revista, igual que la de capítulos: la sección vive en
+         su propia página y aquí solo queda la invitación. -->
+    <a class="capsdoor revdoor" href="revista.html" data-reveal
+       style="margin-top:clamp(2rem,4vw,3.2rem)">
+      <span class="capsdoor__marks revdoor__marks" aria-hidden="true">
+        <img src="assets/img/revista/edicion-02.jpg" alt="" loading="lazy" width="620" height="895" decoding="async">
+        <img src="assets/img/revista/edicion-01.jpg" alt="" loading="lazy" width="620" height="798" decoding="async">
+      </span>
+      <span class="capsdoor__txt">
+        <b>La revista de la Rama</b>
+        <span>La primera edición está publicada y se puede leer entera; la segunda está abierta a envíos en seis apartados.</span>
+      </span>
+      <span class="capsdoor__go">Ver la revista <i aria-hidden="true">→</i></span>
+    </a>
   </div>
 </section>
 
-<!-- =================================================== REVISTA
-     La única sección con la estética de la revista entera. Todo lo editable
-     —portadas y convocatoria— vive en DATA.revista, en js/main.js. -->
-<section class="section revista" id="revista">
-  <span class="revista__galon revista__galon--rojo" aria-hidden="true"></span>
-  <span class="revista__galon revista__galon--azul" aria-hidden="true"></span>
-
-  <div class="shell">
-    <header class="section__head">
-      <h2 class="h2" data-reveal>La <span class="caslon">revista</span></h2>
-      <p class="lede" data-reveal data-delay="1">
-        La Rama publica su propia revista. La escriben sus miembros: artículos,
-        fotografías, logros y testimonios de quienes están aquí.
-      </p>
-    </header>
-
-    <div class="revista__cuerpo">
-      <div class="revista__rack" id="revista-rack" data-reveal></div>
-
-      <div class="revista__convoca" data-reveal data-delay="1">
-        <p class="label">Qué entra en esta edición</p>
-        <div id="revista-convoca"></div>
-        <p class="revista__cierre" id="revista-cierre"></p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- =============================================== TRAYECTORIA -->
 <section class="section" id="trayectoria">
@@ -532,7 +520,7 @@
   <p class="lightbox__cap" id="lightbox-cap"></p>
 </div>
 
-<script src="js/ascii.js?v=128"></script>
-<script src="js/main.js?v=128"></script>
+<script src="js/ascii.js?v=129"></script>
+<script src="js/main.js?v=129"></script>
 </body>
 </html>
