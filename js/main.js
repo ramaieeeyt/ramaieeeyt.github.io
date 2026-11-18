@@ -337,7 +337,52 @@
       { f:'cap-photonics',       c:'Photonics Society · Directiva 2026' },
       { f:'cap-wie',             c:'Women in Engineering · Directiva 2026' },
       { f:'cap-sight',           c:'SIGHT · Directiva 2026' }
-    ]
+    ],
+
+    /* --- La revista ---------------------------------------------------------
+       Portadas en assets/img/revista/. Las de 2025 y 2026 son las que la Rama
+       ya publicó; la de noviembre está en preparación y su portada sale del
+       concurso de fotografía, por eso el número va marcado con `proximo` y se
+       lleva las dos columnas del expositor.
+
+       REGLA DE SIEMPRE: si `convoca` se queda vacío, la convocatoria no se
+       dibuja y la sección se queda solo con las portadas. Una revista sin
+       convocatoria abierta es verdad; una convocatoria cerrada que sigue
+       pidiendo artículos, no.
+
+       Las reglas de cada apartado están copiadas literalmente de los carteles
+       de lineamientos de la Rama. Si cambian allí, cámbialas aquí.
+       `enlace` es el formulario de inscripción: mientras esté vacío no se
+       dibuja el botón, y el cierre remite a Instagram.                      */
+    revista: {
+      numeros: [
+        { f:'edicion-2026.jpg', t:'Revista IEEE Yachay Tech',
+          n:'Edición 2026', fecha:'Noviembre', proximo:true,
+          alt:'Portada de la edición de noviembre de 2026, con el espacio ' +
+              'reservado para la foto ganadora del concurso de portada' },
+        { f:'frontiers-v2.jpg', t:'YIEEE Frontiers',
+          n:'Vol. 2', fecha:'Septiembre 2026',
+          alt:'Portada del segundo número de YIEEE Frontiers' },
+        { f:'frontiers-v1.jpg', t:'YIEEE Frontiers',
+          n:'Vol. 1, N.º 1', fecha:'Mayo 2025',
+          alt:'Portada del primer número de YIEEE Frontiers' }
+      ],
+      convoca: [
+        { t:'Galería fotográfica y portada',
+          r:'Fotos propias · horizontales · mínimo 1920 px · de eventos IEEE YT de 2026' },
+        { t:'Artículos de divulgación',
+          r:'Máx. 800 palabras · tema de ciencia, ingeniería o tecnología · al menos 2 fuentes citadas' },
+        { t:'Éxitos de estudiantes y profesores',
+          r:'Nominación propia o de terceros · logro de 2026 · evidencia: certificado, enlace o publicación' },
+        { t:'Testimonios de miembros',
+          r:'Máx. 150 palabras · una foto del autor · miembro o voluntario IEEE' },
+        { t:'Becas y viajes',
+          r:'Máx. 200 palabras · 2 fotos · beca o viaje obtenido en 2026' },
+        { t:'Frases inspiradoras',
+          r:'Máx. 25 palabras · propia, o cita con el nombre del autor' }
+      ],
+      enlace: ''   /* ← el formulario de inscripción, cuando lo haya */
+    }
   };
 
   /* ========================================================= 2. HELPERS */
@@ -572,6 +617,53 @@
         '<figcaption>' + esc(a.c) + '</figcaption>';
       wrap.appendChild(f);
     });
+  }
+
+  /* -- La revista ----------------------------------------------------------
+     Si una lista viene vacía su bloque no se dibuja, igual que en las páginas
+     de capítulo: mejor una sección corta y verdadera que una con un hueco. */
+  function renderRevista() {
+    var R = DATA.revista;
+    if (!R) return;
+
+    var rack = $('#revista-rack');
+    if (rack && R.numeros && R.numeros.length) {
+      R.numeros.forEach(function (n) {
+        var fig = el('figure',
+          'revista__num' + (n.proximo ? ' revista__num--proximo' : ''));
+        fig.innerHTML =
+          '<img class="revista__lamina" src="assets/img/revista/' + esc(n.f) + V +
+              '" alt="' + esc(n.alt || n.t) + '" loading="lazy" decoding="async">' +
+          '<figcaption class="revista__pie">' +
+            '<b>' + esc(n.t) + '</b>' +
+            '<span>' + esc(n.n) + ' · ' + esc(n.fecha) + '</span>' +
+            (n.proximo ? '<em>En preparación</em>' : '') +
+          '</figcaption>';
+        rack.appendChild(fig);
+      });
+    }
+
+    var conv = $('#revista-convoca');
+    if (conv && R.convoca && R.convoca.length) {
+      R.convoca.forEach(function (c, i) {
+        var num = (i + 1 < 10 ? '0' : '') + (i + 1);
+        conv.appendChild(el('article', 'conv',
+          '<span class="conv__n">' + num + '</span>' +
+          '<h3>' + esc(c.t) + '</h3>' +
+          '<p>' + esc(c.r) + '</p>'));
+      });
+    }
+
+    var cierre = $('#revista-cierre');
+    if (cierre) {
+      cierre.innerHTML = R.enlace
+        ? 'Las inscripciones se hacen en el <a href="' + esc(R.enlace) +
+          '" target="_blank" rel="noopener">formulario de la convocatoria</a>.'
+        : 'La convocatoria se abre y se cierra por ' +
+          '<a href="https://www.instagram.com/ramaieeeyt/" target="_blank" ' +
+          'rel="noopener">@ramaieeeyt</a>, donde también se publican las bases ' +
+          'de cada apartado.';
+    }
   }
 
   /* -- HERBIEEE ----------------------------------------------------------- */
@@ -1006,6 +1098,7 @@
     renderCaps();
     renderTimeline();
     renderArchive();
+    renderRevista();
     renderMemes();
     initAscii();
     initNav();
